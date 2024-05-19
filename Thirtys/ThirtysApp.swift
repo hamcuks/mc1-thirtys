@@ -13,9 +13,8 @@ struct ThirtysApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            ComponenTextField()
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         
     }
