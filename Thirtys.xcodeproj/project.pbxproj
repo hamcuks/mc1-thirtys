@@ -18,6 +18,8 @@
 		E704AAA92BFB741C00578B69 /* StepThreeOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */; };
 		E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */; };
 		E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */; };
+		E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32332BFB8C590014563C /* AppDurationPicker.swift */; };
+		E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32352BFB8C8C0014563C /* DurationTypeEnum.swift */; };
 		E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */; };
 		E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F72BF84EC300237B58 /* ContentView.swift */; };
 		E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72EB2F92BF84EC500237B58 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThreeOnboardingScreen.swift; sourceTree = "<group>"; };
 		E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemComponent.swift; sourceTree = "<group>"; };
 		E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatePicker.swift; sourceTree = "<group>"; };
+		E70A32332BFB8C590014563C /* AppDurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDurationPicker.swift; sourceTree = "<group>"; };
+		E70A32352BFB8C8C0014563C /* DurationTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTypeEnum.swift; sourceTree = "<group>"; };
 		E72EB2F22BF84EC300237B58 /* Thirtys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thirtys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtysApp.swift; sourceTree = "<group>"; };
 		E72EB2F72BF84EC300237B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				03B4D0652BFA299000C6643F /* TextFieldComponent.swift */,
 				03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */,
 				E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */,
+				E70A32332BFB8C590014563C /* AppDurationPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				E72EB3152BF84F7F00237B58 /* SampleEnum.swift */,
+				E70A32352BFB8C8C0014563C /* DurationTypeEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */,
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
 				E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */,
+				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
 				E72EB3182BF84F8B00237B58 /* SampleViews.swift in Sources */,
 				E72EB32B2BF8505B00237B58 /* TimeConfigurationScreen.swift in Sources */,
@@ -306,6 +313,7 @@
 				03D7C68B2BFB33F900980C8F /* FinishLearningScreen.swift in Sources */,
 				E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */,
 				E704AAA82BFB741C00578B69 /* LearningTimeScreen.swift in Sources */,
+				E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */,
 				E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

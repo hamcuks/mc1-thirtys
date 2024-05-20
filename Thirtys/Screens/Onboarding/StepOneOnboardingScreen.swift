@@ -11,11 +11,11 @@ struct StepOneOnboardingScreen: View {
     
     @State private var planTitle: String = ""
     @State private var startDate: Date = .now
+    @State private var duration: Int = 1
     
     var body: some View {
         NavigationStack {
             VStack {
-                
                 ScrollView {
                     VStack(spacing: 40) {
                         Image(.goals)
@@ -46,11 +46,16 @@ struct StepOneOnboardingScreen: View {
                                 label: "Estimated Duration of Learning Plan",
                                 placeholder: "e.g., May 5 - June 5 2024"
                             )
+                            AppDurationPicker(
+                                selection: $duration,
+                                label: "How fast can you achieve this goal?",
+                                placeholder: "e.g., May 5 - June 5 2024"
+                            )
                         }
                     }
                 }
+                .padding(.bottom, 24)
                 
-                Spacer()
                 
                 NavigationLink(
                     destination: StepTwoOnboardingScreen()
