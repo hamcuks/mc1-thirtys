@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct AppButton: View {
-    var label: String
+struct AppButtonStyle: ButtonStyle {
     
-    var body: some View {
-        Text(label)
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
             .font(.subheadline)
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             .bold()
             .padding(.vertical, 12)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             .background(.kAccent)
-            .clipShape(RoundedRectangle(cornerRadius: 56))
+            .foregroundStyle(.kTitleText)
+            .clipShape(Capsule())
     }
+    
 }
 
 struct BackButton: View {
@@ -29,7 +30,7 @@ struct BackButton: View {
             Image(systemName: "chevron.backward")
                 .foregroundStyle(.kTitleText)
                 .bold()
-                .frame(width: 40, height: 40, alignment: .center)
+                .frame(width: 32, height: 32, alignment: .center)
                 .background(.kAccent)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
         }
@@ -37,5 +38,5 @@ struct BackButton: View {
 }
 
 #Preview {
-    AppButton(label: "Button")
+    BackButton()
 }
