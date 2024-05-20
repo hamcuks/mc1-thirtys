@@ -48,11 +48,11 @@ struct StepOneOnboardingScreen: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: GetStartedScreen()
+                    destination: StepTwoOnboardingScreen()
                 ) {
-                    AppButton(label: "Next")
+                    Text("Next")
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(AppButtonStyle())
                 .disabled(planTitle.isEmpty)
                 
             }

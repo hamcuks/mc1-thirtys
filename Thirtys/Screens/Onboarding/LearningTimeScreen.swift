@@ -8,8 +8,67 @@
 import SwiftUI
 
 struct LearningTimeScreen: View {
+    
+    var weekDays: [String] = [
+        "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"
+    ]
+    
+    @State private var selectedDay: String = "SUN"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                
+                VStack(spacing: 40) {
+                    Image(.bedTime)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxHeight: 210)
+                    
+                    VStack (spacing: 16) {
+                        Text("Here Is Your Learning Time!")
+                            .font(.title2)
+                            .bold()
+                            .foregroundStyle(.kTitleText)
+                        Text("Here’s our recommended learning time. Simply dedicate 30 minutes to each session as outlined below")
+                            .font(.callout)
+                            .fontWeight(.medium)
+                            .foregroundStyle(.kBody)
+                            .multilineTextAlignment(.center)
+                    }
+                    
+                    Picker("", selection: $selectedDay) {
+                        ForEach(weekDays, id: \.self) {
+                            Text($0)
+                                .font(.subheadline)
+                                .foregroundStyle(.kBody)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+                
+                Spacer()
+                
+                NavigationLink(
+                    destination: GetStartedScreen()
+                ) {
+                    Text("Next")
+                }
+                .buttonStyle(AppButtonStyle())
+                
+            }
+            .scrollIndicators(.hidden)
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarLeading) {
+                    BackButton()
+                }
+            })
+            .padding()
+            .navigationTitle("Learning Time")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden()
+        }
+        
     }
 }
 

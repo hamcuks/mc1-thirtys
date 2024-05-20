@@ -35,9 +35,9 @@ struct GetStartedScreen: View {
                 NavigationLink(
                     destination: StepOneOnboardingScreen()
                 ) {
-                    AppButton(label: "Let's Start")
+                    Text("Let's Start")
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(AppButtonStyle())
                 
             }
             .padding()

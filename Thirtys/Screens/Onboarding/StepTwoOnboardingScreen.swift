@@ -53,11 +53,11 @@ struct StepTwoOnboardingScreen: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: GetStartedScreen()
+                    destination: StepThreeOnboardingScreen()
                 ) {
-                    AppButton(label: "Next")
+                    Text("Next")
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(AppButtonStyle())
                 
             }
             .scrollIndicators(.hidden)
