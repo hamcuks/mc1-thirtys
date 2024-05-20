@@ -11,6 +11,7 @@
 		03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */; };
 		03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E952BFA25E600C3A248 /* ComponentDate.swift */; };
 		03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E992BFA27D300C3A248 /* ViewExtension.swift */; };
+		82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82265C162BFB2322000F5F92 /* TimerUI.swift */; };
 		E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */; };
 		E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F72BF84EC300237B58 /* ContentView.swift */; };
 		E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72EB2F92BF84EC500237B58 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRangeDatePicker.swift; sourceTree = "<group>"; };
 		03D85E952BFA25E600C3A248 /* ComponentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDate.swift; sourceTree = "<group>"; };
 		03D85E992BFA27D300C3A248 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		82265C162BFB2322000F5F92 /* TimerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUI.swift; sourceTree = "<group>"; };
 		E72EB2F22BF84EC300237B58 /* Thirtys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thirtys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtysApp.swift; sourceTree = "<group>"; };
 		E72EB2F72BF84EC300237B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				E72EB3262BF8503100237B58 /* DailyStrikesScreen.swift */,
 				E72EB3282BF8504100237B58 /* GoalsScreen.swift */,
 				E72EB32A2BF8505B00237B58 /* TimeConfigurationScreen.swift */,
+				82265C162BFB2322000F5F92 /* TimerUI.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				E72EB31F2BF84FB300237B58 /* SampleModel.swift in Sources */,
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
 				03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */,
+				82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */,
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
 				E72EB3102BF84F1700237B58 /* RoundedButton.swift in Sources */,
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
