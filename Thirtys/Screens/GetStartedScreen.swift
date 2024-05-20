@@ -32,7 +32,13 @@ struct GetStartedScreen: View {
                 
                 Spacer()
                 
-                AppButton(label: "Let's Start")
+                NavigationLink(
+                    destination: OnboardingScreen()
+                ) {
+                    AppButton(label: "Let's Start")
+                }
+                .buttonStyle(.plain)
+                
             }
             .padding()
         }
