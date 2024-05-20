@@ -19,7 +19,7 @@
 		E72EB2FD2BF84EC500237B58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72EB2FC2BF84EC500237B58 /* Preview Assets.xcassets */; };
 		E72EB2FF2BF84EC500237B58 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2FE2BF84EC500237B58 /* Persistence.swift */; };
 		E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3002BF84EC500237B58 /* Thirtys.xcdatamodeld */; };
-		E72EB3102BF84F1700237B58 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB30F2BF84F1700237B58 /* RoundedButton.swift */; };
+		E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB30F2BF84F1700237B58 /* AppButtonComponent.swift */; };
 		E72EB3162BF84F7F00237B58 /* SampleEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3152BF84F7F00237B58 /* SampleEnum.swift */; };
 		E72EB3182BF84F8B00237B58 /* SampleViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3172BF84F8B00237B58 /* SampleViews.swift */; };
 		E72EB31A2BF84F9600237B58 /* SampleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3192BF84F9600237B58 /* SampleExtensions.swift */; };
@@ -27,7 +27,7 @@
 		E72EB31F2BF84FB300237B58 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB31E2BF84FB300237B58 /* SampleModel.swift */; };
 		E72EB3212BF84FBF00237B58 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3202BF84FBF00237B58 /* HomeScreen.swift */; };
 		E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */; };
-		E72EB3252BF84FF100237B58 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3242BF84FF100237B58 /* OnboardingScreen.swift */; };
+		E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */; };
 		E72EB3272BF8503100237B58 /* DailyStrikesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3262BF8503100237B58 /* DailyStrikesScreen.swift */; };
 		E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3282BF8504100237B58 /* GoalsScreen.swift */; };
 		E72EB32B2BF8505B00237B58 /* TimeConfigurationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB32A2BF8505B00237B58 /* TimeConfigurationScreen.swift */; };
@@ -47,7 +47,7 @@
 		E72EB2FC2BF84EC500237B58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E72EB2FE2BF84EC500237B58 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E72EB3012BF84EC500237B58 /* Thirtys.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thirtys.xcdatamodel; sourceTree = "<group>"; };
-		E72EB30F2BF84F1700237B58 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		E72EB30F2BF84F1700237B58 /* AppButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonComponent.swift; sourceTree = "<group>"; };
 		E72EB3152BF84F7F00237B58 /* SampleEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleEnum.swift; sourceTree = "<group>"; };
 		E72EB3172BF84F8B00237B58 /* SampleViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViews.swift; sourceTree = "<group>"; };
 		E72EB3192BF84F9600237B58 /* SampleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleExtensions.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		E72EB31E2BF84FB300237B58 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		E72EB3202BF84FBF00237B58 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedScreen.swift; sourceTree = "<group>"; };
-		E72EB3242BF84FF100237B58 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneOnboardingScreen.swift; sourceTree = "<group>"; };
 		E72EB3262BF8503100237B58 /* DailyStrikesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStrikesScreen.swift; sourceTree = "<group>"; };
 		E72EB3282BF8504100237B58 /* GoalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScreen.swift; sourceTree = "<group>"; };
 		E72EB32A2BF8505B00237B58 /* TimeConfigurationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConfigurationScreen.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			children = (
 				E72EB3202BF84FBF00237B58 /* HomeScreen.swift */,
 				E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */,
-				E72EB3242BF84FF100237B58 /* OnboardingScreen.swift */,
+				E7C2FBF72BFB2ADC00AFE597 /* Onboarding */,
 				E72EB3262BF8503100237B58 /* DailyStrikesScreen.swift */,
 				E72EB3282BF8504100237B58 /* GoalsScreen.swift */,
 				E72EB32A2BF8505B00237B58 /* TimeConfigurationScreen.swift */,
@@ -174,7 +174,7 @@
 		E72EB30E2BF84F0000237B58 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E72EB30F2BF84F1700237B58 /* RoundedButton.swift */,
+				E72EB30F2BF84F1700237B58 /* AppButtonComponent.swift */,
 				03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */,
 				03D85E952BFA25E600C3A248 /* ComponentDate.swift */,
 				03B4D0652BFA299000C6643F /* TextFieldComponent.swift */,
@@ -189,6 +189,14 @@
 				E72EB3152BF84F7F00237B58 /* SampleEnum.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		E7C2FBF72BFB2ADC00AFE597 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +274,7 @@
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
 				03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */,
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
-				E72EB3102BF84F1700237B58 /* RoundedButton.swift in Sources */,
+				E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */,
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
 				E72EB3182BF84F8B00237B58 /* SampleViews.swift in Sources */,
@@ -277,7 +285,7 @@
 				E72EB3162BF84F7F00237B58 /* SampleEnum.swift in Sources */,
 				03D7C68D2BFB51D200980C8F /* LearningHistoryEmpty.swift in Sources */,
 				E72EB3212BF84FBF00237B58 /* HomeScreen.swift in Sources */,
-				E72EB3252BF84FF100237B58 /* OnboardingScreen.swift in Sources */,
+				E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */,
 				E72EB31A2BF84F9600237B58 /* SampleExtensions.swift in Sources */,
 				03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */,
 				E72EB31D2BF84FAA00237B58 /* SampleViewModels.swift in Sources */,
