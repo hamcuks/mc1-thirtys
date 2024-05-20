@@ -17,6 +17,7 @@
 		E704AAA82BFB741C00578B69 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA52BFB741C00578B69 /* LearningTimeScreen.swift */; };
 		E704AAA92BFB741C00578B69 /* StepThreeOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */; };
 		E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */; };
+		E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */; };
 		E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */; };
 		E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F72BF84EC300237B58 /* ContentView.swift */; };
 		E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72EB2F92BF84EC500237B58 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		E704AAA52BFB741C00578B69 /* LearningTimeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningTimeScreen.swift; sourceTree = "<group>"; };
 		E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThreeOnboardingScreen.swift; sourceTree = "<group>"; };
 		E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemComponent.swift; sourceTree = "<group>"; };
+		E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatePicker.swift; sourceTree = "<group>"; };
 		E72EB2F22BF84EC300237B58 /* Thirtys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thirtys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtysApp.swift; sourceTree = "<group>"; };
 		E72EB2F72BF84EC300237B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				03D85E952BFA25E600C3A248 /* ComponentDate.swift */,
 				03B4D0652BFA299000C6643F /* TextFieldComponent.swift */,
 				03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */,
+				E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				E72EB2FF2BF84EC500237B58 /* Persistence.swift in Sources */,
 				E704AAA92BFB741C00578B69 /* StepThreeOnboardingScreen.swift in Sources */,
 				E72EB31F2BF84FB300237B58 /* SampleModel.swift in Sources */,
+				E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */,
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
 				03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */,
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
