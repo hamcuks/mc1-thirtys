@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OnboardingScreen: View {
+struct StepOneOnboardingScreen: View {
     
     @State private var planTitle: String = ""
     
@@ -48,11 +48,12 @@ struct OnboardingScreen: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: OnboardingScreen()
+                    destination: GetStartedScreen()
                 ) {
-                    AppButton(label: "Next", isDisabled: planTitle.isEmpty)
+                    AppButton(label: "Next")
                 }
                 .buttonStyle(.plain)
+                .disabled(planTitle.isEmpty)
                 
             }
             .toolbar(content: {
@@ -69,5 +70,5 @@ struct OnboardingScreen: View {
 }
 
 #Preview {
-    OnboardingScreen()
+    StepOneOnboardingScreen()
 }

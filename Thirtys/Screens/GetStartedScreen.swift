@@ -33,7 +33,7 @@ struct GetStartedScreen: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: OnboardingScreen()
+                    destination: StepOneOnboardingScreen()
                 ) {
                     AppButton(label: "Let's Start")
                 }
