@@ -8,8 +8,69 @@
 import SwiftUI
 
 struct StepTwoOnboardingScreen: View {
+    
+    var weekDays: [String] = [ 
+        "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+    ]
+    
+    @State private var isTimePickerOpened: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                
+                ScrollView {
+                    VStack(spacing: 40) {
+                        Image(.workSchedules)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxHeight: 210)
+                        
+                        VStack (spacing: 16) {
+                            Text("Your Work Schedules!")
+                                .font(.title2)
+                                .bold()
+                                .foregroundStyle(.kTitleText)
+                            Text("Setting your work hours allows us to allocate your time effectively")
+                                .font(.callout)
+                                .fontWeight(.medium)
+                                .foregroundStyle(.kBody)
+                                .multilineTextAlignment(.center)
+                        }
+                        
+                        VStack(spacing: 16) {
+                            ForEach(weekDays, id: \.self) { day in
+                                ListItemComponent(
+                                    label: day, 
+                                    selection: .constant([]),
+                                    isOpen: $isTimePickerOpened
+                                )
+                            }
+                        }
+                    }
+                }
+                
+                Spacer()
+                
+                NavigationLink(
+                    destination: GetStartedScreen()
+                ) {
+                    AppButton(label: "Next")
+                }
+                .buttonStyle(.plain)
+                
+            }
+            .scrollIndicators(.hidden)
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarLeading) {
+                    BackButton()
+                }
+            })
+            .padding()
+            .navigationTitle("Step 2/3")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden()
+        }
     }
 }
 
