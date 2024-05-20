@@ -153,12 +153,12 @@ struct WeeklyStreak: View {
                         VStack{
                             Text("\(i)")
                                 .font(.system(.caption2, weight: .semibold))
-                                .foregroundStyle(Color.kTextCircle)
+                                .foregroundStyle(Color.kBody)
                             if isDailyAchive{
                                 Image("Daily Achievement")
                             } else {
                                 Circle()
-                                    .stroke(Color.kCircleBorder, lineWidth: 5)
+                                    .stroke(Color.kPlaceholder, lineWidth: 5)
                                     .frame(maxWidth: 24, maxHeight: 24)
                             }
                         }
