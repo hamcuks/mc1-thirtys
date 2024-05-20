@@ -16,5 +16,6 @@ struct ThirtysApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        
     }
 }
