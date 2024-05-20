@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AppButton: View {
     var label: String
-    var isDisabled: Bool = false
     
     var body: some View {
         Text(label)
@@ -17,7 +16,7 @@ struct AppButton: View {
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             .bold()
             .padding(.vertical, 12)
-            .background(!isDisabled ? .kAccent : .kSecondary)
+            .background(.kAccent)
             .clipShape(RoundedRectangle(cornerRadius: 56))
     }
 }
