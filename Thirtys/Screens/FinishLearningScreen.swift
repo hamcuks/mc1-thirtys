@@ -16,7 +16,6 @@ struct FinishLearningScreen: View {
                 Color.kBackground
                 VStack{
                     WeeklyStreak()
-                        .padding(.top, -60)
                     FinishComponent()
                         .padding(.bottom, 24)
                     LearningHistory()
@@ -53,7 +52,7 @@ struct FinishComponent: View {
             Image("Finish Learning")
                 .resizable()
                 .frame(maxWidth: 250, maxHeight: 210, alignment: .center)
-                .padding(.bottom, 20)
+                .padding(.bottom, 32)
             
             Text("Hooray! You’ve completed your 30 minutes of learning today!")
                 .multilineTextAlignment(.center)
@@ -61,7 +60,7 @@ struct FinishComponent: View {
                 .font(.system(.body, weight: .semibold))
         }
         .frame(maxWidth: .infinity)
-        .padding([.vertical, .horizontal], 30)
+        .padding([.vertical, .horizontal], 32)
         .background(.white)
     }
 }
@@ -76,7 +75,7 @@ struct LearningHistory: View {
             Text("Learning History")
                 .frame(maxWidth: .infinity,alignment: .leading)
                 .font(.system(.body, weight: .bold))
-                .padding(.bottom, 12)
+                .padding(.bottom, 24)
             
             if DurationLearning.count > 1 {
                 HStack{
@@ -141,19 +140,18 @@ struct WeeklyStreak: View {
     
     let data = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     
-    let circleImg = Array(repeating: Circle(), count: 7)
-    
     @State private var isDailyAchive: Bool = false
     
     var body: some View {
         HStack{
-            Grid(horizontalSpacing: 25, verticalSpacing: 10){
+            Grid(horizontalSpacing: 30, verticalSpacing: 50){
                 GridRow{
                     ForEach(data, id: \.hashValue) { i in
                         VStack{
                             Text("\(i)")
                                 .font(.system(.caption2, weight: .semibold))
                                 .foregroundStyle(Color.kBody)
+                                .padding(.bottom, 5)
                             if isDailyAchive{
                                 Image("Daily Achievement")
                             } else {
@@ -166,7 +164,7 @@ struct WeeklyStreak: View {
                 }
             }
         }
-        .padding()
+        .padding(.bottom, 24)
         .frame(maxWidth: .infinity)
     }
 }
