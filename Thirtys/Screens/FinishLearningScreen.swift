@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FinishLearningScreen: View {
-    let streakColor = UIColor(red: 1.00, green: 0.48, blue: 0.00, alpha: 1.00)
     
     var body: some View {
         NavigationStack{
@@ -23,7 +22,6 @@ struct FinishLearningScreen: View {
                     LearningHistory()
                         .padding(.bottom, 24)
                     
-    //                    .border(.red)
                 }
                 .toolbar{
                     HStack{
@@ -32,7 +30,7 @@ struct FinishLearningScreen: View {
                         Text("100")
                             .font(.system(.body, weight: .black))
                     }
-                    .foregroundStyle(Color(uiColor: streakColor))
+                    .foregroundStyle(Color.kStreak)
             }
             
             
@@ -73,10 +71,6 @@ struct LearningHistory: View {
     @State private var isHasContent: Bool = true
     @State private var DurationLearning : [Int] = [2, 1]
     
-    var uiColor = UIColor(red: 0.02, green: 0.25, blue: 0.20, alpha: 1.00)
-    
-    var borderColor = UIColor(red: 0.52, green: 0.86, blue: 0.78, alpha: 1.00)
-    
     var body: some View {
         VStack(alignment: .leading){
             Text("Learning History")
@@ -98,7 +92,7 @@ struct LearningHistory: View {
                 .padding([.horizontal], 20)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color(uiColor: borderColor), lineWidth: 2)
+                        .stroke(Color.kAccent, lineWidth: 2)
                 )
                 
                 HStack{
@@ -114,7 +108,7 @@ struct LearningHistory: View {
                 .padding([.horizontal], 20)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color(uiColor: borderColor), lineWidth: 2)
+                        .stroke(Color.kAccent, lineWidth: 2)
                 )
                 
             } else {
@@ -131,11 +125,11 @@ struct LearningHistory: View {
                 .padding([.horizontal], 20)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color(uiColor: borderColor), lineWidth: 2)
+                        .stroke(Color.kAccent, lineWidth: 2)
                 )
             }
         }
-        .foregroundColor(Color(uiColor: uiColor))
+        .foregroundColor(Color.kTitleText)
         .padding([.horizontal, .vertical], 20)
         .frame(maxWidth: .infinity)
         .background(.white)
@@ -145,15 +139,11 @@ struct LearningHistory: View {
 
 struct WeeklyStreak: View {
     
-    let data = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    let data = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     
     let circleImg = Array(repeating: Circle(), count: 7)
     
-    let colorText = UIColor(red: 0.56, green: 0.56, blue: 0.56, alpha: 1.00)
-    
-    let circleColor = UIColor(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00)
-    
-    @State private var isDailyAchive: Bool = true
+    @State private var isDailyAchive: Bool = false
     
     var body: some View {
         HStack{
@@ -163,12 +153,12 @@ struct WeeklyStreak: View {
                         VStack{
                             Text("\(i)")
                                 .font(.system(.caption2, weight: .semibold))
-                                .foregroundStyle(Color(uiColor: colorText))
+                                .foregroundStyle(Color.kTextCircle)
                             if isDailyAchive{
                                 Image("Daily Achievement")
                             } else {
                                 Circle()
-                                    .stroke(Color(uiColor: circleColor), lineWidth: 5)
+                                    .stroke(Color.kCircleBorder, lineWidth: 5)
                                     .frame(maxWidth: 24, maxHeight: 24)
                             }
                         }
@@ -178,7 +168,6 @@ struct WeeklyStreak: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-//        .background(.red)
     }
 }
 
