@@ -119,11 +119,11 @@ struct LearningHistory: View {
                 
             } else {
                 HStack{
-                    Text("23 Minutes")
+                    Text("30 Minutes")
                         .frame(maxWidth: .infinity,alignment: .leading)
                         .font(.system(.subheadline, weight: .semibold))
                     
-                    Text("06.15 - 06.38")
+                    Text("06.15 - 06.45")
                         .frame(maxWidth: .infinity,alignment: .trailing)
                         .font(.system(.subheadline, weight: .semibold))
                 }
@@ -142,21 +142,6 @@ struct LearningHistory: View {
     }
 }
 
-struct LearningHistoryEmpty: View {
-    var body: some View {
-        ContentUnavailableView{
-            Label("", systemImage: "calendar.day.timeline.leading")
-                .font(.system(.subheadline, weight: .semibold))
-                .padding(.bottom, -16)
-                
-        } description: {
-        Text("You haven't completed your learning session today!")
-        }
-        .frame(maxWidth: .infinity, maxHeight: 156)
-        .padding(.bottom, -25)
-    }
-}
-
 
 struct WeeklyStreak: View {
     
@@ -168,18 +153,24 @@ struct WeeklyStreak: View {
     
     let circleColor = UIColor(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.00)
     
+    @State private var isDailyAchive: Bool = true
+    
     var body: some View {
         HStack{
             Grid(horizontalSpacing: 25, verticalSpacing: 10){
                 GridRow{
                     ForEach(data, id: \.hashValue) { i in
-                        return VStack{
+                        VStack{
                             Text("\(i)")
                                 .font(.system(.caption2, weight: .semibold))
                                 .foregroundStyle(Color(uiColor: colorText))
-                            Circle()
-                                .stroke(Color(uiColor: circleColor), lineWidth: 5)
-                                .frame(maxWidth: 24, maxHeight: 24)
+                            if isDailyAchive{
+                                Image("Daily Achievement")
+                            } else {
+                                Circle()
+                                    .stroke(Color(uiColor: circleColor), lineWidth: 5)
+                                    .frame(maxWidth: 24, maxHeight: 24)
+                            }
                         }
                     }
                 }

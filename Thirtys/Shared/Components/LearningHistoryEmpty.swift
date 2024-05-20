@@ -9,7 +9,16 @@ import SwiftUI
 
 struct LearningHistoryEmpty: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ContentUnavailableView{
+            Label("", systemImage: "calendar.day.timeline.leading")
+                .font(.system(.subheadline, weight: .semibold))
+                .padding(.bottom, -16)
+                
+        } description: {
+        Text("You haven't completed your learning session today!")
+        }
+        .frame(maxWidth: .infinity, maxHeight: 156)
+        .padding(.bottom, -25)
     }
 }
 
