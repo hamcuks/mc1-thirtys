@@ -37,14 +37,46 @@ struct LearningTimeScreen: View {
                             .multilineTextAlignment(.center)
                     }
                     
-                    Picker("", selection: $selectedDay) {
-                        ForEach(weekDays, id: \.self) {
-                            Text($0)
-                                .font(.subheadline)
-                                .foregroundStyle(.kBody)
+                    VStack {
+                        HStack(alignment: .top) {
+                            ForEach(weekDays, id: \.self) { day in
+                                
+                                VStack {
+                                    Text(day)
+                                        .font(.subheadline)
+                                        .foregroundStyle(.kBody)
+                                        .frame(maxWidth: .infinity)
+                                    
+                                    if selectedDay == day {
+                                        Rectangle()
+                                            .fill(.kTitleText)
+                                            .frame(height: 3)
+                                    }
+                                }
+                                .onTapGesture {
+                                    selectedDay = day
+                                }
+                                
+                            }
+                        }
+                        
+                        ForEach(0..<1) { _ in
+                            HStack {
+                                Text("08.00 - 09.30")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.kTitleText)
+                            }
+                            .padding(16)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .strokeBorder(
+                                        .kAccent, lineWidth: 1.5
+                                    )
+                            }
                         }
                     }
-                    .pickerStyle(.segmented)
                 }
                 
                 Spacer()
