@@ -25,7 +25,6 @@ struct FinishLearningScreen: View {
                 .toolbar{
                     HStack{
                         Image(systemName: "flame.fill")
-                            .padding(.trailing, -6)
                         Text("100")
                             .font(.system(.body, weight: .black))
                     }
@@ -51,7 +50,7 @@ struct FinishComponent: View {
         VStack(alignment: .center){
             Image("Finish Learning")
                 .resizable()
-                .frame(maxWidth: 250, maxHeight: 210, alignment: .center)
+                .frame(maxWidth: 240, maxHeight: 280, alignment: .center)
                 .padding(.bottom, 32)
             
             Text("Hooray! You’ve completed your 30 minutes of learning today!")
@@ -73,9 +72,11 @@ struct LearningHistory: View {
     var body: some View {
         VStack(alignment: .leading){
             Text("Learning History")
-                .frame(maxWidth: .infinity,alignment: .leading)
                 .font(.system(.body, weight: .bold))
                 .padding(.bottom, 24)
+                .frame(maxWidth: .infinity,alignment: .leading)
+                
+                
             
             if DurationLearning.count > 1 {
                 HStack{
@@ -87,12 +88,13 @@ struct LearningHistory: View {
                         .frame(maxWidth: .infinity,alignment: .trailing)
                         .font(.system(.subheadline, weight: .semibold))
                 }
-                .frame(maxWidth: .infinity, maxHeight: 40, alignment: .trailing)
-                .padding([.horizontal], 20)
+                .padding(16)
+                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .trailing)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.kAccent, lineWidth: 2)
                 )
+                .padding(.bottom, 16)
                 
                 HStack{
                     Text("7 Minutes")
@@ -103,8 +105,8 @@ struct LearningHistory: View {
                         .frame(maxWidth: .infinity,alignment: .trailing)
                         .font(.system(.subheadline, weight: .semibold))
                 }
-                .frame(maxWidth: .infinity, maxHeight: 40, alignment: .trailing)
-                .padding([.horizontal], 20)
+                .padding(16)
+                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .trailing)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.kAccent, lineWidth: 2)
@@ -121,7 +123,7 @@ struct LearningHistory: View {
                         .font(.system(.subheadline, weight: .semibold))
                 }
                 .frame(maxWidth: .infinity, maxHeight: 40, alignment: .trailing)
-                .padding([.horizontal], 20)
+                .padding([.all], 16)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.kAccent, lineWidth: 2)
@@ -151,12 +153,12 @@ struct WeeklyStreak: View {
                             Text("\(i)")
                                 .font(.system(.caption2, weight: .semibold))
                                 .foregroundStyle(Color.kBody)
-                                .padding(.bottom, 5)
+                                .padding(.bottom, 12)
                             if isDailyAchive{
                                 Image("Daily Achievement")
                             } else {
                                 Circle()
-                                    .stroke(Color.kPlaceholder, lineWidth: 5)
+                                    .stroke(Color.kPlaceholder, lineWidth: 4)
                                     .frame(maxWidth: 24, maxHeight: 24)
                             }
                         }
@@ -164,7 +166,7 @@ struct WeeklyStreak: View {
                 }
             }
         }
-        .padding(.bottom, 24)
+        .padding(.vertical, 24)
         .frame(maxWidth: .infinity)
     }
 }

@@ -20,19 +20,20 @@ struct GoalsScreen: View {
                 Color.kBackground
                 VStack{
                     VStack{
-                        StaticFieldComponent(ContentField: "\(goals_title)", label: "What Knowledge Will You Unlock?").padding(.bottom, 10)
+                        StaticFieldComponent(ContentField: "\(goals_title)", label: "What Knowledge Will You Unlock?").padding(.bottom, 24)
                         StaticFieldComponent(ContentField: "\(goals_duration)", label: "Estimated Duration of Learning Plan")
                     }
                     .padding()
                     .background()
-                    .padding(.bottom, 15)
+                    .padding(.bottom, 24)
                     
                     VStack{
                         Text("Learning Time")
+                            .font(.system(.body, weight: .bold))
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom, 15)
+                            .padding(.bottom, 24)
                         HStack{
-                            Grid(horizontalSpacing: 32, verticalSpacing: 10){
+                            Grid(horizontalSpacing: 32, verticalSpacing: 0){
                                 GridRow{
                                     ForEach(date, id: \.hashValue) { i in
                                         VStack(){
@@ -49,6 +50,7 @@ struct GoalsScreen: View {
                         }
                         
                         StaticFieldComponent(ContentField: "06.30 - 07.30", label: "")
+
                         StaticFieldComponent(ContentField: "20.00 - 22.45", label: "")
                     }
                     .padding()
