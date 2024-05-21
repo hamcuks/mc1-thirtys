@@ -35,17 +35,16 @@ struct StepThreeOnboardingScreen: View {
                     }
                     
                     VStack(spacing: 16) {
-                        DatePicker(
-                            "Bed Time",
+                        TimePickerThrough(
+                            label: "Bed Time",
                             selection: $vm.bedTime.startTime,
-                            in: ...vm.bedTime.endTime,
-                            displayedComponents: [.hourAndMinute]
+                            in: ...vm.bedTime.endTime
                         )
-                        DatePicker(
-                            "Wake Up Time",
+                        
+                        TimePickerFrom(
+                            label: "Wake Up Time",
                             selection: $vm.wakeUpTime.endTime,
-                            in: vm.wakeUpTime.startTime...,
-                            displayedComponents: [.hourAndMinute]
+                            in: vm.wakeUpTime.startTime...
                         )
                     }
                 }
