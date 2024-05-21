@@ -7,20 +7,10 @@
 
 import Foundation
 
-struct Weekday: Identifiable {
-    var id: UUID = UUID()
-    var label: String
-    var timeRange: [Date] = [
-        .now,
-        Calendar.current.date(byAdding: .hour, value: 8, to: .now)!
-    ]
-    var isDayOff: Bool = false
-    var isEdited: Bool = false
-    
-    static var dummy: Weekday = Weekday(label: "Sunday")
-}
-
 class OnboardingViewModel: ObservableObject {
+    // Learning Time
+    @Published var learningTimes: [GrouppedWeekdayEvent] = []
+    
     // Step One
     @Published var planTitle: String = ""
     @Published var planStartDate: Date = .now
@@ -28,19 +18,82 @@ class OnboardingViewModel: ObservableObject {
     
     // Step Two
     @Published var weekDays: [Weekday] = [
-        Weekday(label: "Sunday"),
-        Weekday(label: "Monday"),
-        Weekday(label: "Tuesday"),
-        Weekday(label: "Wednesday"),
-        Weekday(label: "Thursday"),
-        Weekday(label: "Friday"),
-        Weekday(label: "Saturday")
+        Weekday(label: .sunday),
+        Weekday(label: .monday),
+        Weekday(label: .tuesday),
+        Weekday(label: .wednesday),
+        Weekday(label: .thursday),
+        Weekday(label: .friday),
+        Weekday(label: .saturday)
     ]
     
-    @Published var sundaySetup: Weekday = Weekday(label: "Sunday")
-    @Published var mondaySetup: Weekday = Weekday(label: "Monday")
-    @Published var wednesdaySetup: Weekday = Weekday(label: "Wednesday")
-    @Published var thursdaySetup: Weekday = Weekday(label: "Thurday")
-    @Published var fridaySetup: Weekday = Weekday(label: "Friday")
-    @Published var saturdaySetup: Weekday = Weekday(label: "Saturday")
+    // Step Three
+    @Published var bedTime: Event = Event(
+        label: "Bed Time",
+        startTime: Calendar.current.date(bySettingHour: 22, minute: 30, second: 0, of: Date())!,
+        endTime: Calendar.current.date(bySettingHour: 23, minute: 59, second: 0, of: Date())!
+    )
+    @Published var wakeUpTime: Event = Event(
+        label: "Wake Up Time",
+        startTime: Calendar.current.date(bySettingHour: 00, minute: 00, second: 0, of: Date())!,
+        endTime: Calendar.current.date(bySettingHour: 04, minute: 30, second: 0, of: Date())!
+    )
+    
+    private func makeGrouppedEvent() -> [GrouppedWeekdayEvent] {
+        return self.weekDays.map { day in
+            GrouppedWeekdayEvent(
+                label: day.label,
+                events: [
+                    self.wakeUpTime,
+                    day.event,
+                    self.bedTime,
+                ]
+            )
+        }
+    }
+    
+    private func findFreeTime(grouppedEvents: [GrouppedWeekdayEvent]) -> [GrouppedWeekdayEvent] {
+        return grouppedEvents.map { group in
+            
+            let freeTime = group.events.enumerated().compactMap {
+                (index, current) in
+                
+                if let next = group.events[safe: index + 1] {
+                    let startTime = current.endTime.addMinute(to: 1)
+                    
+                    let endTime = next.startTime.addMinute(to: -1)
+                    
+                    let diff = Calendar.current.dateComponents([.minute], from: startTime, to: endTime).minute ?? 0
+                    
+                    // Only get the learning time if greater and or equals with 30 minute
+                    if diff >= 30 {
+                        return Event(
+                            label: "Free Time",
+                            startTime: startTime,
+                            endTime: endTime,
+                            duration: diff
+                        )
+                    }
+                }
+                
+                return nil
+            }
+            
+            return GrouppedWeekdayEvent(
+                label: group.label,
+                events: freeTime
+            )
+            
+        }
+    }
+    
+    func getLearningTime() {
+        let grouppedEvents: [GrouppedWeekdayEvent] = makeGrouppedEvent()
+        self.learningTimes = self.findFreeTime(
+            grouppedEvents: grouppedEvents
+        )
+        
+        print(self.learningTimes)
+    }
 }
+
