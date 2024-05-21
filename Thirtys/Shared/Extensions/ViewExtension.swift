@@ -18,4 +18,12 @@ extension View {
             self
         }
     }
+    
+    @ViewBuilder func applyTextColor(_ color: Color) -> some View {
+      if UITraitCollection.current.userInterfaceStyle == .light {
+        self.colorInvert().colorMultiply(color)
+      } else {
+        self.colorMultiply(color)
+      }
+    }
 }

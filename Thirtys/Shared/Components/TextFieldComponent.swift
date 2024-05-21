@@ -7,66 +7,67 @@
 
 import SwiftUI
 
-struct ComponenTextField: View {
-
-    @State private var firstShow : Bool = false
+struct AppTextField: View {
     
-    @State private var fieldText : String = ""
-    var titleColumn : String = "Hanya Coba"
-    var errorDesc : String = "Ini adalah error"
-    var uiColor = UIColor(red: 0.52, green: 0.86, blue: 0.78, alpha: 1.00)
+    //    @State private var firstShow: Bool = false
+    @Binding var selection: String
+    
+    var label: String
+    var placeholder: String = "Input value"
+    //    var errorDesc: String
     let charTextLimit: Int = 40
     
     var body: some View {
-        VStack(alignment: .leading){
-            Text("\(titleColumn)")
+        VStack(alignment: .leading, spacing: 8){
+            Text("\(label)")
+                .font(.subheadline)
                 .bold()
-            TextField("", text: $fieldText)
-            .placeholder(when: fieldText.isEmpty, placeholder: {
-                Text("e.g Belajar SwiftUI")
-                    .foregroundColor(.gray)
-            })
-            .frame(maxWidth: .infinity, maxHeight: 50)
-            .padding([.horizontal], 20)
-            .tint(.black)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10).stroke(Color(uiColor: uiColor))
-            )
-            .onChange(of: fieldText) { oldValue, newValue in
-                fieldText = newValue
-                if newValue.count > charTextLimit{
-                    fieldText = String(newValue.prefix(charTextLimit))
-                } else if newValue.isEmpty{
-                    
-                }
-                
-            }
-            .onSubmit {
-                if fieldText.isEmpty{
-                    print("next button disabled")
-                    firstShow.toggle()
-//                    print(firstShow)
-                }
-            }
+                .foregroundStyle(.kTitleText)
             
-            if fieldText.isEmpty && !firstShow{
-                Text("\(errorDesc)")
-                    .frame(maxWidth: .infinity,alignment: .leading)
-                    .font(.footnote)
-                    .padding(.horizontal, 5)
-                    .foregroundColor(.red)
-                    .bold()
-            }
+            TextField(placeholder, text: $selection)
+            //            .placeholder(when: fieldText.isEmpty, placeholder: {
+            //                Text("e.g Belajar SwiftUI")
+            //                    .foregroundColor(.gray)
+            //            })
+                .frame(maxWidth: .infinity)
+                .padding(16)
+            //            .tint(.kTitleText)
+                .fontWeight(.medium)
+                .foregroundStyle(.kTitleText)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .strokeBorder(Color.kAccent, lineWidth: 1.5)
+                )
+                .onChange(of: selection) { oldValue, newValue in
+                    if selection.count > charTextLimit{
+                        selection = String(newValue.prefix(charTextLimit))
+                    }
+                }
+                .onSubmit {
+                    //                if fieldText.isEmpty{
+                    //                    print("next button disabled")
+                    //                    firstShow.toggle()
+                    ////                    print(firstShow)
+                    //                }
+                }
+            //
+            //            if fieldText.isEmpty && !firstShow{
+            //                Text("\(errorDesc)")
+            //                    .frame(maxWidth: .infinity,alignment: .leading)
+            //                    .font(.footnote)
+            //                    .padding(.horizontal, 5)
+            //                    .foregroundColor(.red)
+            //                    .bold()
+            //            }
             
             
         }
-        .padding()
-        .font(.subheadline)
-        
-        
     }
 }
 
-#Preview(body: {
-    ComponenTextField()
-})
+
+
+
+#Preview {
+    AppTextField(selection: .constant("Test"), label: "Label")
+}

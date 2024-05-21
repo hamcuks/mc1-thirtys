@@ -13,8 +13,9 @@ struct ThirtysApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GetStartedScreen()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(OnboardingViewModel())
         }
         
     }
