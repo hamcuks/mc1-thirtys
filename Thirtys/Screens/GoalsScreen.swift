@@ -9,12 +9,12 @@ import SwiftUI
 
 struct GoalsScreen: View {
     
+    @EnvironmentObject private var goalViewModel: GoalViewModel
+    
     let date = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     
-    @State private var selectedDay: String = "SUN"
+    @State private var arr: [String] = []
     
-    @Binding var goals_title: String
-    @Binding var goals_duration: String
     
     var body: some View {
         NavigationStack{
@@ -22,8 +22,8 @@ struct GoalsScreen: View {
                 Color.kBackground
                 VStack(spacing: 24){
                     VStack(spacing: 24){
-                        StaticFieldComponent(ContentField: "\(goals_title)", label: "What Knowledge Will You Unlock?")
-                        StaticFieldComponent(ContentField: "\(goals_duration)", label: "Estimated Duration of Learning Plan")
+                        StaticFieldComponent(ContentField: "\(goalViewModel.goals_title)", label: "What Knowledge Will You Unlock?")
+                        StaticFieldComponent(ContentField: "\(goalViewModel.goals_duration)", label: "Estimated Duration of Learning Plan")
                     }
                     .padding()
                     .background()
@@ -34,23 +34,35 @@ struct GoalsScreen: View {
                                 .font(.system(.body, weight: .bold))
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            Picker("", selection: $selectedDay) {
-                                ForEach(date, id: \.self) {
-                                    Text($0)
-                                        .font(.system(.caption2, weight: .semibold))
-                                        .foregroundStyle(.kTitleText)
+                            HStack(alignment: .top) {
+                                ForEach(date, id: \.self) { day in
+                                    
+                                    VStack {
+                                        Text(day)
+                                            .font(.subheadline)
+                                            .foregroundStyle(.kBody)
+                                            .frame(maxWidth: .infinity)
+                                        
+                                        if goalViewModel.selectedDay == day {
+                                            Rectangle()
+                                                .fill(.kTitleText)
+                                                .frame(height: 3)
+                                        }
+                                    }
+                                    .onTapGesture {
+                                        goalViewModel.selectedDay = day
+                                        arr = goalViewModel.getSuggestionTime(selectedDay: goalViewModel.selectedDay)
+                                    }
                                 }
                             }
-                            .pickerStyle(.segmented)
                         }
                         
-                        if selectedDay == "SUN"{
+                        ForEach(arr, id: \.self){ i in
                             VStack{
-                                StaticFieldComponent(ContentField: "06.30 - 07.30", label: "")
-
-                                StaticFieldComponent(ContentField: "20.00 - 22.45", label: "")
+                                StaticFieldComponent(ContentField: i, label: "")
                             }
                         }
+                        
                     }
                     .padding()
                     .background()
@@ -65,5 +77,6 @@ struct GoalsScreen: View {
 }
 
 #Preview {
-    GoalsScreen(goals_title: .constant("Belajar SwiftUI 1 Bulan"), goals_duration: .constant("May 18 - June 18 2024"))
+    GoalsScreen()
+        .environmentObject(GoalViewModel())
 }
