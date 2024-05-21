@@ -14,32 +14,27 @@ struct FinishLearningScreen: View {
             
             ZStack{
                 Color.kBackground
-                VStack{
+                VStack(spacing: 24){
                     WeeklyStreak()
                     FinishComponent()
-                        .padding(.bottom, 24)
                     LearningHistory()
-                        .padding(.bottom, 24)
-                    
                 }
-                .toolbar{
-                    HStack{
-                        Image(systemName: "flame.fill")
-                        Text("100")
-                            .font(.system(.body, weight: .black))
-                    }
-                    .foregroundStyle(Color.kStreak)
+                .padding(.top)
+                .frame(maxWidth: .infinity, maxHeight: .infinity,alignment: .top)
             }
+            .toolbar{
+                HStack{
+                    Image(systemName: "flame.fill")
+                    Text("100")
+                        .font(.system(.body, weight: .black))
+                }
+                .foregroundStyle(Color.kStreak)
             
             
             }
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(Text("Thirty’s").foregroundStyle(.red))
-            
-            
+            .navigationTitle(Text("Today"))
         }
-        
-        
     }
 }
 
@@ -47,11 +42,10 @@ struct FinishLearningScreen: View {
 // Image finish learning
 struct FinishComponent: View {
     var body: some View {
-        VStack(alignment: .center){
-            Image("Finish Learning")
+        VStack(alignment: .center, spacing: 32){
+            Image("finish-learning")
                 .resizable()
-                .frame(maxWidth: 240, maxHeight: 280, alignment: .center)
-                .padding(.bottom, 32)
+                .frame(maxWidth: 250, maxHeight: 200, alignment: .leading)
             
             Text("Hooray! You’ve completed your 30 minutes of learning today!")
                 .multilineTextAlignment(.center)
@@ -67,67 +61,33 @@ struct FinishComponent: View {
 struct LearningHistory: View {
     
     @State private var isHasContent: Bool = true
-    @State private var DurationLearning : [Int] = [2, 1]
+    @State private var DurationLearning = [2, 1]
     
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading, spacing: 24){
             Text("Learning History")
                 .font(.system(.body, weight: .bold))
-                .padding(.bottom, 24)
                 .frame(maxWidth: .infinity,alignment: .leading)
-                
-                
-            
-            if DurationLearning.count > 1 {
-                HStack{
-                    Text("23 Minutes")
-                        .frame(maxWidth: .infinity,alignment: .leading)
-                        .font(.system(.subheadline, weight: .semibold))
-                    
-                    Text("06.15 - 06.38")
-                        .frame(maxWidth: .infinity,alignment: .trailing)
-                        .font(.system(.subheadline, weight: .semibold))
+            if DurationLearning.count > 0 {
+                VStack(spacing: 16){
+                    ForEach(DurationLearning, id: \.self){ i in
+                        HStack{
+                            Text("23 Minutes")
+                                .frame(maxWidth: .infinity,alignment: .leading)
+                                .font(.system(.subheadline, weight: .semibold))
+                            
+                            Text("06.15 - 06.38")
+                                .frame(maxWidth: .infinity,alignment: .trailing)
+                                .font(.system(.subheadline, weight: .semibold))
+                        }
+                        .padding(16)
+                        .frame(maxWidth: .infinity, maxHeight: 50, alignment: .trailing)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.kAccent, lineWidth: 2)
+                        )
+                    }
                 }
-                .padding(16)
-                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .trailing)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.kAccent, lineWidth: 2)
-                )
-                .padding(.bottom, 16)
-                
-                HStack{
-                    Text("7 Minutes")
-                        .frame(maxWidth: .infinity,alignment: .leading)
-                        .font(.system(.subheadline, weight: .semibold))
-                    
-                    Text("20.00 - 20.07")
-                        .frame(maxWidth: .infinity,alignment: .trailing)
-                        .font(.system(.subheadline, weight: .semibold))
-                }
-                .padding(16)
-                .frame(maxWidth: .infinity, maxHeight: 50, alignment: .trailing)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.kAccent, lineWidth: 2)
-                )
-                
-            } else {
-                HStack{
-                    Text("30 Minutes")
-                        .frame(maxWidth: .infinity,alignment: .leading)
-                        .font(.system(.subheadline, weight: .semibold))
-                    
-                    Text("06.15 - 06.45")
-                        .frame(maxWidth: .infinity,alignment: .trailing)
-                        .font(.system(.subheadline, weight: .semibold))
-                }
-                .frame(maxWidth: .infinity, maxHeight: 40, alignment: .trailing)
-                .padding([.all], 16)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.kAccent, lineWidth: 2)
-                )
             }
         }
         .foregroundColor(Color.kTitleText)
@@ -145,29 +105,32 @@ struct WeeklyStreak: View {
     @State private var isDailyAchive: Bool = false
     
     var body: some View {
-        HStack{
-            Grid(horizontalSpacing: 30, verticalSpacing: 50){
-                GridRow{
-                    ForEach(data, id: \.hashValue) { i in
-                        VStack{
-                            Text("\(i)")
-                                .font(.system(.caption2, weight: .semibold))
-                                .foregroundStyle(Color.kBody)
-                                .padding(.bottom, 12)
-                            if isDailyAchive{
-                                Image("Daily Achievement")
-                            } else {
-                                Circle()
-                                    .stroke(Color.kPlaceholder, lineWidth: 4)
-                                    .frame(maxWidth: 24, maxHeight: 24)
+        
+            HStack{
+                Grid(horizontalSpacing: 28, verticalSpacing: 0){
+                    GridRow{
+                        ForEach(data, id: \.hashValue) { i in
+                            VStack{
+                                Text("\(i)")
+                                    .font(.system(.caption2, weight: .semibold))
+                                    .foregroundStyle(Color.kBody)
+    //                                .padding(.bottom, 12)
+                                if isDailyAchive{
+                                    Image("daily-achievement")
+                                        .frame(maxWidth: 24)
+                                } else {
+                                    Circle()
+                                        .stroke(Color.kPlaceholder, lineWidth: 4)
+                                        .frame(maxWidth: 24)
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-        .padding(.vertical, 24)
-        .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity)
+            
+        
     }
 }
 
