@@ -9,43 +9,51 @@ import SwiftUI
 
 struct StepOneOnboardingScreen: View {
     
-    @State private var planTitle: String = ""
+    @EnvironmentObject private var vm: OnboardingViewModel
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 40) {
-                
-                Image(.goals)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxHeight: 210)
-                
-                VStack (spacing: 16) {
-                    Text("Define Your Goals!")
-                        .font(.title2)
-                        .bold()
-                        .foregroundStyle(.kTitleText)
-                    Text("Setting clear goals unlocks new behaviors, enhances your focus, and keeps your momentum going")
-                        .font(.callout)
-                        .fontWeight(.medium)
-                        .foregroundStyle(.kBody)
-                        .multilineTextAlignment(.center)
+            VStack {
+                ScrollView {
+                    VStack(spacing: 40) {
+                        Image(.goals)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxHeight: 210)
+                        
+                        VStack (spacing: 16) {
+                            Text("Define Your Goals!")
+                                .font(.title2)
+                                .bold()
+                                .foregroundStyle(.kTitleText)
+                            Text("Setting clear goals unlocks new behaviors, enhances your focus, and keeps your momentum going")
+                                .font(.callout)
+                                .fontWeight(.medium)
+                                .foregroundStyle(.kBody)
+                                .multilineTextAlignment(.center)
+                        }
+                        
+                        VStack(spacing: 24) {
+                            AppTextField(
+                                selection: $vm.planTitle,
+                                label: "What Knowledge Will You Unlock?",
+                                placeholder: "e.g., Belajar SwiftUI"
+                            )
+                            AppDatePicker(
+                                selection: $vm.planStartDate,
+                                label: "Estimated Duration of Learning Plan",
+                                placeholder: "e.g., May 5 - June 5 2024"
+                            )
+                            AppDurationPicker(
+                                selection: $vm.planDuration,
+                                label: "How fast can you achieve this goal?",
+                                placeholder: "e.g., May 5 - June 5 2024"
+                            )
+                        }
+                    }
                 }
+                .padding(.bottom, 24)
                 
-                VStack(spacing: 24) {
-                    AppTextField(
-                        selection: $planTitle,
-                        label: "What Knowledge Will You Unlock?",
-                        placeholder: "e.g., Belajar SwiftUI"
-                    )
-                    AppTextField(
-                        selection: $planTitle,
-                        label: "Estimated Duration of Learning Plan",
-                        placeholder: "e.g., May 5 - June 5 2024"
-                    )
-                }
-                
-                Spacer()
                 
                 NavigationLink(
                     destination: StepTwoOnboardingScreen()
@@ -53,7 +61,8 @@ struct StepOneOnboardingScreen: View {
                     Text("Next")
                 }
                 .buttonStyle(AppButtonStyle())
-                .disabled(planTitle.isEmpty)
+                .grayscale(vm.planTitle.isEmpty ? 1 : 0)
+                .disabled(vm.planTitle.isEmpty)
                 
             }
             .toolbar(content: {
@@ -71,4 +80,5 @@ struct StepOneOnboardingScreen: View {
 
 #Preview {
     StepOneOnboardingScreen()
+        .environmentObject(OnboardingViewModel())
 }

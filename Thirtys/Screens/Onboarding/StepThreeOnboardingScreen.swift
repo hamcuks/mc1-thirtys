@@ -38,16 +38,14 @@ struct StepThreeOnboardingScreen: View {
                     }
                     
                     VStack(spacing: 16) {
-                        ListItemComponent(
-                            label: "Bed Time",
-                            selection: .constant([]),
-                            isOpen: $isTimePickerOpened
-                        )
-                        ListItemComponent(
-                            label: "Wake Up Time",
-                            selection: .constant([]),
-                            isOpen: $isTimePickerOpened
-                        )
+//                        ListItemComponent(
+//                            label: "Bed Time",
+//                            selection: .constant([])
+//                        )
+//                        ListItemComponent(
+//                            label: "Wake Up Time",
+//                            selection: .constant([])
+//                        )
                     }
                 }
                 

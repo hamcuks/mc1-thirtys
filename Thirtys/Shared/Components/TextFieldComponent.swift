@@ -65,6 +65,9 @@ struct AppTextField: View {
     }
 }
 
+
+
+
 #Preview {
-    AppTextField(selection: .constant("Text"), label: "Label")
+    AppTextField(selection: .constant("Test"), label: "Label")
 }
