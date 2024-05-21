@@ -17,6 +17,8 @@
 		03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */; };
 		03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E952BFA25E600C3A248 /* ComponentDate.swift */; };
 		03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E992BFA27D300C3A248 /* ViewExtension.swift */; };
+		03E71A3E2BFC9F1700207B4F /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E71A3D2BFC9F1700207B4F /* GoalViewModel.swift */; };
+		03F207A32BFB760A00FF07A3 /* StaticFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */; };
 		E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */; };
 		E704AAA82BFB741C00578B69 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA52BFB741C00578B69 /* LearningTimeScreen.swift */; };
 		E704AAA92BFB741C00578B69 /* StepThreeOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */; };
@@ -25,7 +27,6 @@
 		E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32332BFB8C590014563C /* AppDurationPicker.swift */; };
 		E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32352BFB8C8C0014563C /* DurationTypeEnum.swift */; };
 		E70A32382BFC22780014563C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32372BFC22780014563C /* OnboardingViewModel.swift */; };
-		03F207A32BFB760A00FF07A3 /* StaticFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */; };
 		E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */; };
 		E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F72BF84EC300237B58 /* ContentView.swift */; };
 		E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72EB2F92BF84EC500237B58 /* Assets.xcassets */; };
@@ -56,6 +57,8 @@
 		03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRangeDatePicker.swift; sourceTree = "<group>"; };
 		03D85E952BFA25E600C3A248 /* ComponentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDate.swift; sourceTree = "<group>"; };
 		03D85E992BFA27D300C3A248 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		03E71A3D2BFC9F1700207B4F /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
+		03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
 		E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwoOnboardingScreen.swift; sourceTree = "<group>"; };
 		E704AAA52BFB741C00578B69 /* LearningTimeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningTimeScreen.swift; sourceTree = "<group>"; };
 		E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThreeOnboardingScreen.swift; sourceTree = "<group>"; };
@@ -64,7 +67,6 @@
 		E70A32332BFB8C590014563C /* AppDurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDurationPicker.swift; sourceTree = "<group>"; };
 		E70A32352BFB8C8C0014563C /* DurationTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTypeEnum.swift; sourceTree = "<group>"; };
 		E70A32372BFC22780014563C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
 		E72EB2F22BF84EC300237B58 /* Thirtys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thirtys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtysApp.swift; sourceTree = "<group>"; };
 		E72EB2F72BF84EC300237B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				E72EB31C2BF84FAA00237B58 /* SampleViewModels.swift */,
 				E70A32372BFC22780014563C /* OnboardingViewModel.swift */,
+				03E71A3D2BFC9F1700207B4F /* GoalViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				034E29342BFB74650030D448 /* ListItemComponent.swift in Sources */,
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
 				E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */,
+				03E71A3E2BFC9F1700207B4F /* GoalViewModel.swift in Sources */,
 				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
 				E72EB3182BF84F8B00237B58 /* SampleViews.swift in Sources */,
