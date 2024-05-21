@@ -20,7 +20,7 @@ struct LearningTimeScreen: View {
             VStack {
                 
                 VStack(spacing: 40) {
-                    Image(.bedTime)
+                    Image(.learningTime)
                         .resizable()
                         .scaledToFit()
                         .frame(maxHeight: 210)
