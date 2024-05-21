@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+extension Date {
+    func addMinute(to: Int) -> Date {
+        let calendar = Calendar.current
+        return calendar.date(
+            byAdding: .minute,
+            value: to,
+            to: self
+        )!
+    }
+}
