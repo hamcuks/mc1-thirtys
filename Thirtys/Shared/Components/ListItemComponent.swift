@@ -69,6 +69,7 @@ struct ListItemComponent: View {
                 DatePicker(
                     "End Time",
                     selection: $data.event.endTime,
+                    in: data.event.startTime...,
                     displayedComponents: .hourAndMinute
                 )
                 
