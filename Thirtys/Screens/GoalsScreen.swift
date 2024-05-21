@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GoalsScreen: View {
     
-    @EnvironmentObject private var gvm: GoalViewModel
+    @EnvironmentObject private var goalViewModel: GoalViewModel
     
     let date = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     
@@ -22,8 +22,8 @@ struct GoalsScreen: View {
                 Color.kBackground
                 VStack(spacing: 24){
                     VStack(spacing: 24){
-                        StaticFieldComponent(ContentField: "\(gvm.goals_title)", label: "What Knowledge Will You Unlock?")
-                        StaticFieldComponent(ContentField: "\(gvm.goals_duration)", label: "Estimated Duration of Learning Plan")
+                        StaticFieldComponent(ContentField: "\(goalViewModel.goals_title)", label: "What Knowledge Will You Unlock?")
+                        StaticFieldComponent(ContentField: "\(goalViewModel.goals_duration)", label: "Estimated Duration of Learning Plan")
                     }
                     .padding()
                     .background()
@@ -43,15 +43,15 @@ struct GoalsScreen: View {
                                             .foregroundStyle(.kBody)
                                             .frame(maxWidth: .infinity)
                                         
-                                        if gvm.selectedDay == day {
+                                        if goalViewModel.selectedDay == day {
                                             Rectangle()
                                                 .fill(.kTitleText)
                                                 .frame(height: 3)
                                         }
                                     }
                                     .onTapGesture {
-                                        gvm.selectedDay = day
-                                        arr = gvm.getSuggestionTime(selectedDay: gvm.selectedDay)
+                                        goalViewModel.selectedDay = day
+                                        arr = goalViewModel.getSuggestionTime(selectedDay: goalViewModel.selectedDay)
                                     }
                                 }
                             }
