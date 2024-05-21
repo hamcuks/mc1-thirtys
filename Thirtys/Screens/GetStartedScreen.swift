@@ -47,4 +47,5 @@ struct GetStartedScreen: View {
 
 #Preview {
     GetStartedScreen()
+        .environmentObject(OnboardingViewModel())
 }

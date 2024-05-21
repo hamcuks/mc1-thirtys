@@ -9,9 +9,7 @@ import SwiftUI
 
 struct StepOneOnboardingScreen: View {
     
-    @State private var planTitle: String = ""
-    @State private var startDate: Date = .now
-    @State private var duration: Int = 1
+    @EnvironmentObject private var vm: OnboardingViewModel
     
     var body: some View {
         NavigationStack {
@@ -37,17 +35,17 @@ struct StepOneOnboardingScreen: View {
                         
                         VStack(spacing: 24) {
                             AppTextField(
-                                selection: $planTitle,
+                                selection: $vm.planTitle,
                                 label: "What Knowledge Will You Unlock?",
                                 placeholder: "e.g., Belajar SwiftUI"
                             )
                             AppDatePicker(
-                                selection: $startDate,
+                                selection: $vm.planStartDate,
                                 label: "Estimated Duration of Learning Plan",
                                 placeholder: "e.g., May 5 - June 5 2024"
                             )
                             AppDurationPicker(
-                                selection: $duration,
+                                selection: $vm.planDuration,
                                 label: "How fast can you achieve this goal?",
                                 placeholder: "e.g., May 5 - June 5 2024"
                             )
@@ -63,7 +61,8 @@ struct StepOneOnboardingScreen: View {
                     Text("Next")
                 }
                 .buttonStyle(AppButtonStyle())
-                .disabled(planTitle.isEmpty)
+                .grayscale(vm.planTitle.isEmpty ? 1 : 0)
+                .disabled(vm.planTitle.isEmpty)
                 
             }
             .toolbar(content: {
@@ -81,4 +80,5 @@ struct StepOneOnboardingScreen: View {
 
 #Preview {
     StepOneOnboardingScreen()
+        .environmentObject(OnboardingViewModel())
 }

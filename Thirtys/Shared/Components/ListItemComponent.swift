@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ListItemComponent: View {
-    var label: String
-    
-    @Binding var selection: [Date]
-    @Binding var isOpen: Bool
+    @Binding var data: Weekday
+    @State private var isOpen: Bool = false
     
     var body: some View {
         HStack {
-            Text(label)
+            Text(data.label)
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundStyle(.kTitleText)
@@ -24,22 +22,22 @@ struct ListItemComponent: View {
             
             HStack {
 
-                if selection.isEmpty {
+                if data.isDayOff {
                     Text("Set Up")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                 } else {
                     (
-                        Text(selection.first!, style: .time) +
+                        Text(data.timeRange.first!, style: .time) +
                         Text(" - ") +
-                        Text(selection.last!, style: .time)
+                        Text(data.timeRange.last!, style: .time)
                     )
                         .font(.subheadline)
                         .fontWeight(.semibold)
                 }
                     
                 Image(
-                    systemName: selection.isEmpty ? "chevron.forward" : "pencil"
+                    systemName: data.isDayOff ? "chevron.forward" : "pencil"
                 )
                 
             }
@@ -57,13 +55,39 @@ struct ListItemComponent: View {
                     .kAccent, lineWidth: 1.5
                 )
         }
+        .sheet(isPresented: $isOpen) {
+            VStack(spacing: 24) {
+                Text("Set Up Work Time Range")
+                    .fontWeight(.semibold)
+                    .font(.title3)
+                
+                DatePicker(
+                    "Start Time",
+                    selection: $data.timeRange.first!,
+                    displayedComponents: .hourAndMinute
+                )
+                DatePicker(
+                    "End Time",
+                    selection: $data.timeRange.last!,
+                    displayedComponents: .hourAndMinute
+                )
+                
+                Spacer()
+                
+                Button("Set") {
+                    isOpen.toggle()
+                }
+                .buttonStyle(AppButtonStyle())
+            }
+            .padding()
+            .padding(.top, 24)
+            .presentationDetents([.medium])
+        }
     }
 }
 
 #Preview {
     ListItemComponent(
-        label: "Item",
-        selection: .constant([.now, .now]),
-        isOpen: .constant(false)
+        data: .constant(Weekday.dummy)
     )
 }

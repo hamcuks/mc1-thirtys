@@ -9,11 +9,8 @@ import SwiftUI
 
 struct StepTwoOnboardingScreen: View {
     
-    var weekDays: [String] = [ 
-        "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-    ]
-    
     @State private var isTimePickerOpened: Bool = false
+    @EnvironmentObject private var vm: OnboardingViewModel
     
     var body: some View {
         NavigationStack {
@@ -39,11 +36,9 @@ struct StepTwoOnboardingScreen: View {
                         }
                         
                         VStack(spacing: 16) {
-                            ForEach(weekDays, id: \.self) { day in
+                            ForEach(Array(vm.weekDays.enumerated()), id: \.offset) { (index, day) in
                                 ListItemComponent(
-                                    label: day, 
-                                    selection: .constant([]),
-                                    isOpen: $isTimePickerOpened
+                                    data: $vm.weekDays[index]
                                 )
                             }
                         }
@@ -61,11 +56,11 @@ struct StepTwoOnboardingScreen: View {
                 
             }
             .scrollIndicators(.hidden)
-            .toolbar(content: {
+            .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     BackButton()
                 }
-            })
+            }
             .padding()
             .navigationTitle("Step 2/3")
             .navigationBarTitleDisplayMode(.inline)
@@ -76,4 +71,5 @@ struct StepTwoOnboardingScreen: View {
 
 #Preview {
     StepTwoOnboardingScreen()
+        .environmentObject(OnboardingViewModel())
 }
