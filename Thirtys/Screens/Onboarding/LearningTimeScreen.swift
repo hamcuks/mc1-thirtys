@@ -34,7 +34,7 @@ struct LearningTimeScreen: View {
                             .multilineTextAlignment(.center)
                     }
                     
-                    VStack {
+                    VStack(spacing: 16) {
                         HStack(alignment: .top) {
                             ForEach(WeekdayType.allCases, id: \.self) { day in
                                 
@@ -51,7 +51,9 @@ struct LearningTimeScreen: View {
                                     }
                                 }
                                 .onTapGesture {
-                                    selectedDay = day
+                                    withAnimation(.smooth) {
+                                        selectedDay = day
+                                    }
                                 }
                                 
                             }
@@ -96,13 +98,12 @@ struct LearningTimeScreen: View {
                                             )
                                         )
                                     )
+                                    .listRowSeparator(.hidden)
                                 }
                                 
                             }
                         }
                         .listStyle(.plain)
-                        
-                        
                     }
                 }
                 
