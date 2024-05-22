@@ -42,6 +42,7 @@ class CountdownTimerViewModel: ObservableObject {
         isActive = false
         timer?.cancel()
         startTime = nil
+        learningHistory.removeAll()
     }
     
     func completeSession() {

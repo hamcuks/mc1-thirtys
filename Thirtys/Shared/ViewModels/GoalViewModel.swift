@@ -10,8 +10,8 @@ import Foundation
 class GoalViewModel: ObservableObject {
     
     @Published var selectedDay: String = "SUN"
-    @Published var goals_title: String = ""
-    @Published var goals_duration: String = ""
+    @Published var goalsTitle: String = "Belajar SwiftUI"
+    @Published var goalsDuration: Int = 0
     @Published var suggestTime: [String] = ["coba", "cobi", "cobu"]
     
     

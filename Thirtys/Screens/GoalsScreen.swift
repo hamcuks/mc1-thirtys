@@ -22,8 +22,8 @@ struct GoalsScreen: View {
                 Color.kBackground
                 VStack(spacing: 24){
                     VStack(spacing: 24){
-                        StaticFieldComponent(ContentField: "\(goalViewModel.goals_title)", label: "What Knowledge Will You Unlock?")
-                        StaticFieldComponent(ContentField: "\(goalViewModel.goals_duration)", label: "Estimated Duration of Learning Plan")
+                        StaticFieldComponent(ContentField: "\(goalViewModel.goalsTitle)", label: "What Knowledge Will You Unlock?")
+                        StaticFieldComponent(ContentField: "\(goalViewModel.goalsDuration)", label: "Estimated Duration of Learning Plan")
                     }
                     .padding()
                     .background()
