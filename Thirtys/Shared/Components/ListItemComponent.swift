@@ -13,7 +13,7 @@ struct ListItemComponent: View {
     
     var body: some View {
         HStack {
-            Text(data.label)
+            Text(data.label.term)
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundStyle(.kTitleText)
@@ -28,9 +28,9 @@ struct ListItemComponent: View {
                         .fontWeight(.semibold)
                 } else {
                     (
-                        Text(data.timeRange.first!, style: .time) +
+                        Text(data.event.startTime, style: .time) +
                         Text(" - ") +
-                        Text(data.timeRange.last!, style: .time)
+                        Text(data.event.endTime, style: .time)
                     )
                         .font(.subheadline)
                         .fontWeight(.semibold)
@@ -63,12 +63,13 @@ struct ListItemComponent: View {
                 
                 DatePicker(
                     "Start Time",
-                    selection: $data.timeRange.first!,
+                    selection: $data.event.startTime,
                     displayedComponents: .hourAndMinute
                 )
                 DatePicker(
                     "End Time",
-                    selection: $data.timeRange.last!,
+                    selection: $data.event.endTime,
+                    in: data.event.startTime...,
                     displayedComponents: .hourAndMinute
                 )
                 
