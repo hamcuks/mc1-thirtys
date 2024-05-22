@@ -13,15 +13,17 @@ struct CircularProgressBar: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(lineWidth: 20)
-                .opacity(0.3)
-                .foregroundStyle(Color.green)
+                .stroke(lineWidth: 35)
+                .opacity(0.08)
+                .foregroundStyle(Color.black)
+                .frame(width: 261, height: 261)
             
             Circle()
                 .trim(from: 0, to: progress)
-                .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
-                .foregroundColor(Color.green)
+                .stroke(style: StrokeStyle(lineWidth: 35, lineCap: .round, lineJoin: .round))
                 .rotationEffect(Angle(degrees: 270))
+                .foregroundStyle(Color.kAccent)
+                .frame(width: 261, height: 261)
         }
         .padding()
     }

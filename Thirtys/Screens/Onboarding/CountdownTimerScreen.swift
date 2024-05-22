@@ -22,13 +22,20 @@ struct CountdownTimerScreen: View {
                 
                 ZStack {
                     CircularProgressBar(progress: CGFloat(viewModel.remainingTime / 1800))
-                        .frame(width: 200, height: 200)
                         .padding()
-
                     
-                    Text("\(timeString(from: viewModel.remainingTime))\nRemaining")
-                        .font(.subheadline)
-                        .multilineTextAlignment(.center)
+                    
+                    VStack {
+                        Text("\(timeString(from: viewModel.remainingTime))")
+                            .font(.system(size: 36))
+                            .bold()
+                            .foregroundStyle(Color.kLabel)
+                            .contentTransition(.numericText())
+                        Text("Remaining")
+                            .font(.system(size: 16))
+                            .bold()
+                            .foregroundStyle(Color.kPlaceholder)
+                    }
                 }
                 
                 HStack {
@@ -58,6 +65,12 @@ struct CountdownTimerScreen: View {
                 }
                 .padding()
                 
+                VStack(alignment: .leading, spacing: 24) {
+                    Text("Learning History")
+                        .font(.system(.body, weight: .bold))
+                        .frame(maxWidth: .infinity,alignment: .leading)
+                }
+                
                 List(viewModel.learningHistory, id: \.id) { session in
                     HStack {
                         Text("\(Int(session.duration / 60)) minutes")
@@ -65,8 +78,8 @@ struct CountdownTimerScreen: View {
                         Text("\(session.startTime, style: .time) - \(session.endTime, style: .time)")
                     }
                 }
-                Spacer()
             }
+            .padding()
         }
     }
 }
