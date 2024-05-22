@@ -17,8 +17,9 @@
 		03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */; };
 		03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E952BFA25E600C3A248 /* ComponentDate.swift */; };
 		03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E992BFA27D300C3A248 /* ViewExtension.swift */; };
-		03E71A3E2BFC9F1700207B4F /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E71A3D2BFC9F1700207B4F /* GoalViewModel.swift */; };
+		03E71A402BFCC90300207B4F /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E71A3F2BFCC90300207B4F /* BadgesScreen.swift */; };
 		03F207A32BFB760A00FF07A3 /* StaticFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */; };
+		03E71A3E2BFC9F1700207B4F /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E71A3D2BFC9F1700207B4F /* GoalViewModel.swift */; };
 		82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82265C162BFB2322000F5F92 /* TimerUI.swift */; };
 		E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */; };
 		E704AAA82BFB741C00578B69 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA52BFB741C00578B69 /* LearningTimeScreen.swift */; };
@@ -64,9 +65,6 @@
 		03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRangeDatePicker.swift; sourceTree = "<group>"; };
 		03D85E952BFA25E600C3A248 /* ComponentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDate.swift; sourceTree = "<group>"; };
 		03D85E992BFA27D300C3A248 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		03E71A3D2BFC9F1700207B4F /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
-		03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
-		82265C162BFB2322000F5F92 /* TimerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUI.swift; sourceTree = "<group>"; };
 		E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwoOnboardingScreen.swift; sourceTree = "<group>"; };
 		E704AAA52BFB741C00578B69 /* LearningTimeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningTimeScreen.swift; sourceTree = "<group>"; };
 		E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThreeOnboardingScreen.swift; sourceTree = "<group>"; };
@@ -162,6 +160,7 @@
 				E72EB32A2BF8505B00237B58 /* TimeConfigurationScreen.swift */,
 				82265C162BFB2322000F5F92 /* TimerUI.swift */,
 				03D7C68A2BFB33F900980C8F /* FinishLearningScreen.swift */,
+				03E71A3F2BFCC90300207B4F /* BadgesScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -353,6 +352,7 @@
 				03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */,
 				E70A323A2BFCF12D0014563C /* Event.swift in Sources */,
 				E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */,
+				03E71A402BFCC90300207B4F /* BadgesScreen.swift in Sources */,
 				E70A32382BFC22780014563C /* OnboardingViewModel.swift in Sources */,
 				E70A32402BFCF1A80014563C /* CollectionExtension.swift in Sources */,
 				E72EB3272BF8503100237B58 /* DailyStrikesScreen.swift in Sources */,
