@@ -55,22 +55,23 @@ struct CircleTimer: View {
             }
             .padding()
             .padding()
-                Button {
-                } label: {
-                    Image(systemName: "play.fill")
-                    Text("Start Learning")
-                }.frame(width: 351, height: 41)
+            Button {
+            } label: {
+                Image(systemName: "play.fill")
+                Text("Start Learning")
+            }.frame(width: 351, height: 41)
                 .font(.system(size:14).bold())
                 .foregroundColor(Color.kLabel)
                 .background(Color.kAccent)
                 .cornerRadius(45)
         }
     }
-            struct CircleTimer_Previews: PreviewProvider {
-                static var previews: some View {
-                    CircleTimer(progress: .constant(1), duration: .constant(1800))
-                }
-            }
-        }
     
+}
 
+
+struct CircleTimer_Previews: PreviewProvider {
+    static var previews: some View {
+        CircleTimer(progress: .constant(1), duration: .constant(1800))
+    }
+}
