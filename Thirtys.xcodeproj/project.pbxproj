@@ -41,6 +41,7 @@
 		E70A324A2BFCFDF90014563C /* TimePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32492BFCFDF90014563C /* TimePickerComponent.swift */; };
 		E70A324F2BFD90410014563C /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A324E2BFD90410014563C /* GoalViewModel.swift */; };
 		E70A32512BFD90520014563C /* StaticFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32502BFD90520014563C /* StaticFieldComponent.swift */; };
+		E70A32552BFE13C90014563C /* LearningTimeListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32542BFE13C90014563C /* LearningTimeListComponent.swift */; };
 		E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */; };
 		E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F72BF84EC300237B58 /* ContentView.swift */; };
 		E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72EB2F92BF84EC500237B58 /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 		E70A32492BFCFDF90014563C /* TimePickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerComponent.swift; sourceTree = "<group>"; };
 		E70A324E2BFD90410014563C /* GoalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		E70A32502BFD90520014563C /* StaticFieldComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
+		E70A32542BFE13C90014563C /* LearningTimeListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTimeListComponent.swift; sourceTree = "<group>"; };
 		E72EB2F22BF84EC300237B58 /* Thirtys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thirtys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtysApp.swift; sourceTree = "<group>"; };
 		E72EB2F72BF84EC300237B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				E70A32332BFB8C590014563C /* AppDurationPicker.swift */,
 				E70A32492BFCFDF90014563C /* TimePickerComponent.swift */,
 				DAA2CC232BFC922300529B16 /* BadgeComponent.swift */,
+				E70A32542BFE13C90014563C /* LearningTimeListComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */,
 				DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */,
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
+				E70A32552BFE13C90014563C /* LearningTimeListComponent.swift in Sources */,
 				03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */,
 				03545A9E2BFDDA4E00F731D8 /* CountdownTimerScreen.swift in Sources */,
 				03545AA42BFDDA7600F731D8 /* CircularProgressBar.swift in Sources */,
