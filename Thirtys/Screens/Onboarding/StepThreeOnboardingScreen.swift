@@ -9,11 +9,8 @@ import SwiftUI
 
 struct StepThreeOnboardingScreen: View {
     
-    var weekDays: [String] = [
-        "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-    ]
-    
     @State private var isTimePickerOpened: Bool = false
+    @EnvironmentObject private var vm: OnboardingViewModel
     
     var body: some View {
         NavigationStack {
@@ -38,14 +35,17 @@ struct StepThreeOnboardingScreen: View {
                     }
                     
                     VStack(spacing: 16) {
-//                        ListItemComponent(
-//                            label: "Bed Time",
-//                            selection: .constant([])
-//                        )
-//                        ListItemComponent(
-//                            label: "Wake Up Time",
-//                            selection: .constant([])
-//                        )
+                        TimePickerThrough(
+                            label: "Bed Time",
+                            selection: $vm.bedTime.startTime,
+                            in: ...vm.bedTime.endTime
+                        )
+                        
+                        TimePickerFrom(
+                            label: "Wake Up Time",
+                            selection: $vm.wakeUpTime.endTime,
+                            in: vm.wakeUpTime.startTime...
+                        )
                     }
                 }
                 
@@ -76,4 +76,5 @@ struct StepThreeOnboardingScreen: View {
 
 #Preview {
     StepThreeOnboardingScreen()
+        .environmentObject(OnboardingViewModel())
 }

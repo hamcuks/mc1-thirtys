@@ -9,26 +9,30 @@
 /* Begin PBXBuildFile section */
 		034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292D2BFB74200030D448 /* LearningTimeScreen.swift */; };
 		034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292F2BFB74290030D448 /* StepThreeOnboardingScreen.swift */; };
-		034E29322BFB74290030D448 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E29302BFB74290030D448 /* StepTwoOnboardingScreen.swift */; };
-		034E29342BFB74650030D448 /* ListItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E29332BFB74650030D448 /* ListItemComponent.swift */; };
 		03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B4D0652BFA299000C6643F /* TextFieldComponent.swift */; };
 		03D7C68B2BFB33F900980C8F /* FinishLearningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D7C68A2BFB33F900980C8F /* FinishLearningScreen.swift */; };
 		03D7C68D2BFB51D200980C8F /* LearningHistoryEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */; };
 		03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */; };
 		03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E952BFA25E600C3A248 /* ComponentDate.swift */; };
 		03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E992BFA27D300C3A248 /* ViewExtension.swift */; };
-		03E71A402BFCC90300207B4F /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E71A3F2BFCC90300207B4F /* BadgesScreen.swift */; };
-		03F207A32BFB760A00FF07A3 /* StaticFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */; };
-		03E71A3E2BFC9F1700207B4F /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E71A3D2BFC9F1700207B4F /* GoalViewModel.swift */; };
-		82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82265C162BFB2322000F5F92 /* TimerUI.swift */; };
+		03E71A3E2BFC9F1700207B4F /* (null) in Sources */ = {isa = PBXBuildFile; };
+		03E71A402BFCC90300207B4F /* (null) in Sources */ = {isa = PBXBuildFile; };
+		03F207A32BFB760A00FF07A3 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		82265C172BFB2322000F5F92 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */; };
-		E704AAA82BFB741C00578B69 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA52BFB741C00578B69 /* LearningTimeScreen.swift */; };
-		E704AAA92BFB741C00578B69 /* StepThreeOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */; };
 		E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */; };
 		E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */; };
 		E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32332BFB8C590014563C /* AppDurationPicker.swift */; };
 		E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32352BFB8C8C0014563C /* DurationTypeEnum.swift */; };
 		E70A32382BFC22780014563C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32372BFC22780014563C /* OnboardingViewModel.swift */; };
+		E70A323A2BFCF12D0014563C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32392BFCF12D0014563C /* Event.swift */; };
+		E70A323C2BFCF1630014563C /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A323B2BFCF1630014563C /* Weekday.swift */; };
+		E70A323E2BFCF17A0014563C /* WeekdayTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A323D2BFCF17A0014563C /* WeekdayTypeEnum.swift */; };
+		E70A32402BFCF1A80014563C /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A323F2BFCF1A80014563C /* CollectionExtension.swift */; };
+		E70A32422BFCF1B40014563C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32412BFCF1B40014563C /* DateExtension.swift */; };
+		E70A324A2BFCFDF90014563C /* TimePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32492BFCFDF90014563C /* TimePickerComponent.swift */; };
+		E70A324F2BFD90410014563C /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A324E2BFD90410014563C /* GoalViewModel.swift */; };
+		E70A32512BFD90520014563C /* StaticFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32502BFD90520014563C /* StaticFieldComponent.swift */; };
 		E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */; };
 		E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F72BF84EC300237B58 /* ContentView.swift */; };
 		E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72EB2F92BF84EC500237B58 /* Assets.xcassets */; };
@@ -51,8 +55,6 @@
 /* Begin PBXFileReference section */
 		034E292D2BFB74200030D448 /* LearningTimeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningTimeScreen.swift; sourceTree = "<group>"; };
 		034E292F2BFB74290030D448 /* StepThreeOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThreeOnboardingScreen.swift; sourceTree = "<group>"; };
-		034E29302BFB74290030D448 /* StepTwoOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwoOnboardingScreen.swift; sourceTree = "<group>"; };
-		034E29332BFB74650030D448 /* ListItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemComponent.swift; sourceTree = "<group>"; };
 		03B4D0652BFA299000C6643F /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
 		03D7C68A2BFB33F900980C8F /* FinishLearningScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishLearningScreen.swift; sourceTree = "<group>"; };
 		03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHistoryEmpty.swift; sourceTree = "<group>"; };
@@ -60,13 +62,19 @@
 		03D85E952BFA25E600C3A248 /* ComponentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDate.swift; sourceTree = "<group>"; };
 		03D85E992BFA27D300C3A248 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwoOnboardingScreen.swift; sourceTree = "<group>"; };
-		E704AAA52BFB741C00578B69 /* LearningTimeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningTimeScreen.swift; sourceTree = "<group>"; };
-		E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThreeOnboardingScreen.swift; sourceTree = "<group>"; };
 		E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemComponent.swift; sourceTree = "<group>"; };
 		E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatePicker.swift; sourceTree = "<group>"; };
 		E70A32332BFB8C590014563C /* AppDurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDurationPicker.swift; sourceTree = "<group>"; };
 		E70A32352BFB8C8C0014563C /* DurationTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationTypeEnum.swift; sourceTree = "<group>"; };
 		E70A32372BFC22780014563C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		E70A32392BFCF12D0014563C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E70A323B2BFCF1630014563C /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		E70A323D2BFCF17A0014563C /* WeekdayTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayTypeEnum.swift; sourceTree = "<group>"; };
+		E70A323F2BFCF1A80014563C /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		E70A32412BFCF1B40014563C /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		E70A32492BFCFDF90014563C /* TimePickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerComponent.swift; sourceTree = "<group>"; };
+		E70A324E2BFD90410014563C /* GoalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
+		E70A32502BFD90520014563C /* StaticFieldComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
 		E72EB2F22BF84EC300237B58 /* Thirtys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thirtys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtysApp.swift; sourceTree = "<group>"; };
 		E72EB2F72BF84EC300237B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,9 +154,7 @@
 				E72EB3262BF8503100237B58 /* DailyStrikesScreen.swift */,
 				E72EB3282BF8504100237B58 /* GoalsScreen.swift */,
 				E72EB32A2BF8505B00237B58 /* TimeConfigurationScreen.swift */,
-				82265C162BFB2322000F5F92 /* TimerUI.swift */,
 				03D7C68A2BFB33F900980C8F /* FinishLearningScreen.swift */,
-				03E71A3F2BFCC90300207B4F /* BadgesScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -170,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				E72EB31E2BF84FB300237B58 /* SampleModel.swift */,
+				E70A32392BFCF12D0014563C /* Event.swift */,
+				E70A323B2BFCF1630014563C /* Weekday.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,9 +185,9 @@
 		E72EB30B2BF84EE600237B58 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E70A324E2BFD90410014563C /* GoalViewModel.swift */,
 				E72EB31C2BF84FAA00237B58 /* SampleViewModels.swift */,
 				E70A32372BFC22780014563C /* OnboardingViewModel.swift */,
-				03E71A3D2BFC9F1700207B4F /* GoalViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -188,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				03D85E992BFA27D300C3A248 /* ViewExtension.swift */,
+				E70A323F2BFCF1A80014563C /* CollectionExtension.swift */,
+				E70A32412BFCF1B40014563C /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -203,7 +213,7 @@
 		E72EB30E2BF84F0000237B58 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				034E29332BFB74650030D448 /* ListItemComponent.swift */,
+				E70A32502BFD90520014563C /* StaticFieldComponent.swift */,
 				E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */,
 				E72EB30F2BF84F1700237B58 /* AppButtonComponent.swift */,
 				03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */,
@@ -212,7 +222,7 @@
 				03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */,
 				E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */,
 				E70A32332BFB8C590014563C /* AppDurationPicker.swift */,
-				03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */,
+				E70A32492BFCFDF90014563C /* TimePickerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -222,6 +232,7 @@
 			children = (
 				E72EB3152BF84F7F00237B58 /* SampleEnum.swift */,
 				E70A32352BFB8C8C0014563C /* DurationTypeEnum.swift */,
+				E70A323D2BFCF17A0014563C /* WeekdayTypeEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -229,11 +240,8 @@
 		E7C2FBF72BFB2ADC00AFE597 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				E704AAA52BFB741C00578B69 /* LearningTimeScreen.swift */,
-				E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */,
 				E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */,
 				034E292F2BFB74290030D448 /* StepThreeOnboardingScreen.swift */,
-				034E29302BFB74290030D448 /* StepTwoOnboardingScreen.swift */,
 				034E292D2BFB74200030D448 /* LearningTimeScreen.swift */,
 				E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */,
 			);
@@ -311,40 +319,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				E72EB2FF2BF84EC500237B58 /* Persistence.swift in Sources */,
-				E704AAA92BFB741C00578B69 /* StepThreeOnboardingScreen.swift in Sources */,
-				034E29322BFB74290030D448 /* StepTwoOnboardingScreen.swift in Sources */,
+				E70A323C2BFCF1630014563C /* Weekday.swift in Sources */,
 				034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */,
 				E72EB31F2BF84FB300237B58 /* SampleModel.swift in Sources */,
 				E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */,
-				03F207A32BFB760A00FF07A3 /* StaticFieldComponent.swift in Sources */,
+				03F207A32BFB760A00FF07A3 /* (null) in Sources */,
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
 				03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */,
-				82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */,
+				E70A32512BFD90520014563C /* StaticFieldComponent.swift in Sources */,
+				82265C172BFB2322000F5F92 /* (null) in Sources */,
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
 				E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */,
-				034E29342BFB74650030D448 /* ListItemComponent.swift in Sources */,
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
 				E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */,
-				03E71A3E2BFC9F1700207B4F /* GoalViewModel.swift in Sources */,
+				03E71A3E2BFC9F1700207B4F /* (null) in Sources */,
 				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
 				E72EB3182BF84F8B00237B58 /* SampleViews.swift in Sources */,
 				E72EB32B2BF8505B00237B58 /* TimeConfigurationScreen.swift in Sources */,
 				03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */,
+				E70A323A2BFCF12D0014563C /* Event.swift in Sources */,
 				E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */,
-				03E71A402BFCC90300207B4F /* BadgesScreen.swift in Sources */,
+				03E71A402BFCC90300207B4F /* (null) in Sources */,
 				E70A32382BFC22780014563C /* OnboardingViewModel.swift in Sources */,
+				E70A32402BFCF1A80014563C /* CollectionExtension.swift in Sources */,
 				E72EB3272BF8503100237B58 /* DailyStrikesScreen.swift in Sources */,
 				E72EB3162BF84F7F00237B58 /* SampleEnum.swift in Sources */,
 				03D7C68D2BFB51D200980C8F /* LearningHistoryEmpty.swift in Sources */,
 				E72EB3212BF84FBF00237B58 /* HomeScreen.swift in Sources */,
 				E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */,
+				E70A324F2BFD90410014563C /* GoalViewModel.swift in Sources */,
 				03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */,
+				E70A323E2BFCF17A0014563C /* WeekdayTypeEnum.swift in Sources */,
+				E70A32422BFCF1B40014563C /* DateExtension.swift in Sources */,
 				034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */,
 				E72EB31D2BF84FAA00237B58 /* SampleViewModels.swift in Sources */,
 				03D7C68B2BFB33F900980C8F /* FinishLearningScreen.swift in Sources */,
 				E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */,
-				E704AAA82BFB741C00578B69 /* LearningTimeScreen.swift in Sources */,
+				E70A324A2BFCFDF90014563C /* TimePickerComponent.swift in Sources */,
 				E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */,
 				E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */,
 			);
@@ -480,7 +492,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Thirtys/Preview Content\"";
-				DEVELOPMENT_TEAM = F44CLK4937;
+				DEVELOPMENT_TEAM = 57BYB3NG56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -509,7 +521,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Thirtys/Preview Content\"";
-				DEVELOPMENT_TEAM = F44CLK4937;
+				DEVELOPMENT_TEAM = 57BYB3NG56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
