@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import CoreData
 
 class OnboardingViewModel: ObservableObject {
+    var database: PersistenceController = PersistenceController.shared
+    
     // Learning Time
     @Published var learningTimes: [GrouppedWeekdayEvent] = []
     
@@ -94,6 +97,51 @@ class OnboardingViewModel: ObservableObject {
         )
         
         print(self.learningTimes)
+    }
+    
+    func storeData() {
+        
+        let plan = PlanEntity(context: database.container.viewContext)
+        plan.title = self.planTitle
+        plan.startDate = self.planStartDate
+        plan.duration = Int16(self.planDuration)
+        
+        self.weekDays.forEach { day in
+            let data = WorkScheduleEntity(context: database.container.viewContext)
+            data.day = day.label.rawValue
+            data.startTime = day.event.startTime
+            data.endTime = day.event.endTime
+        }
+        
+        let bedTime = BedTimeEntity(context: database.container.viewContext)
+        bedTime.label = self.bedTime.label
+        bedTime.startTime = self.bedTime.startTime
+        bedTime.endTime = self.bedTime.endTime
+        
+        let wakeUpTime = BedTimeEntity(context: database.container.viewContext)
+        wakeUpTime.label = self.wakeUpTime.label
+        wakeUpTime.startTime = self.wakeUpTime.startTime
+        wakeUpTime.endTime = self.wakeUpTime.endTime
+        
+        self.learningTimes.forEach { time in
+            let data = LearningTimeEntity(context: database.container.viewContext)
+            data.day = time.label.rawValue
+            time.events.forEach { event in
+                data.events = LearningEventEntity(context: database.container.viewContext)
+                data.events?.startTime = event.startTime
+                data.events?.endTime = event.endTime
+                data.events?.duration = Int16(event.duration ?? 0)
+            }
+        }
+        
+//        let wakeUpTime = 
+        
+        do {
+            try database.container.viewContext.save()
+            print("Stored successfully")
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 
