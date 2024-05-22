@@ -21,6 +21,9 @@
 		03F838292BFD9288004DDDFA /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838272BFD9288004DDDFA /* TimerUI.swift */; };
 		03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838282BFD9288004DDDFA /* BadgesScreen.swift */; };
 		82265C172BFB2322000F5F92 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		03F207A32BFB760A00FF07A3 /* StaticFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */; };
+		DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC232BFC922300529B16 /* BadgeComponent.swift */; };
+		DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */; };
 		E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */; };
 		E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */; };
 		E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */; };
@@ -65,6 +68,9 @@
 		03D85E992BFA27D300C3A248 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		03F838272BFD9288004DDDFA /* TimerUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerUI.swift; sourceTree = "<group>"; };
 		03F838282BFD9288004DDDFA /* BadgesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
+		03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
+		DAA2CC232BFC922300529B16 /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
+		DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeData.swift; sourceTree = "<group>"; };
 		E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwoOnboardingScreen.swift; sourceTree = "<group>"; };
 		E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemComponent.swift; sourceTree = "<group>"; };
 		E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatePicker.swift; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 				E72EB31E2BF84FB300237B58 /* SampleModel.swift */,
 				E70A32392BFCF12D0014563C /* Event.swift */,
 				E70A323B2BFCF1630014563C /* Weekday.swift */,
+				DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 				E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */,
 				E70A32332BFB8C590014563C /* AppDurationPicker.swift */,
 				E70A32492BFCFDF90014563C /* TimePickerComponent.swift */,
+				DAA2CC232BFC922300529B16 /* BadgeComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				E72EB31F2BF84FB300237B58 /* SampleModel.swift in Sources */,
 				E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */,
 				03F207A32BFB760A00FF07A3 /* (null) in Sources */,
+				DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */,
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
 				03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */,
 				E70A32512BFD90520014563C /* StaticFieldComponent.swift in Sources */,
@@ -367,6 +376,7 @@
 				E70A324A2BFCFDF90014563C /* TimePickerComponent.swift in Sources */,
 				E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */,
 				E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */,
+				DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
