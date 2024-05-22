@@ -7,14 +7,15 @@
 
 import Foundation
 
-enum WeekdayType: String, CaseIterable {
-    case sunday = "SUN"
-    case monday = "MON"
-    case tuesday = "TUE"
-    case wednesday = "WED"
-    case thursday = "THU"
-    case friday = "FRI"
-    case saturday = "SAT"
+@objc
+enum WeekdayType: Int16, CaseIterable {
+    case sunday
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
     
     var term: String {
         switch self {
@@ -32,6 +33,25 @@ enum WeekdayType: String, CaseIterable {
             "Friday"
         case .saturday:
             "Saturday"
+        }
+    }
+    
+    var shortTerm: String {
+        switch self {
+        case .sunday:
+            "SUN"
+        case .monday:
+            "MON"
+        case .tuesday:
+            "TUE"
+        case .wednesday:
+            "WED"
+        case .thursday:
+            "THU"
+        case .friday:
+            "FRI"
+        case .saturday:
+            "SAT"
         }
     }
 }
