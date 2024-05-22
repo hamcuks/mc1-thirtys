@@ -116,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9F5FAF52BFD99C50043F428 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D9F5FAF62BFD99DE0043F428 /* TimeFormattingHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		E72EB2E92BF84EC300237B58 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +143,7 @@
 		E72EB2F42BF84EC300237B58 /* Thirtys */ = {
 			isa = PBXGroup;
 			children = (
+				D9F5FAF52BFD99C50043F428 /* Helpers */,
 				E72EB3092BF84ED800237B58 /* Shared */,
 				E72EB3082BF84ED000237B58 /* Screens */,
 				E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */,
@@ -201,6 +210,7 @@
 				E70A324E2BFD90410014563C /* GoalViewModel.swift */,
 				E72EB31C2BF84FAA00237B58 /* SampleViewModels.swift */,
 				E70A32372BFC22780014563C /* OnboardingViewModel.swift */,
+				D9F5FAFC2BFD9A3A0043F428 /* CountdownTimerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -258,6 +268,7 @@
 				034E292F2BFB74290030D448 /* StepThreeOnboardingScreen.swift */,
 				034E292D2BFB74200030D448 /* LearningTimeScreen.swift */,
 				E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */,
+				D9F5FAFE2BFD9A770043F428 /* CountdownTimerScreen.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -335,6 +346,7 @@
 				E72EB2FF2BF84EC500237B58 /* Persistence.swift in Sources */,
 				E70A323C2BFCF1630014563C /* Weekday.swift in Sources */,
 				034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */,
+				D9F5FAF72BFD99DE0043F428 /* TimeFormattingHelper.swift in Sources */,
 				E72EB31F2BF84FB300237B58 /* SampleModel.swift in Sources */,
 				E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */,
 				03F207A32BFB760A00FF07A3 /* (null) in Sources */,
@@ -346,6 +358,7 @@
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
 				E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */,
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
+				D9F5FAFD2BFD9A3A0043F428 /* CountdownTimerViewModel.swift in Sources */,
 				E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */,
 				03E71A3E2BFC9F1700207B4F /* (null) in Sources */,
 				03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */,
@@ -361,6 +374,7 @@
 				E70A32402BFCF1A80014563C /* CollectionExtension.swift in Sources */,
 				03F838292BFD9288004DDDFA /* TimerUI.swift in Sources */,
 				E72EB3272BF8503100237B58 /* DailyStrikesScreen.swift in Sources */,
+				D9F5FAF92BFD99FB0043F428 /* CircularProgressBar.swift in Sources */,
 				E72EB3162BF84F7F00237B58 /* SampleEnum.swift in Sources */,
 				03D7C68D2BFB51D200980C8F /* LearningHistoryEmpty.swift in Sources */,
 				E72EB3212BF84FBF00237B58 /* HomeScreen.swift in Sources */,
@@ -369,6 +383,7 @@
 				03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */,
 				E70A323E2BFCF17A0014563C /* WeekdayTypeEnum.swift in Sources */,
 				E70A32422BFCF1B40014563C /* DateExtension.swift in Sources */,
+				D9F5FAFF2BFD9A770043F428 /* CountdownTimerScreen.swift in Sources */,
 				034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */,
 				E72EB31D2BF84FAA00237B58 /* SampleViewModels.swift in Sources */,
 				03D7C68B2BFB33F900980C8F /* FinishLearningScreen.swift in Sources */,
