@@ -39,10 +39,11 @@ struct LearningTimeScreen: View {
                             ForEach(WeekdayType.allCases, id: \.self) { day in
                                 
                                 VStack {
-                                    Text("\(day.rawValue)")
+                                    Text("\(day.shortTerm)")
                                         .font(.subheadline)
-                                        .foregroundStyle(.kBody)
+                                        .foregroundStyle(selectedDay == day ? .kTitleText : .kBody)
                                         .frame(maxWidth: .infinity)
+                                        .fontWeight(selectedDay == day ? .bold : .medium)
                                     
                                     if selectedDay == day {
                                         Rectangle()
