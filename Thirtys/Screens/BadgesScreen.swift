@@ -11,18 +11,22 @@ struct BadgesScreen: View {
     
     var columns = Array(repeating: GridItem(.flexible()), count: 4)
     
-    var badgeImage : [String] = []
+    var badgeImage : [BadgeData] = BadgeData.items
     
     var body: some View {
         NavigationStack{
             ScrollView{
                 LazyVGrid(columns: columns){
-                    ForEach(badgeImage, id: \.self){ i in
-                        Image("\(i)")
-                            .padding()
-                            .frame(height: 100)
+                    ForEach(badgeImage, id: \.id){ badge in
+                        Image("\(badge.image)")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 80)
+                            .opacity(badge.isAchieved ? 1 : 0.3)
+                            .border(.red)
                     }
                 }
+                .padding()
             }
             .navigationTitle("Badges")
             .navigationBarTitleDisplayMode(.inline)

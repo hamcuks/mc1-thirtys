@@ -1,19 +1,20 @@
 //
-//  CountdownTimerScreen.swift
+//  Coba.swift
 //  Thirtys
 //
-//  Created by Rajesh Triadi Noftarizal on 22/05/24.
+//  Created by Bayu Septyan Nur Hidayat on 22/05/24.
 //
 
 import SwiftUI
 
-struct CountdownTimerScreen: View {
+
+struct Coba: View {
     @StateObject private var countdownTimerViewModel = CountdownTimerViewModel()
     @StateObject private var goalViewModel = GoalViewModel()
     @StateObject private var achievementViewModel = AchievementViewModel()
     
-    @State private var showAchievementPopup: Bool = false
-    
+    @State private var showAchievementPopup = false
+
     var body: some View {
         NavigationView {
             ScrollView{
@@ -23,7 +24,7 @@ struct CountdownTimerScreen: View {
                         DailyStreak()
                             .padding(.top)
                         VStack{
-                            if countdownTimerViewModel.remainingTime > 0{
+                            if countdownTimerViewModel.remainingTime > 0 {
                                 VStack(spacing:8){
                                     Text("\(goalViewModel.goalsTitle)")
                                         .font(.system(.title2, weight: .bold))
@@ -34,7 +35,7 @@ struct CountdownTimerScreen: View {
                                 .padding(.bottom, 32)
                                 VStack{
                                     ZStack {
-                                        CircularProgressBar(progress: CGFloat(countdownTimerViewModel.remainingTime / 1800))
+                                        CircularProgressBar(progress: CGFloat(countdownTimerViewModel.remainingTime) / 1800)
                                         
                                         VStack {
                                             Text("\(timeString(from: countdownTimerViewModel.remainingTime))")
@@ -69,11 +70,9 @@ struct CountdownTimerScreen: View {
                                     }
                                     .font(.system(.caption, weight: .bold))
                                     .frame(width: 164, height: 41)
-                                    
                                     .foregroundColor(Color.kLabel)
                                     .background(Color.kAccent)
                                     .cornerRadius(45)
-                                    
                                     
                                     Button {
                                         countdownTimerViewModel.resetTimer()
@@ -90,18 +89,21 @@ struct CountdownTimerScreen: View {
                                 .padding(.bottom, 24)
                                 
                             } else {
-                                FinishComponent()
-                                    .frame(alignment: .center)
+                                VStack {
+                                    FinishComponent()
+                                        .frame(alignment: .center)
+                                    
+                                    // Check and update achievement when timer finishes
                                     .onAppear {
-                                        updateDailyStreak()
+                                        updateAchievementIfNeeded()
                                     }
+                                }
                             }
                         }
                         .frame(maxWidth: .infinity)
                         .background(.white)
                         
                         LearningHistory(historyLearning: countdownTimerViewModel.learningHistory)
-                        
                     }
                     .padding(.bottom, 60)
                 }
@@ -117,12 +119,13 @@ struct CountdownTimerScreen: View {
             .navigationTitle("Thirty's")
             .navigationBarTitleDisplayMode(.inline)
         }
-        .sheet(isPresented: $showAchievementPopup){
-            BadgeComponent(image: achievementViewModel.imageTitle, title: achievementViewModel.titleBadge, desc: achievementViewModel.descBadge)
+        .sheet(isPresented: $showAchievementPopup) {
+            AchievementPopupView(image: achievementViewModel.imageTitle, title: achievementViewModel.titleBadge, description: achievementViewModel.descBadge)
         }
     }
-    
-    func updateDailyStreak() {
+
+    // Function to check and update achievement
+    func updateAchievementIfNeeded() {
         achievementViewModel.dailyStrike += 1
         if achievementViewModel.getAchievement() {
             showAchievementPopup = true
@@ -130,7 +133,33 @@ struct CountdownTimerScreen: View {
     }
 }
 
-#Preview {
-    CountdownTimerScreen()
+struct AchievementPopupView: View {
+    let image: String
+    let title: String
+    let description: String
+    
+    var body: some View {
+        VStack {
+            Image(image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+            Text(title)
+                .font(.title)
+                .bold()
+            Text(description)
+                .font(.body)
+                .padding()
+            Button("Close") {
+                // Handle close action
+            }
+            .padding()
+        }
+        .padding()
+    }
 }
 
+
+#Preview {
+    Coba()
+}
