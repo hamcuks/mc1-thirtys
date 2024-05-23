@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0349704F2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */; };
 		034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292D2BFB74200030D448 /* LearningTimeScreen.swift */; };
 		034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292F2BFB74290030D448 /* StepThreeOnboardingScreen.swift */; };
 		03545A9E2BFDDA4E00F731D8 /* CountdownTimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03545A9D2BFDDA4E00F731D8 /* CountdownTimerScreen.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationStopLearningComponent.swift; sourceTree = "<group>"; };
 		034E292D2BFB74200030D448 /* LearningTimeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningTimeScreen.swift; sourceTree = "<group>"; };
 		034E292F2BFB74290030D448 /* StepThreeOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThreeOnboardingScreen.swift; sourceTree = "<group>"; };
 		03545A9D2BFDDA4E00F731D8 /* CountdownTimerScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTimerScreen.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				E70A32332BFB8C590014563C /* AppDurationPicker.swift */,
 				E70A32492BFCFDF90014563C /* TimePickerComponent.swift */,
 				DAA2CC232BFC922300529B16 /* BadgeComponent.swift */,
+				0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */,
 				E70A32542BFE13C90014563C /* LearningTimeListComponent.swift */,
 			);
 			path = Components;
@@ -365,6 +368,7 @@
 				E70A323C2BFCF1630014563C /* Weekday.swift in Sources */,
 				03A122352BFE3012000BD12A /* Coba.swift in Sources */,
 				03545AA02BFDDA5D00F731D8 /* Timer.swift in Sources */,
+				0349704F2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift in Sources */,
 				034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */,
 				E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */,
 				DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */,

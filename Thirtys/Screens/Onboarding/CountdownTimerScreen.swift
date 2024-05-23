@@ -7,12 +7,16 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct CountdownTimerScreen: View {
     @StateObject private var countdownTimerViewModel = CountdownTimerViewModel()
     @StateObject private var goalViewModel = GoalViewModel()
     @StateObject private var achievementViewModel = AchievementViewModel()
     
     @State private var showAchievementPopup: Bool = false
+    @State private var isLearningStarted: Bool = false
+    @State private var isConfirmationStopOpen: Bool = false
     
     var body: some View {
         NavigationView {
@@ -23,7 +27,7 @@ struct CountdownTimerScreen: View {
                         DailyStreak()
                             .padding(.top)
                         VStack{
-                            if countdownTimerViewModel.remainingTime > 0{
+                            if countdownTimerViewModel.remainingTime > 0 {
                                 VStack(spacing:8){
                                     Text("\(goalViewModel.plan?.title ?? "Title")")
                                         .font(.system(.title2, weight: .bold))
@@ -51,41 +55,54 @@ struct CountdownTimerScreen: View {
                                 }
                                 .padding(.bottom, 32)
                                 HStack {
-                                    Button {
-                                        if countdownTimerViewModel.isActive {
-                                            countdownTimerViewModel.pauseTimer()
-                                        } else {
+                                    if !isLearningStarted {
+                                        Button(action: {
                                             countdownTimerViewModel.startTimer()
+                                            isLearningStarted.toggle()
+                                        }) {
+                                            Text("Start Learning")
+                                                .font(.system(.caption, weight: .bold))
+                                                .frame(width: 328, height: 41)
+                                                .foregroundColor(Color.kLabel)
+                                                .background(Color.kAccent)
+                                                .cornerRadius(45)
                                         }
-                                    } label: {
-                                        if countdownTimerViewModel.isActive {
-                                            Image(systemName: "pause.fill")
-                                            Text("Pause")
-                                        } else {
-                                            Image(systemName: "play.fill")
-                                            Text("Resume")
+                                    } else {
+                                        Button {
+                                            if countdownTimerViewModel.isActive {
+                                                countdownTimerViewModel.pauseTimer()
+                                            } else {
+                                                countdownTimerViewModel.startTimer()
+                                            }
+                                        } label: {
+                                            if countdownTimerViewModel.isActive {
+                                                Image(systemName: "pause.fill")
+                                                Text("Pause")
+                                            } else {
+                                                Image(systemName: "play.fill")
+                                                Text("Resume")
+                                            }
+                                            
                                         }
+                                        .font(.system(.caption, weight: .bold))
+                                        .frame(width: 164, height: 41)
+                                        .foregroundColor(Color.kLabel)
+                                        .background(Color.kAccent)
+                                        .cornerRadius(45)
                                         
+                                        
+                                        Button {
+                                            isConfirmationStopOpen.toggle()
+                                        } label: {
+                                            Image(systemName: "flag.fill")
+                                            Text("Stop")
+                                        }
+                                        .frame(width: 164, height: 41)
+                                        .font(.system(.caption, weight: .bold))
+                                        .foregroundColor(Color.kError)
+                                        .background(Color.kError.opacity(0.15))
+                                        .cornerRadius(45)
                                     }
-                                    .font(.system(.caption, weight: .bold))
-                                    .frame(width: 164, height: 41)
-                                    
-                                    .foregroundColor(Color.kLabel)
-                                    .background(Color.kAccent)
-                                    .cornerRadius(45)
-                                    
-                                    
-                                    Button {
-                                        countdownTimerViewModel.resetTimer()
-                                    } label: {
-                                        Image(systemName: "flag.fill")
-                                        Text("Stop")
-                                    }
-                                    .frame(width: 164, height: 41)
-                                    .font(.system(.caption, weight: .bold))
-                                    .foregroundColor(Color.kError)
-                                    .background(Color.kError.opacity(0.15))
-                                    .cornerRadius(45)
                                 }
                                 .padding(.bottom, 24)
                                 
@@ -118,7 +135,15 @@ struct CountdownTimerScreen: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .sheet(isPresented: $showAchievementPopup){
-            BadgeComponent(image: achievementViewModel.imageTitle, title: achievementViewModel.titleBadge, desc: achievementViewModel.descBadge)
+            BadgeComponent(image: achievementViewModel.imageTitle, title: achievementViewModel.titleBadge, desc: achievementViewModel.descBadge, showAchievementPopup: $showAchievementPopup)
+                .presentationCompactAdaptation(.fullScreenCover)
+                
+        }
+        .sheet(isPresented: $isConfirmationStopOpen){
+            ConfirmationStopLearningComponent(isConfirmationStopOpen: $isConfirmationStopOpen) {
+                countdownTimerViewModel.resetTimer()
+                isLearningStarted = false
+            }
         }
     }
     
