@@ -22,8 +22,8 @@ struct BadgesScreen: View {
                             .resizable()
                             .scaledToFit()
                             .frame(height: 80)
-                            .opacity(badge.isAchieved ? 1 : 0.3)
-                            .border(.red)
+                            .opacity(badge.isAchieved ? 1 : 0.5)
+                            .grayscale(badge.isAchieved ? 0 : 1)
                     }
                 }
                 .padding()

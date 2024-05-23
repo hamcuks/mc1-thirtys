@@ -11,14 +11,14 @@ struct StreakScreen: View {
     
     var badgeImage : [BadgeData] = BadgeData.items
     
-    @State var isViewClicked: Bool
+    @State private var isViewClicked: Bool = false
     
     
     var body: some View {
         NavigationStack{
             ScrollView{
                 VStack(alignment: .leading, spacing: 24){
-                    VStack (alignment: .leading){
+                    VStack (alignment: .leading, spacing: 16){
                         HStack(spacing: 4) {
                             Image(systemName: "flame.fill")
                                 .resizable()
@@ -63,14 +63,17 @@ struct StreakScreen: View {
                         }
                         HStack {
                             ForEach(badgeImage.prefix(5), id: \.id){ image in
-                                ZStack {
-                                    Image("\(image.image)")
-                                        .resizable()
-                                        .frame(width: 64, height: 75)
-                                        .opacity(image.isAchieved ? 1 : 0.3)
-                                    
-                                }
-                                .cornerRadius(10)
+                                
+                                Spacer()
+                                
+                                Image("\(image.image)")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 56)
+                                    .opacity(image.isAchieved ? 1 : 0.5)
+                                    .grayscale(image.isAchieved ? 0 : 1)
+                                
+                                Spacer()
                             }
                         }
                     }
@@ -96,18 +99,20 @@ struct StreakScreen: View {
                 .sheet(isPresented: $isViewClicked){
                     BadgesScreen()
                 }
+                .background(.kBackground)
+                .ignoresSafeArea()
               
             }
             .navigationTitle("Streak")
+            .toolbarBackground(.white, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
-            .background(.kBackground)
         }
     }
 }
 
 struct StreakScreen_Previews: PreviewProvider {
     static var previews: some View {
-        StreakScreen(isViewClicked: false)
+        StreakScreen()
     }
 }
 

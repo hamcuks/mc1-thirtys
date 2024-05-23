@@ -9,14 +9,24 @@ import SwiftUI
 
 struct AppButtonStyle: ButtonStyle {
     
+    private var backgroundColor: Color?
+    private var foregroundColor: Color?
+    
+    init() {}
+    
+    init(backgroundColor: Color, foregroundColor: Color) {
+        self.backgroundColor = backgroundColor
+        self.foregroundColor = foregroundColor
+    }
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.subheadline)
             .bold()
             .padding(.vertical, 12)
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-            .background(.kAccent)
-            .foregroundStyle(.kTitleText)
+            .background( backgroundColor ?? .kAccent )
+            .foregroundStyle( foregroundColor ?? .kTitleText )
             .clipShape(Capsule())
     }
     
