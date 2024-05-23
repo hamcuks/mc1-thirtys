@@ -13,10 +13,10 @@ struct GoalsScreen: View {
     
     var body: some View {
         NavigationStack{
-            if let plan = vm.plan, let startDate = plan.startDate {
-                VStack(spacing: 24){
-                    
-                    
+            
+            VStack(spacing: 24){
+                
+                if let plan = vm.plan, let startDate = plan.startDate {
                     let endDate = Calendar.current.date(
                         byAdding: .day,
                         value: Int(plan.duration),
@@ -59,10 +59,11 @@ struct GoalsScreen: View {
                     
                     Spacer()
                 }
-                .background(.kBackground)
-                .navigationTitle("Goal")
-                .navigationBarTitleDisplayMode(.inline)
             }
+            .background(.kBackground)
+            .navigationTitle("Goal")
+            .navigationBarTitleDisplayMode(.inline)
+            
         }
         .onAppear {
             vm.getPlanData()
