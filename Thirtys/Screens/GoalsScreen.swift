@@ -9,69 +9,63 @@ import SwiftUI
 
 struct GoalsScreen: View {
     
-    @EnvironmentObject private var goalViewModel: GoalViewModel
-    
-    let date = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
-    
-    @State private var arr: [String] = []
-    
+    @EnvironmentObject private var vm: GoalViewModel
     
     var body: some View {
         NavigationStack{
-            ZStack{
-                Color.kBackground
+            if let plan = vm.plan, let startDate = plan.startDate {
                 VStack(spacing: 24){
+                    
+                    
+                    let endDate = Calendar.current.date(
+                        byAdding: .day,
+                        value: Int(plan.duration),
+                        to: startDate
+                    )
+                    
                     VStack(spacing: 24){
-                        StaticFieldComponent(ContentField: "\(goalViewModel.goals_title)", label: "What Knowledge Will You Unlock?")
-                        StaticFieldComponent(ContentField: "\(goalViewModel.goals_duration)", label: "Estimated Duration of Learning Plan")
+                        AppTextField(
+                            selection: .constant(plan.title ?? "Plan Title"),
+                            label: "What Knowledge Will You Unlock?"
+                        )
+                        
+                        AppDatePicker(
+                            selection: .constant(startDate),
+                            label: "Plan Start Date"
+                        )
+                        
+                        AppDatePicker(
+                            selection: .constant(endDate ?? .now),
+                            label: "Plan End Date"
+                        )
                     }
+                    .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     .padding()
                     .background()
                     
-                    VStack{
-                        VStack(spacing: 24){
-                            Text("Learning Time")
-                                .font(.system(.body, weight: .bold))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            HStack(alignment: .top) {
-                                ForEach(date, id: \.self) { day in
-                                    
-                                    VStack {
-                                        Text(day)
-                                            .font(.subheadline)
-                                            .foregroundStyle(.kBody)
-                                            .frame(maxWidth: .infinity)
-                                        
-                                        if goalViewModel.selectedDay == day {
-                                            Rectangle()
-                                                .fill(.kTitleText)
-                                                .frame(height: 3)
-                                        }
-                                    }
-                                    .onTapGesture {
-                                        goalViewModel.selectedDay = day
-                                        arr = goalViewModel.getSuggestionTime(selectedDay: goalViewModel.selectedDay)
-                                    }
-                                }
-                            }
-                        }
+                    
+                    
+                    VStack(alignment: .leading, spacing: 24){
+                        Text("Learning Time")
+                            .foregroundStyle(.kTitleText)
+                            .font(.body.bold())
                         
-                        ForEach(arr, id: \.self){ i in
-                            VStack{
-                                StaticFieldComponent(ContentField: i, label: "")
-                            }
-                        }
-                        
+                        LearningTimeList(
+                            items: vm.learningTimes
+                        )
                     }
                     .padding()
                     .background()
                     
                     Spacer()
                 }
+                .background(.kBackground)
+                .navigationTitle("Goal")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("Goal")
-            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear {
+            vm.getPlanData()
         }
     }
 }

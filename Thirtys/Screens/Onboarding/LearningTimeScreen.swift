@@ -39,9 +39,11 @@ struct LearningTimeScreen: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: GetStartedScreen()
+                    destination: GoalsScreen().onAppear {
+                        vm.storeData()
+                    }
                 ) {
-                    Text("Next")
+                    Text("Save")
                 }
                 .buttonStyle(AppButtonStyle())
                 
