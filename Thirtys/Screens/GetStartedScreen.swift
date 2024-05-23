@@ -42,6 +42,7 @@ struct GetStartedScreen: View {
             }
             .padding()
         }
+        .preferredColorScheme(.light)
     }
 }
 

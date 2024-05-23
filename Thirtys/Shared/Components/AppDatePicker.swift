@@ -15,6 +15,7 @@ struct AppDatePicker: View {
     var placeholder: String = "Select Date"
     
     @State private var isOpened: Bool = false
+    @Environment(\.isEnabled) private var isEnabled
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8){
@@ -29,10 +30,12 @@ struct AppDatePicker: View {
                 
                 Spacer()
                 
-                Image(systemName: "calendar")
-                    .onTapGesture {
-                        isOpened.toggle()
-                    }
+                if isEnabled {
+                    Image(systemName: "calendar")
+                        .onTapGesture {
+                            isOpened.toggle()
+                        }
+                }
                 
             }
             .foregroundStyle(.kTitleText)

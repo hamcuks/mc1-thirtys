@@ -9,61 +9,68 @@ import SwiftUI
 
 struct GoalsScreen: View {
     
-    let date = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
-    
-    @State private var selectedDay: String = "SUN"
-    
-    @Binding var goals_title: String
-    @Binding var goals_duration: String
+    @EnvironmentObject private var vm: GoalViewModel
     
     var body: some View {
         NavigationStack{
-            ZStack{
-                Color.kBackground
+            if let plan = vm.plan, let startDate = plan.startDate {
                 VStack(spacing: 24){
+                    
+                    
+                    let endDate = Calendar.current.date(
+                        byAdding: .day,
+                        value: Int(plan.duration),
+                        to: startDate
+                    )
+                    
                     VStack(spacing: 24){
-                        StaticFieldComponent(ContentField: "\(goals_title)", label: "What Knowledge Will You Unlock?")
-                        StaticFieldComponent(ContentField: "\(goals_duration)", label: "Estimated Duration of Learning Plan")
+                        AppTextField(
+                            selection: .constant(plan.title ?? "Plan Title"),
+                            label: "What Knowledge Will You Unlock?"
+                        )
+                        
+                        AppDatePicker(
+                            selection: .constant(startDate),
+                            label: "Plan Start Date"
+                        )
+                        
+                        AppDatePicker(
+                            selection: .constant(endDate ?? .now),
+                            label: "Plan End Date"
+                        )
                     }
+                    .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     .padding()
                     .background()
                     
-                    VStack{
-                        VStack(spacing: 24){
-                            Text("Learning Time")
-                                .font(.system(.body, weight: .bold))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            Picker("", selection: $selectedDay) {
-                                ForEach(date, id: \.self) {
-                                    Text($0)
-                                        .font(.system(.caption2, weight: .semibold))
-                                        .foregroundStyle(.kTitleText)
-                                }
-                            }
-                            .pickerStyle(.segmented)
-                        }
+                    
+                    
+                    VStack(alignment: .leading, spacing: 24){
+                        Text("Learning Time")
+                            .foregroundStyle(.kTitleText)
+                            .font(.body.bold())
                         
-                        if selectedDay == "SUN"{
-                            VStack{
-                                StaticFieldComponent(ContentField: "06.30 - 07.30", label: "")
-
-                                StaticFieldComponent(ContentField: "20.00 - 22.45", label: "")
-                            }
-                        }
+                        LearningTimeList(
+                            items: vm.learningTimes
+                        )
                     }
                     .padding()
                     .background()
                     
                     Spacer()
                 }
+                .background(.kBackground)
+                .navigationTitle("Goal")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("Goal")
-            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear {
+            vm.getPlanData()
         }
     }
 }
 
 #Preview {
-    GoalsScreen(goals_title: .constant("Belajar SwiftUI 1 Bulan"), goals_duration: .constant("May 18 - June 18 2024"))
+    GoalsScreen()
+        .environmentObject(GoalViewModel())
 }
