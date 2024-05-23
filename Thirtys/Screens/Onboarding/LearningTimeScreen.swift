@@ -11,6 +11,8 @@ struct LearningTimeScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
     
+    @AppStorage("isFirstInstall") private var isFirstInstall = true
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -39,14 +41,16 @@ struct LearningTimeScreen: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: GoalsScreen().onAppear {
-                        vm.storeData()
-                    }
+                    destination: TodayScreen()
                 ) {
                     Text("Save")
                 }
                 .buttonStyle(AppButtonStyle())
                 
+            }
+            .onDisappear {
+                vm.storeData()
+                isFirstInstall = false
             }
             .scrollIndicators(.hidden)
             .toolbar(content: {
