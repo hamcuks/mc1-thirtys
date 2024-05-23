@@ -9,11 +9,16 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    let notification = NotificationHandler()
 
     @AppStorage("firstInstall") private var isFirstInstall = false
     var body: some View {
         if isFirstInstall {
             GetStartedScreen()
+                .onAppear{
+                    notification.askPermission()
+                }
         } else {
             TabViewComponent()
         }
@@ -30,4 +35,8 @@ private let itemFormatter: DateFormatter = {
 
 #Preview {
     ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        .environmentObject(OnboardingViewModel())
+        .environmentObject(GoalViewModel())
+        .environmentObject(TodayViewModel())
+
 }
