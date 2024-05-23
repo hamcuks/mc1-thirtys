@@ -16,12 +16,14 @@ struct TabViewComponent: View {
                         "Today", systemImage: "smallcircle.fill.circle"
                     )
                 }
-//            StreakScreen()
-//                .tabItem {
-//                    Label(
-//                        "Streak", systemImage: "flame"
-//                    )
-//                }
+            
+            StreakScreen()
+                .tabItem {
+                    Label(
+                        "Streak", systemImage: "flame"
+                    )
+                }
+            
             GoalsScreen()
                 .tabItem {
                     Label(
