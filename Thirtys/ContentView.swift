@@ -15,7 +15,7 @@ struct ContentView: View {
         if isFirstInstall {
             GetStartedScreen()
         } else {
-            TodayScreen()
+            TabViewComponent()
         }
     }
     
