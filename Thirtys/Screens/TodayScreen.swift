@@ -12,9 +12,12 @@ struct TodayScreen: View {
     @StateObject private var goalViewModel = GoalViewModel()
     @StateObject private var achievementViewModel = AchievementViewModel()
     
+    @EnvironmentObject private var todayVm: TodayViewModel
+    
     @State private var showAchievementPopup: Bool = false
     @State private var isLearningStarted: Bool = false
     @State private var isConfirmationStopOpen: Bool = false
+    
     
     var body: some View {
         NavigationView {
@@ -26,10 +29,31 @@ struct TodayScreen: View {
                     VStack(spacing: 32){
                         if countdownTimerViewModel.remainingTime > 0 {
                             VStack(spacing:8){
-                                Text("\(goalViewModel.plan?.title ?? "Title")")
+                                Text("\(todayVm.plan?.title ?? "Title")")
                                     .font(.system(.title2, weight: .bold))
-                                Text("Your learning time is available at 06.00 - 07.30")
+                                
+                                if let event = todayVm.currentLearningTime {
+                                    
+                                    (Text(
+                                            event.startTime >= .now && event.endTime <= .now ?
+                                            "Your learning time is at "
+                                            :
+                                                "Your next learning time will be available at "
+                                       )
+                                     
+                                     +
+                                     
+                                     Text(event.startTime, style: .time) +
+                                     Text(" - ") +
+                                     Text(event.endTime, style: .time))
+                                    
                                     .font(.system(.footnote, weight: .regular))
+                                    
+                                } else {
+                                    Text("You do not have active learning time")
+                                        .font(.system(.footnote, weight: .regular))
+                                }
+                                
                             }
                             VStack{
                                 ZStack {
@@ -132,6 +156,14 @@ struct TodayScreen: View {
             .navigationTitle("Thirty's")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .refreshable {
+            todayVm.getPlanData()
+            todayVm.getTodayLearningPlan()
+        }
+        .onAppear {
+            todayVm.getPlanData()
+            todayVm.getTodayLearningPlan()
+        }
         .sheet(isPresented: $showAchievementPopup){
             BadgeComponent(image: achievementViewModel.imageTitle, title: achievementViewModel.titleBadge, desc: achievementViewModel.descBadge, showAchievementPopup: $showAchievementPopup)
                 .presentationCompactAdaptation(.fullScreenCover)
@@ -155,4 +187,5 @@ struct TodayScreen: View {
 
 #Preview {
     TodayScreen()
+        .environmentObject(TodayViewModel())
 }
