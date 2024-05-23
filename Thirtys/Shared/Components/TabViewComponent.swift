@@ -36,5 +36,6 @@ struct TabViewComponent: View {
 
 #Preview {
     TabViewComponent()
+        .environmentObject(TodayViewModel())
         .environmentObject(GoalViewModel())
 }
