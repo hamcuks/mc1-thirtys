@@ -16,22 +16,22 @@ struct GoalsScreen: View {
             
             VStack(spacing: 24){
                 
-                if let plan = vm.plan, let startDate = plan.startDate {
-                    let endDate = Calendar.current.date(
-                        byAdding: .day,
-                        value: Int(plan.duration),
-                        to: startDate
+                VStack(spacing: 24){
+                    AppTextField(
+                        selection: .constant(vm.plan?.title ?? "Plan Title"),
+                        label: "What Knowledge Will You Unlock?"
                     )
                     
-                    VStack(spacing: 24){
-                        AppTextField(
-                            selection: .constant(plan.title ?? "Plan Title"),
-                            label: "What Knowledge Will You Unlock?"
-                        )
-                        
-                        AppDatePicker(
-                            selection: .constant(startDate),
-                            label: "Plan Start Date"
+                    AppDatePicker(
+                        selection: .constant(vm.plan?.startDate ?? .now),
+                        label: "Plan Start Date"
+                    )
+                    
+                    if var startDate = vm.plan?.startDate, let duration = vm.plan?.duration {
+                        let endDate = Calendar.current.date(
+                            byAdding: .day,
+                            value: Int(duration),
+                            to: startDate
                         )
                         
                         AppDatePicker(
@@ -39,26 +39,24 @@ struct GoalsScreen: View {
                             label: "Plan End Date"
                         )
                     }
-                    .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                    .padding()
-                    .background()
-                    
-                    
-                    
-                    VStack(alignment: .leading, spacing: 24){
-                        Text("Learning Time")
-                            .foregroundStyle(.kTitleText)
-                            .font(.body.bold())
-                        
-                        LearningTimeList(
-                            items: vm.learningTimes
-                        )
-                    }
-                    .padding()
-                    .background()
-                    
-                    Spacer()
                 }
+                .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                .padding()
+                .background()
+                
+                VStack(alignment: .leading, spacing: 24){
+                    Text("Learning Time")
+                        .foregroundStyle(.kTitleText)
+                        .font(.body.bold())
+                    
+                    LearningTimeList(
+                        items: vm.learningTimes
+                    )
+                }
+                .padding()
+                .background()
+                
+                Spacer()
             }
             .background(.kBackground)
             .navigationTitle("Goal")
