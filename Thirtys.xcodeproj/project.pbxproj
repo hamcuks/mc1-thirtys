@@ -57,8 +57,6 @@
 		E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */; };
 		E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */; };
 		E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3282BF8504100237B58 /* GoalsScreen.swift */; };
-		E72EB32B2BF8505B00237B58 /* TimeConfigurationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB32A2BF8505B00237B58 /* TimeConfigurationScreen.swift */; };
-		E7C2C4B72BFEFCD900CAF782 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4B62BFEFCD900CAF782 /* Plan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,7 +109,6 @@
 		E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedScreen.swift; sourceTree = "<group>"; };
 		E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneOnboardingScreen.swift; sourceTree = "<group>"; };
 		E72EB3282BF8504100237B58 /* GoalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScreen.swift; sourceTree = "<group>"; };
-		E72EB32A2BF8505B00237B58 /* TimeConfigurationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConfigurationScreen.swift; sourceTree = "<group>"; };
 		E7C2C4B62BFEFCD900CAF782 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -393,7 +390,6 @@
 				03545AA22BFDDA6600F731D8 /* CountdownTimerViewModel.swift in Sources */,
 				03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */,
 				E70A323A2BFCF12D0014563C /* Event.swift in Sources */,
-				E7C2C4B72BFEFCD900CAF782 /* Plan.swift in Sources */,
 				E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */,
 				03E71A402BFCC90300207B4F /* (null) in Sources */,
 				E70A32382BFC22780014563C /* OnboardingViewModel.swift in Sources */,
