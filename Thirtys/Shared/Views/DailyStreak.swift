@@ -38,6 +38,7 @@ struct DailyStreak: View {
             }
         }
         .frame(maxWidth: .infinity)
+        .padding(.top)
     }
 }
 
