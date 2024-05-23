@@ -20,7 +20,6 @@
 		03A122332BFDF05E000BD12A /* LearningHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A122322BFDF05E000BD12A /* LearningHistory.swift */; };
 		03A122352BFE3012000BD12A /* Coba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A122342BFE3012000BD12A /* Coba.swift */; };
 		03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B4D0652BFA299000C6643F /* TextFieldComponent.swift */; };
-		03D7C68D2BFB51D200980C8F /* LearningHistoryEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */; };
 		03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */; };
 		03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E952BFA25E600C3A248 /* ComponentDate.swift */; };
 		03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E992BFA27D300C3A248 /* ViewExtension.swift */; };
@@ -77,7 +76,6 @@
 		03A122322BFDF05E000BD12A /* LearningHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHistory.swift; sourceTree = "<group>"; };
 		03A122342BFE3012000BD12A /* Coba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coba.swift; sourceTree = "<group>"; };
 		03B4D0652BFA299000C6643F /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
-		03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHistoryEmpty.swift; sourceTree = "<group>"; };
 		03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRangeDatePicker.swift; sourceTree = "<group>"; };
 		03D85E952BFA25E600C3A248 /* ComponentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDate.swift; sourceTree = "<group>"; };
 		03D85E992BFA27D300C3A248 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 				03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */,
 				03D85E952BFA25E600C3A248 /* ComponentDate.swift */,
 				03B4D0652BFA299000C6643F /* TextFieldComponent.swift */,
-				03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */,
 				E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */,
 				E70A32332BFB8C590014563C /* AppDurationPicker.swift */,
 				E70A32492BFCFDF90014563C /* TimePickerComponent.swift */,
@@ -403,7 +400,6 @@
 				E70A32382BFC22780014563C /* OnboardingViewModel.swift in Sources */,
 				E70A32402BFCF1A80014563C /* CollectionExtension.swift in Sources */,
 				03F838292BFD9288004DDDFA /* TimerUI.swift in Sources */,
-				03D7C68D2BFB51D200980C8F /* LearningHistoryEmpty.swift in Sources */,
 				E72EB3212BF84FBF00237B58 /* TodayScreen.swift in Sources */,
 				03A1222F2BFDEFEB000BD12A /* DailyStreak.swift in Sources */,
 				E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */,
