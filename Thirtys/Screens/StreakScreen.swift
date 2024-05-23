@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct StreakScreen: View {
-    @State private var dates: Set<DateComponents> = []
     
-    var uiColor = UIColor(red: 0.52, green: 0.86, blue: 0.78, alpha: 1.00)
-    var titleColor = UIColor(red: 0.02, green: 0.25, blue: 0.20, alpha: 1.00)
+    var badgeImage : [BadgeData] = BadgeData.items
+    
+    @State var isViewClicked: Bool
+    
     
     var body: some View {
         NavigationStack{
@@ -56,21 +57,23 @@ struct StreakScreen: View {
                                 Text("Badges")
                                     .font(.system(.body, weight: .bold))
                                 Spacer()
-                                Text("View All")
-                                    .font(.system(.footnote, weight: .semibold))
-                                    .foregroundColor(Color.kLabel)
+                                Button{
+                                    isViewClicked.toggle()
+                                } label: {
+                                    Text("View All")
+                                        .font(.system(.footnote, weight: .semibold))
+                                        .foregroundColor(Color.kLabel)
+                                }
                             }
                             HStack {
-                                ForEach(0..<5){ _ in
+                                ForEach(badgeImage.prefix(5), id: \.id){ image in
                                     ZStack {
-                                        Image("badge logo")
+                                        Image("\(image.image)")
                                             .resizable()
                                             .frame(width: 64, height: 75)
-                                        Text("Badge Logo")
-                                            .font(.caption)
-                                            .foregroundColor(Color.kLabel)
+                                            .opacity(image.isAchieved ? 1 : 0.3)
+                                        
                                     }
-                                    .background(Color.kAccent)
                                     .cornerRadius(10)
                                 }
                             }
@@ -85,19 +88,22 @@ struct StreakScreen: View {
                                 .padding(.horizontal, 5)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color(uiColor: uiColor), lineWidth: 2)
+                                        .stroke(Color.kAccent, lineWidth: 2)
                                         .frame(maxWidth: .infinity)
                                 )
-                                .accentColor(Color(uiColor: uiColor))
                             
                         }
                         .padding(16)
                         .background(.white)
                     }
                     .padding(.bottom, 32)
-                }   .navigationTitle("Strike")
-                    .font(.title)
-                    .navigationBarTitleDisplayMode(.inline)
+                    .sheet(isPresented: $isViewClicked){
+                        BadgesScreen()
+                    }
+                }
+                .navigationTitle("Streak")
+                .font(.title)
+                .navigationBarTitleDisplayMode(.inline)
             }
         }
     }
@@ -105,7 +111,7 @@ struct StreakScreen: View {
 
 struct StreakScreen_Previews: PreviewProvider {
     static var previews: some View {
-        StreakScreen()
+        StreakScreen(isViewClicked: true)
     }
 }
 

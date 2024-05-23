@@ -10,6 +10,7 @@
 		0349704F2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */; };
 		034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292D2BFB74200030D448 /* LearningTimeScreen.swift */; };
 		034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292F2BFB74290030D448 /* StepThreeOnboardingScreen.swift */; };
+		034E29322BFB74290030D448 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		03545A9E2BFDDA4E00F731D8 /* CountdownTimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03545A9D2BFDDA4E00F731D8 /* CountdownTimerScreen.swift */; };
 		03545AA02BFDDA5D00F731D8 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03545A9F2BFDDA5D00F731D8 /* Timer.swift */; };
 		03545AA22BFDDA6600F731D8 /* CountdownTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03545AA12BFDDA6600F731D8 /* CountdownTimerViewModel.swift */; };
@@ -19,9 +20,6 @@
 		03A1222F2BFDEFEB000BD12A /* DailyStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */; };
 		03A122312BFDF039000BD12A /* FinishComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A122302BFDF039000BD12A /* FinishComponent.swift */; };
 		03A122332BFDF05E000BD12A /* LearningHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A122322BFDF05E000BD12A /* LearningHistory.swift */; };
-		03A122352BFE3012000BD12A /* Coba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A122342BFE3012000BD12A /* Coba.swift */; };
-		034E29322BFB74290030D448 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E29302BFB74290030D448 /* StepTwoOnboardingScreen.swift */; };
-		034E29342BFB74650030D448 /* ListItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E29332BFB74650030D448 /* ListItemComponent.swift */; };
 		03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B4D0652BFA299000C6643F /* TextFieldComponent.swift */; };
 		03D7C68D2BFB51D200980C8F /* LearningHistoryEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */; };
 		03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */; };
@@ -31,15 +29,13 @@
 		03E71A402BFCC90300207B4F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		03F838292BFD9288004DDDFA /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838272BFD9288004DDDFA /* TimerUI.swift */; };
 		03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838282BFD9288004DDDFA /* BadgesScreen.swift */; };
-		82265C172BFB2322000F5F92 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82265C162BFB2322000F5F92 /* TimerUI.swift */; };
+		82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8C8362BFDCE8300214670 /* StreakScreen.swift */; };
 		DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC232BFC922300529B16 /* BadgeComponent.swift */; };
 		DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */; };
 		E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */; };
+		E704AAA92BFB741C00578B69 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */; };
-		03F207A32BFB760A00FF07A3 /* StaticFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */; };
-		82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82265C162BFB2322000F5F92 /* TimerUI.swift */; };
-		82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8C8362BFDCE8300214670 /* StreakScreen.swift */; };
-		E704AAA92BFB741C00578B69 /* StepThreeOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA62BFB741C00578B69 /* StepThreeOnboardingScreen.swift */; };
 		E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */; };
 		E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32332BFB8C590014563C /* AppDurationPicker.swift */; };
 		E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32352BFB8C8C0014563C /* DurationTypeEnum.swift */; };
@@ -79,7 +75,6 @@
 		03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStreak.swift; sourceTree = "<group>"; };
 		03A122302BFDF039000BD12A /* FinishComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishComponent.swift; sourceTree = "<group>"; };
 		03A122322BFDF05E000BD12A /* LearningHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHistory.swift; sourceTree = "<group>"; };
-		03A122342BFE3012000BD12A /* Coba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coba.swift; sourceTree = "<group>"; };
 		03B4D0652BFA299000C6643F /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
 		03D7C68C2BFB51D200980C8F /* LearningHistoryEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHistoryEmpty.swift; sourceTree = "<group>"; };
 		03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRangeDatePicker.swift; sourceTree = "<group>"; };
@@ -88,10 +83,10 @@
 		03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
 		03F838272BFD9288004DDDFA /* TimerUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerUI.swift; sourceTree = "<group>"; };
 		03F838282BFD9288004DDDFA /* BadgesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
-		DAA2CC232BFC922300529B16 /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
-		DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeData.swift; sourceTree = "<group>"; };
 		82265C162BFB2322000F5F92 /* TimerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUI.swift; sourceTree = "<group>"; };
 		82B8C8362BFDCE8300214670 /* StreakScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
+		DAA2CC232BFC922300529B16 /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
+		DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeData.swift; sourceTree = "<group>"; };
 		E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwoOnboardingScreen.swift; sourceTree = "<group>"; };
 		E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemComponent.swift; sourceTree = "<group>"; };
 		E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatePicker.swift; sourceTree = "<group>"; };
@@ -119,7 +114,6 @@
 		E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedScreen.swift; sourceTree = "<group>"; };
 		E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneOnboardingScreen.swift; sourceTree = "<group>"; };
 		E72EB3282BF8504100237B58 /* GoalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScreen.swift; sourceTree = "<group>"; };
-		E7C2C4B62BFEFCD900CAF782 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,11 +193,8 @@
 				E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */,
 				E7C2FBF72BFB2ADC00AFE597 /* Onboarding */,
 				E72EB3282BF8504100237B58 /* GoalsScreen.swift */,
-				03A122342BFE3012000BD12A /* Coba.swift */,
-				E72EB32A2BF8505B00237B58 /* TimeConfigurationScreen.swift */,
 				82B8C8362BFDCE8300214670 /* StreakScreen.swift */,
 				82265C162BFB2322000F5F92 /* TimerUI.swift */,
-				03D7C68A2BFB33F900980C8F /* FinishLearningScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -228,7 +219,6 @@
 				E70A32392BFCF12D0014563C /* Event.swift */,
 				E70A323B2BFCF1630014563C /* Weekday.swift */,
 				DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */,
-				E7C2C4B62BFEFCD900CAF782 /* Plan.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,13 +368,11 @@
 			files = (
 				E72EB2FF2BF84EC500237B58 /* Persistence.swift in Sources */,
 				E70A323C2BFCF1630014563C /* Weekday.swift in Sources */,
-				03A122352BFE3012000BD12A /* Coba.swift in Sources */,
 				03545AA02BFDDA5D00F731D8 /* Timer.swift in Sources */,
 				0349704F2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift in Sources */,
 				034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */,
-				E704AAA92BFB741C00578B69 /* StepThreeOnboardingScreen.swift in Sources */,
-				034E29322BFB74290030D448 /* StepTwoOnboardingScreen.swift in Sources */,
-				E72EB31F2BF84FB300237B58 /* SampleModel.swift in Sources */,
+				E704AAA92BFB741C00578B69 /* (null) in Sources */,
+				034E29322BFB74290030D448 /* (null) in Sources */,
 				E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */,
 				DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */,
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
@@ -395,7 +383,7 @@
 				03A122312BFDF039000BD12A /* FinishComponent.swift in Sources */,
 				03545AA42BFDDA7600F731D8 /* CircularProgressBar.swift in Sources */,
 				E70A32512BFD90520014563C /* StaticFieldComponent.swift in Sources */,
-				82265C172BFB2322000F5F92 /* (null) in Sources */,
+				82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */,
 				03A122332BFDF05E000BD12A /* LearningHistory.swift in Sources */,
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
 				E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */,
@@ -407,8 +395,6 @@
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
 				03545AA62BFDDA7F00F731D8 /* TimeFormattingHelper.swift in Sources */,
 				03545AA22BFDDA6600F731D8 /* CountdownTimerViewModel.swift in Sources */,
-				E72EB3182BF84F8B00237B58 /* SampleViews.swift in Sources */,
-				E72EB32B2BF8505B00237B58 /* TimeConfigurationScreen.swift in Sources */,
 				82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */,
 				03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */,
 				E70A323A2BFCF12D0014563C /* Event.swift in Sources */,
