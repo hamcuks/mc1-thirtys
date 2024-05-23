@@ -16,6 +16,7 @@ struct ThirtysApp: App {
             GetStartedScreen()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(OnboardingViewModel())
+                .environmentObject(GoalViewModel())
         }
         
     }

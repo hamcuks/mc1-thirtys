@@ -99,13 +99,7 @@ class OnboardingViewModel: ObservableObject {
         print(self.learningTimes)
     }
     
-    func storeData() {
-        
-        let plan = PlanEntity(context: database.container.viewContext)
-        plan.title = self.planTitle
-        plan.startDate = self.planStartDate
-        plan.duration = Int16(self.planDuration)
-        
+    private func storeWorkSchedulesData() {
         self.weekDays.forEach { day in
             let data = WorkScheduleEntity(context: database.container.viewContext)
             data.day = day.label.rawValue
@@ -123,18 +117,37 @@ class OnboardingViewModel: ObservableObject {
         wakeUpTime.startTime = self.wakeUpTime.startTime
         wakeUpTime.endTime = self.wakeUpTime.endTime
         
-        self.learningTimes.forEach { time in
-            let data = LearningTimeEntity(context: database.container.viewContext)
-            data.day = time.label.rawValue
-            time.events.forEach { event in
-                data.events = LearningEventEntity(context: database.container.viewContext)
-                data.events?.startTime = event.startTime
-                data.events?.endTime = event.endTime
-                data.events?.duration = Int16(event.duration ?? 0)
+        do {
+            try database.container.viewContext.save()
+        } catch {
+            print("Error: \(error.localizedDescription)")
+        }
+    }
+    
+    private func storePlanData() {
+        
+        let plan = PlanEntity(context: database.container.viewContext)
+        plan.title = self.planTitle
+        plan.startDate = self.planStartDate
+        plan.duration = Int16(self.planDuration)
+        
+        var learningTimeEntities: [LearningTimeEntity] = []
+        
+        learningTimeEntities = self.learningTimes.flatMap { time in
+            
+            return time.events.map { event in
+                let data = LearningTimeEntity(context: database.container.viewContext)
+                data.day = time.label.rawValue
+                data.startTime = event.startTime
+                data.endTime = event.endTime
+                data.duration = Int16(event.duration ?? 0)
+                
+                return data
             }
+            
         }
         
-//        let wakeUpTime = 
+        plan.learningTimes = NSSet(array: learningTimeEntities)
         
         do {
             try database.container.viewContext.save()
@@ -142,6 +155,11 @@ class OnboardingViewModel: ObservableObject {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func storeData() {
+        self.storeWorkSchedulesData()
+        self.storePlanData()
     }
 }
 

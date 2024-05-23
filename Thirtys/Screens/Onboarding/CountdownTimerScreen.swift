@@ -25,7 +25,7 @@ struct CountdownTimerScreen: View {
                         VStack{
                             if countdownTimerViewModel.remainingTime > 0{
                                 VStack(spacing:8){
-                                    Text("\(goalViewModel.goalsTitle)")
+                                    Text("\(goalViewModel.plan?.title ?? "Title")")
                                         .font(.system(.title2, weight: .bold))
                                     Text("Your learning time is available at 06.00 - 07.30")
                                         .font(.system(.footnote, weight: .regular))
