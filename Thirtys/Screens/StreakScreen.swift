@@ -63,14 +63,17 @@ struct StreakScreen: View {
                         }
                         HStack {
                             ForEach(badgeImage.prefix(5), id: \.id){ image in
-                                ZStack {
-                                    Image("\(image.image)")
-                                        .resizable()
-                                        .frame(width: 64, height: 75)
-                                        .opacity(image.isAchieved ? 1 : 0.3)
-                                    
-                                }
-                                .cornerRadius(10)
+                                
+                                Spacer()
+                                
+                                Image("\(image.image)")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 56)
+                                    .opacity(image.isAchieved ? 1 : 0.5)
+                                    .grayscale(image.isAchieved ? 0 : 1)
+                                
+                                Spacer()
                             }
                         }
                     }
@@ -96,11 +99,13 @@ struct StreakScreen: View {
                 .sheet(isPresented: $isViewClicked){
                     BadgesScreen()
                 }
+                .background(.kBackground)
+                .ignoresSafeArea()
               
             }
             .navigationTitle("Streak")
+            .toolbarBackground(.white, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
-            .background(.kBackground)
         }
     }
 }
