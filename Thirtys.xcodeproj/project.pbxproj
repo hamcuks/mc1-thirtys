@@ -31,6 +31,7 @@
 		DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC232BFC922300529B16 /* BadgeComponent.swift */; };
 		DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */; };
 		E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */; };
+		E704AAA92BFB741C00578B69 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */; };
 		E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */; };
 		E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32332BFB8C590014563C /* AppDurationPicker.swift */; };
