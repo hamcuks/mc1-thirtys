@@ -8,25 +8,21 @@
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="LearningEventEntity" representedClassName="LearningEventEntity" syncable="YES" codeGenerationType="class">
+    <entity name="LearningTimeEntity" representedClassName="LearningTimeEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="learningTime" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LearningTimeEntity" inverseName="events" inverseEntity="LearningTimeEntity"/>
-    </entity>
-    <entity name="LearningTimeEntity" representedClassName="LearningTimeEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LearningEventEntity" inverseName="learningTime" inverseEntity="LearningEventEntity"/>
+        <relationship name="plan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlanEntity" inverseName="learningTimes" inverseEntity="PlanEntity"/>
     </entity>
     <entity name="PlanEntity" representedClassName="PlanEntity" syncable="YES" codeGenerationType="class">
         <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="learningTimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LearningTimeEntity" inverseName="plan" inverseEntity="LearningTimeEntity"/>
     </entity>
-    <entity name="WeekdayEnitity" representedClassName="WeekdayEnitity" syncable="YES" codeGenerationType="class"/>
     <entity name="WorkScheduleEntity" representedClassName="WorkScheduleEntity" syncable="YES" codeGenerationType="class">
         <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

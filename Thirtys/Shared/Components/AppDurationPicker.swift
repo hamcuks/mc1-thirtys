@@ -15,6 +15,7 @@ struct AppDurationPicker: View {
     var placeholder: String = "Select Duration"
     
     @State private var selected: DurationType = .day
+    @Environment(\.isEnabled) private var isEnabled
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8){
@@ -31,15 +32,17 @@ struct AppDurationPicker: View {
                 
                 Spacer()
                 
-                Picker("", selection: $selected) {
-                    ForEach(DurationType.allCases, id: \.hashValue) {
-                        Text($0.rawValue).tag($0)
+                if isEnabled {
+                    Picker("", selection: $selected) {
+                        ForEach(DurationType.allCases, id: \.hashValue) {
+                            Text($0.rawValue).tag($0)
+                        }
                     }
+                    .frame(maxHeight: 0)
+                    .pickerStyle(.menu)
+                    .tint(.kTitleText)
+                    .padding(.zero)
                 }
-                .frame(maxHeight: 0)
-                .pickerStyle(.menu)
-                .tint(.kTitleText)
-                .padding(.zero)
                 
             }
             .foregroundStyle(.kTitleText)
