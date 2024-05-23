@@ -54,10 +54,12 @@
 		E72EB2FF2BF84EC500237B58 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2FE2BF84EC500237B58 /* Persistence.swift */; };
 		E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3002BF84EC500237B58 /* Thirtys.xcdatamodeld */; };
 		E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB30F2BF84F1700237B58 /* AppButtonComponent.swift */; };
-		E72EB3212BF84FBF00237B58 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3202BF84FBF00237B58 /* HomeScreen.swift */; };
+		E72EB3212BF84FBF00237B58 /* TodayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3202BF84FBF00237B58 /* TodayScreen.swift */; };
 		E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */; };
 		E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */; };
 		E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3282BF8504100237B58 /* GoalsScreen.swift */; };
+		E7C2C4B92BFF0A0100CAF782 /* TabViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4B82BFF0A0100CAF782 /* TabViewComponent.swift */; };
+		E7C2C4BB2BFF0A3E00CAF782 /* StreakScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4BA2BFF0A3E00CAF782 /* StreakScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,7 +109,7 @@
 		E72EB2FE2BF84EC500237B58 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E72EB3012BF84EC500237B58 /* Thirtys.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Thirtys.xcdatamodel; sourceTree = "<group>"; };
 		E72EB30F2BF84F1700237B58 /* AppButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonComponent.swift; sourceTree = "<group>"; };
-		E72EB3202BF84FBF00237B58 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		E72EB3202BF84FBF00237B58 /* TodayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayScreen.swift; sourceTree = "<group>"; };
 		E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedScreen.swift; sourceTree = "<group>"; };
 		E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneOnboardingScreen.swift; sourceTree = "<group>"; };
 		E72EB3282BF8504100237B58 /* GoalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScreen.swift; sourceTree = "<group>"; };
@@ -187,11 +189,12 @@
 			children = (
 				03F838282BFD9288004DDDFA /* BadgesScreen.swift */,
 				03F838272BFD9288004DDDFA /* TimerUI.swift */,
-				E72EB3202BF84FBF00237B58 /* HomeScreen.swift */,
+				E72EB3202BF84FBF00237B58 /* TodayScreen.swift */,
 				E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */,
 				E7C2FBF72BFB2ADC00AFE597 /* Onboarding */,
 				E72EB3282BF8504100237B58 /* GoalsScreen.swift */,
 				03A122342BFE3012000BD12A /* Coba.swift */,
+				E7C2C4BA2BFF0A3E00CAF782 /* StreakScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -400,14 +403,16 @@
 				E70A32402BFCF1A80014563C /* CollectionExtension.swift in Sources */,
 				03F838292BFD9288004DDDFA /* TimerUI.swift in Sources */,
 				03D7C68D2BFB51D200980C8F /* LearningHistoryEmpty.swift in Sources */,
-				E72EB3212BF84FBF00237B58 /* HomeScreen.swift in Sources */,
+				E72EB3212BF84FBF00237B58 /* TodayScreen.swift in Sources */,
 				03A1222F2BFDEFEB000BD12A /* DailyStreak.swift in Sources */,
 				E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */,
 				E70A324F2BFD90410014563C /* GoalViewModel.swift in Sources */,
+				E7C2C4B92BFF0A0100CAF782 /* TabViewComponent.swift in Sources */,
 				03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */,
 				E70A323E2BFCF17A0014563C /* WeekdayTypeEnum.swift in Sources */,
 				E70A32422BFCF1B40014563C /* DateExtension.swift in Sources */,
 				034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */,
+				E7C2C4BB2BFF0A3E00CAF782 /* StreakScreen.swift in Sources */,
 				E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */,
 				E70A324A2BFCFDF90014563C /* TimePickerComponent.swift in Sources */,
 				E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */,
