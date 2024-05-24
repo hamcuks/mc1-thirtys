@@ -25,7 +25,6 @@ class GoalViewModel: ObservableObject {
         // Convert learningTimes object to Array
         let items = userPrefService.getLearningTimes()
         
-        print("learning time: \(items)")
         
         // Get the learning time weekday
         let weekday: [Int16] = Set(items.map { $0.day }).sorted()

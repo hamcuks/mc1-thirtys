@@ -43,7 +43,7 @@ struct LearningTimeScreen: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: TodayScreen()
+                    destination: TabViewComponent()
                 ) {
                     Text("Save")
                 }
