@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0349704F2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */; };
+		034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034970502BFF54BA00CB2E28 /* NotificationHandler.swift */; };
 		034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292D2BFB74200030D448 /* LearningTimeScreen.swift */; };
 		034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292F2BFB74290030D448 /* StepThreeOnboardingScreen.swift */; };
 		03545AA02BFDDA5D00F731D8 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03545A9F2BFDDA5D00F731D8 /* Timer.swift */; };
@@ -31,7 +32,6 @@
 		DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC232BFC922300529B16 /* BadgeComponent.swift */; };
 		DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */; };
 		E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */; };
-		E704AAA92BFB741C00578B69 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAA2BFB742E00578B69 /* ListItemComponent.swift */; };
 		E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAAC2BFB81B000578B69 /* AppDatePicker.swift */; };
 		E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32332BFB8C590014563C /* AppDurationPicker.swift */; };
@@ -66,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationStopLearningComponent.swift; sourceTree = "<group>"; };
+		034970502BFF54BA00CB2E28 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		034E292D2BFB74200030D448 /* LearningTimeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningTimeScreen.swift; sourceTree = "<group>"; };
 		034E292F2BFB74290030D448 /* StepThreeOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThreeOnboardingScreen.swift; sourceTree = "<group>"; };
 		03545A9F2BFDDA5D00F731D8 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
@@ -235,6 +236,7 @@
 				E70A32372BFC22780014563C /* OnboardingViewModel.swift */,
 				03A1222A2BFDE2C4000BD12A /* AchievementViewModel.swift */,
 				E7C2C4BE2BFF1C6700CAF782 /* TodayViewModel.swift */,
+				034970502BFF54BA00CB2E28 /* NotificationHandler.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -396,6 +398,7 @@
 				03E71A3E2BFC9F1700207B4F /* (null) in Sources */,
 				03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */,
 				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
+				034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
 				03545AA62BFDDA7F00F731D8 /* TimeFormattingHelper.swift in Sources */,
 				03545AA22BFDDA6600F731D8 /* CountdownTimerViewModel.swift in Sources */,
