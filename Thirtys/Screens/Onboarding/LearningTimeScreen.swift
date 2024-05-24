@@ -13,6 +13,8 @@ struct LearningTimeScreen: View {
     
     @AppStorage("isFirstInstall") private var isFirstInstall = true
     
+    var notification = NotificationHandler()
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -51,6 +53,11 @@ struct LearningTimeScreen: View {
             .onDisappear {
                 vm.storeData()
                 isFirstInstall = false
+                for learningTime in vm.learningTimes{
+                    for eventTime in learningTime.events {
+                        notification.scheduleLearningNotifications(suggestionTimes: [eventTime])
+                    }
+                }
             }
             .scrollIndicators(.hidden)
             .toolbar(content: {
