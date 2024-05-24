@@ -62,4 +62,11 @@ class TodayViewModel: ObservableObject {
             }
         }
     }
+    
+    // Check if the current time is within the learning time range
+    var isWithinLearningTimeRange: Bool {
+        guard let currentLearningTime = currentLearningTime else { return false }
+        return currentLearningTime.startTime <= .now && currentLearningTime.endTime >= .now
+    }
+    
 }

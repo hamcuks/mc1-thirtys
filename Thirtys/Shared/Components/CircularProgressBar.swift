@@ -24,6 +24,11 @@ struct CircularProgressBar: View {
                 .rotationEffect(Angle(degrees: 270))
                 .foregroundStyle(Color.kAccent)
                 .frame(width: 261, height: 261)
+            
+            Circle()
+                .fill(Color.white)
+                .frame(width: 240, height: 240)
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
         }
     }
 }

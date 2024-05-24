@@ -27,7 +27,6 @@
 		03E71A402BFCC90300207B4F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		03F838292BFD9288004DDDFA /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838272BFD9288004DDDFA /* TimerUI.swift */; };
 		03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838282BFD9288004DDDFA /* BadgesScreen.swift */; };
-		82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82265C162BFB2322000F5F92 /* TimerUI.swift */; };
 		82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8C8362BFDCE8300214670 /* StreakScreen.swift */; };
 		DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC232BFC922300529B16 /* BadgeComponent.swift */; };
 		DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */; };
@@ -61,7 +60,6 @@
 		E7C2C4BB2BFF0A3E00CAF782 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E7C2C4BD2BFF116800CAF782 /* TabViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4BC2BFF116800CAF782 /* TabViewComponent.swift */; };
 		E7C2C4BF2BFF1C6700CAF782 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4BE2BFF1C6700CAF782 /* TodayViewModel.swift */; };
-		E7EF50B62BFF301C00F47901 /* StreakScreen.swift in Resources */ = {isa = PBXBuildFile; fileRef = E7EF50B42BFF301C00F47901 /* StreakScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,7 +82,6 @@
 		03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
 		03F838272BFD9288004DDDFA /* TimerUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerUI.swift; sourceTree = "<group>"; };
 		03F838282BFD9288004DDDFA /* BadgesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
-		82265C162BFB2322000F5F92 /* TimerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUI.swift; sourceTree = "<group>"; };
 		82B8C8362BFDCE8300214670 /* StreakScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
 		DAA2CC232BFC922300529B16 /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
 		DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeData.swift; sourceTree = "<group>"; };
@@ -117,7 +114,6 @@
 		E72EB3282BF8504100237B58 /* GoalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScreen.swift; sourceTree = "<group>"; };
 		E7C2C4BC2BFF116800CAF782 /* TabViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewComponent.swift; sourceTree = "<group>"; };
 		E7C2C4BE2BFF1C6700CAF782 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
-		E7EF50B42BFF301C00F47901 /* StreakScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,10 +166,10 @@
 				D9F5FAF52BFD99C50043F428 /* Helpers */,
 				E72EB3092BF84ED800237B58 /* Shared */,
 				E72EB3082BF84ED000237B58 /* Screens */,
-				E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */,
 				E72EB2F72BF84EC300237B58 /* ContentView.swift */,
 				E72EB2F92BF84EC500237B58 /* Assets.xcassets */,
 				E72EB2FE2BF84EC500237B58 /* Persistence.swift */,
+				E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */,
 				E72EB3002BF84EC500237B58 /* Thirtys.xcdatamodeld */,
 				E72EB2FB2BF84EC500237B58 /* Preview Content */,
 			);
@@ -191,15 +187,13 @@
 		E72EB3082BF84ED000237B58 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E7EF50B42BFF301C00F47901 /* StreakScreen.swift */,
+				82B8C8362BFDCE8300214670 /* StreakScreen.swift */,
 				03F838282BFD9288004DDDFA /* BadgesScreen.swift */,
 				03F838272BFD9288004DDDFA /* TimerUI.swift */,
 				E72EB3202BF84FBF00237B58 /* TodayScreen.swift */,
 				E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */,
 				E7C2FBF72BFB2ADC00AFE597 /* Onboarding */,
 				E72EB3282BF8504100237B58 /* GoalsScreen.swift */,
-				82B8C8362BFDCE8300214670 /* StreakScreen.swift */,
-				82265C162BFB2322000F5F92 /* TimerUI.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -362,7 +356,6 @@
 			files = (
 				E72EB2FD2BF84EC500237B58 /* Preview Assets.xcassets in Resources */,
 				E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */,
-				E7EF50B62BFF301C00F47901 /* StreakScreen.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +382,6 @@
 				03545AA42BFDDA7600F731D8 /* CircularProgressBar.swift in Sources */,
 				E70A32512BFD90520014563C /* StaticFieldComponent.swift in Sources */,
 				E7C2C4BF2BFF1C6700CAF782 /* TodayViewModel.swift in Sources */,
-				82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */,
 				03A122332BFDF05E000BD12A /* LearningHistory.swift in Sources */,
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
 				E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */,

@@ -105,12 +105,14 @@ struct TodayScreen: View {
                         .bold()
                         .foregroundStyle(Color.kLabel)
                         .contentTransition(.numericText())
+                    
                     Text("Remaining")
                         .font(.system(size: 16))
                         .bold()
                         .foregroundStyle(Color.kPlaceholder)
                 }
             }
+            .animation(.easeInOut(duration: 1), value: countdownTimerViewModel.remainingTime)
         }
     }
     
@@ -151,6 +153,7 @@ struct TodayScreen: View {
                     }
                 }
                 .buttonStyle(AppButtonStyle())
+                .disabled(!todayVm.isWithinLearningTimeRange)
             }
         }
     }
@@ -165,6 +168,7 @@ struct TodayScreen: View {
         .foregroundStyle(Color.kStreak)
     }
     
+    // Function to update the daily streak
     private func updateDailyStreak() {
         achievementViewModel.dailyStrike += 1
         if achievementViewModel.getAchievement() {

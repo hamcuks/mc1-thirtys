@@ -16,13 +16,14 @@ class CountdownTimerViewModel: ObservableObject {
     
     private var timer: AnyCancellable?
     private var startTime: Date?
-    
     private let lastCheckedDateKey = "lastCheckedDate"
     
+    // Initialize and check if it's a new day
     init() {
         checkForNewDay()
     }
     
+    // Start the countdown timer
     func startTimer() {
         isActive = true
         hasStarted = true
@@ -35,12 +36,14 @@ class CountdownTimerViewModel: ObservableObject {
         }
     }
     
+    // Pause the countdown timer
     func pauseTimer() {
         isActive = false
         timer?.cancel()
         recordSession()
     }
     
+    // Reset the countdown timer
     func resetTimer() {
         remainingTime = 1800
         isActive = false
@@ -51,12 +54,14 @@ class CountdownTimerViewModel: ObservableObject {
         saveLastCheckedDate()
     }
     
+    // Complete the current session
     func completeSession() {
         isActive = false
         timer?.cancel()
         recordSession()
     }
     
+    // Record the current session
     func recordSession() {
         if let start = startTime {
             let endTime = Date()
@@ -65,16 +70,17 @@ class CountdownTimerViewModel: ObservableObject {
         }
     }
     
+    // Save the current date as the last checked date
     func saveLastCheckedDate() {
-        let defaults = UserDefaults.standard
-        defaults.set(Date(), forKey: lastCheckedDateKey)
+        UserDefaults.standard.set(Date(), forKey: lastCheckedDateKey)
     }
     
+    // Retrieve the last checked date
     func getLastCheckedDate() -> Date? {
-        let defaults = UserDefaults.standard
-        return defaults.object(forKey: lastCheckedDateKey) as? Date
+        UserDefaults.standard.object(forKey: lastCheckedDateKey) as? Date
     }
     
+    // Check if it's a new day and reset the timer if needed
     func checkForNewDay() {
         if let lastChecked = getLastCheckedDate() {
             if !Calendar.current.isDateInToday(lastChecked) {
