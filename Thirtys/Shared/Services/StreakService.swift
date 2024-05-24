@@ -16,18 +16,11 @@ class StreakService: ObservableObject {
         return []
     }
     
-    func getLearningStreaks() -> [StreakEntity] {
-        let request: NSFetchRequest = NSFetchRequest<StreakEntity>(entityName: "StreakEntity")
+    func getLearningStreaks(plan: PlanEntity) -> [StreakEntity] {
+        // TODO: get learning strike by plan id
+        let items = plan.streaks?.allObjects as? Array<StreakEntity> ?? []
         
-        do {
-            let items = try database.fetch(request)
-            
-            return items
-        } catch {
-            print("Error: \(error.localizedDescription)")
-            
-            return []
-        }
+        return items
     }
     
     func updateDailyStreak(plan: PlanEntity, learningHistory: [Event]) {
