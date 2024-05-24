@@ -57,6 +57,8 @@
 		E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */; };
 		E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */; };
 		E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB3282BF8504100237B58 /* GoalsScreen.swift */; };
+		E741256C2C007C5000812EB1 /* PlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741256B2C007C5000812EB1 /* PlanService.swift */; };
+		E741256E2C00804D00812EB1 /* UserPreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741256D2C00804D00812EB1 /* UserPreferenceService.swift */; };
 		E7C2C4B92BFF0A0100CAF782 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E7C2C4BB2BFF0A3E00CAF782 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E7C2C4BD2BFF116800CAF782 /* TabViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4BC2BFF116800CAF782 /* TabViewComponent.swift */; };
@@ -115,6 +117,8 @@
 		E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedScreen.swift; sourceTree = "<group>"; };
 		E72EB3242BF84FF100237B58 /* StepOneOnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepOneOnboardingScreen.swift; sourceTree = "<group>"; };
 		E72EB3282BF8504100237B58 /* GoalsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsScreen.swift; sourceTree = "<group>"; };
+		E741256B2C007C5000812EB1 /* PlanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanService.swift; sourceTree = "<group>"; };
+		E741256D2C00804D00812EB1 /* UserPreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferenceService.swift; sourceTree = "<group>"; };
 		E7C2C4BC2BFF116800CAF782 /* TabViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewComponent.swift; sourceTree = "<group>"; };
 		E7C2C4BE2BFF1C6700CAF782 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		E7EF50B42BFF301C00F47901 /* StreakScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 		E72EB3092BF84ED800237B58 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E741256A2C007C3500812EB1 /* Services */,
 				E72EB3142BF84F6700237B58 /* Enums */,
 				E72EB30E2BF84F0000237B58 /* Components */,
 				E72EB30D2BF84EF400237B58 /* Views */,
@@ -289,6 +294,15 @@
 				E70A323D2BFCF17A0014563C /* WeekdayTypeEnum.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		E741256A2C007C3500812EB1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E741256B2C007C5000812EB1 /* PlanService.swift */,
+				E741256D2C00804D00812EB1 /* UserPreferenceService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E7C2FBF72BFB2ADC00AFE597 /* Onboarding */ = {
@@ -384,6 +398,7 @@
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
 				E70A32552BFE13C90014563C /* LearningTimeListComponent.swift in Sources */,
 				03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */,
+				E741256C2C007C5000812EB1 /* PlanService.swift in Sources */,
 				03A1222B2BFDE2C4000BD12A /* AchievementViewModel.swift in Sources */,
 				03A122312BFDF039000BD12A /* FinishComponent.swift in Sources */,
 				03545AA42BFDDA7600F731D8 /* CircularProgressBar.swift in Sources */,
@@ -407,6 +422,7 @@
 				E70A323A2BFCF12D0014563C /* Event.swift in Sources */,
 				E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */,
 				03E71A402BFCC90300207B4F /* (null) in Sources */,
+				E741256E2C00804D00812EB1 /* UserPreferenceService.swift in Sources */,
 				E70A32382BFC22780014563C /* OnboardingViewModel.swift in Sources */,
 				E70A32402BFCF1A80014563C /* CollectionExtension.swift in Sources */,
 				03F838292BFD9288004DDDFA /* TimerUI.swift in Sources */,
