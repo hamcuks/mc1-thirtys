@@ -108,18 +108,22 @@ class OnboardingViewModel: ObservableObject {
         userPreferenceService.storeBedSchedule(bedTime: self.bedTime, wakeUpTime: self.wakeUpTime)
     }
     
+    private func storeLearningTime() {
+        userPreferenceService.storeLearningTime(items: self.learningTimes)
+    }
+    
     private func storePlanData() {
         planService.store(
             title: self.planTitle,
             startDate: self.planStartDate,
-            duration: self.planDuration,
-            learningTimes: self.learningTimes
+            duration: self.planDuration
         )
     }
     
     func storeData() {
         self.storeWorkSchedulesData()
         self.storeBedSchedulesData()
+        self.storeLearningTime()
         self.storePlanData()
     }
 }

@@ -42,15 +42,15 @@ class UserPreferenceService: ObservableObject {
     }
     
     func storeBedSchedule(bedTime: Event, wakeUpTime: Event) {
-        let bedTime = BedTimeEntity(context: database)
-        bedTime.label = bedTime.label
-        bedTime.startTime = bedTime.startTime
-        bedTime.endTime = bedTime.endTime
+        let bedTimeEntity = BedTimeEntity(context: database)
+        bedTimeEntity.label = bedTime.label
+        bedTimeEntity.startTime = bedTime.startTime
+        bedTimeEntity.endTime = bedTime.endTime
         
-        let wakeUpTime = BedTimeEntity(context: database)
-        wakeUpTime.label = wakeUpTime.label
-        wakeUpTime.startTime = wakeUpTime.startTime
-        wakeUpTime.endTime = wakeUpTime.endTime
+        let wakeUpTimeEntity = BedTimeEntity(context: database)
+        wakeUpTimeEntity.label = wakeUpTime.label
+        wakeUpTimeEntity.startTime = wakeUpTime.startTime
+        wakeUpTimeEntity.endTime = wakeUpTime.endTime
         
         do {
             try database.save()
@@ -70,4 +70,38 @@ class UserPreferenceService: ObservableObject {
             return []
         }
     }
+    
+    func storeLearningTime(items: [GrouppedWeekdayEvent]) {
+        items.forEach { time in
+            time.events.forEach { event in
+                let data = LearningTimeEntity(context: database)
+                data.day = time.label.rawValue
+                data.startTime = event.startTime
+                data.endTime = event.endTime
+                data.duration = Int16(event.duration ?? 0)
+            }
+        }
+        
+        do {
+            try database.save()
+        } catch {
+            print("Error: \(error.localizedDescription)")
+        }
+    }
+    
+    func getLearningTimes() -> [LearningTimeEntity] {
+        let request: NSFetchRequest = NSFetchRequest<LearningTimeEntity>(entityName: "LearningTimeEntity")
+        
+        do {
+            let items = try database.fetch(request)
+            
+            return items
+        } catch {
+            print("Error: \(error.localizedDescription)")
+            
+            return []
+        }
+    }
 }
+
+
