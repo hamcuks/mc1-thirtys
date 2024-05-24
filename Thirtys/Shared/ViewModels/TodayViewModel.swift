@@ -7,38 +7,49 @@
 
 import Foundation
 import CoreData
+import Combine
+import SwiftUI
 
 class TodayViewModel: ObservableObject {
     var database: PersistenceController = PersistenceController.shared
     
+    private let planService: PlanService = PlanService.shared
+    private let userPrefService: UserPreferenceService = UserPreferenceService.shared
+    private let streakService: StreakService = StreakService.shared
+    
+    // Plan Data
     @Published var plan: PlanEntity? = nil
     @Published var learningTimes: [GrouppedWeekdayEvent] = []
     @Published var currentLearningTime: Event? = nil
     
+    // Countdown Data
+    var countdownInterval: TimeInterval = 3
+    @Published var remainingTime: TimeInterval = 3 // 30 minutes in seconds
+    @Published var isTimerActive: Bool = false
+    @Published var hasStarted: Bool = false
+    private var timer: AnyCancellable?
+    private var startTime: Date?
+    
+    // User Learning Data
+    @Published var learningHistory: [Event] = []
+    @Published var todayLearningHasCompleted: Bool = false
+    
+    @Published var dailyStreak: Int = 0
+    @Published var learningStreaks: [StreakEntity] = []
+    @Published var showBadge: Bool = false
+    @Published var badgeData: BadgeData? = nil
+    
     func getPlanData() {
-        // Create NSFetchRequest from PlanEntity
-        let request = NSFetchRequest<PlanEntity>(entityName: "PlanEntity")
-        
-        do {
-            // Get list of data based on NSFetchRequest
-            let plans = try database.container.viewContext.fetch(request)
-            
-            // Select last plan data
-            if let plan = plans.last {
-                self.plan = plan
-                
-                print(plan)
-            }
-        } catch {
-            print("Error: \(error.localizedDescription)")
+        if let plan = planService.getAll().last {
+            self.plan = plan
         }
     }
     
     func getTodayLearningPlan() {
         let today = Calendar.current.dateComponents([.weekday, .day, .month], from: .now)
         
-        if let plan = self.plan, let weekday = today.weekday {
-            let learningTimes = plan.learningTimes?.allObjects as? Array<LearningTimeEntity> ?? []
+        if let weekday = today.weekday {
+            let learningTimes = userPrefService.getLearningTimes()
             let todayLearningTimes = learningTimes.filter { entity in entity.day == weekday }
             
             todayLearningTimes.enumerated().forEach { index, current in
@@ -60,6 +71,90 @@ class TodayViewModel: ObservableObject {
                     }
                 }
             }
+        }
+    }
+    
+    func startTimer() {
+        isTimerActive = true
+        hasStarted = true
+        startTime = Date() // Record the start time
+        timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect().sink { _ in
+            withAnimation(.linear) {
+                self.remainingTime -= 1
+                if self.remainingTime <= 0 {
+                    self.completeSession()
+                }
+            }
+        }
+    }
+    
+    func pauseTimer() {
+        isTimerActive = false
+        timer?.cancel()
+        recordSession()
+    }
+    
+    func resetTimer() {
+        remainingTime = self.countdownInterval
+        isTimerActive = false
+        hasStarted = false
+        timer?.cancel()
+        startTime = nil
+        learningHistory.removeAll()
+    }
+    
+    func completeSession() {
+        isTimerActive = false
+        timer?.cancel()
+        recordSession()
+        self.todayLearningHasCompleted = true
+        self.updateDailyStreak()
+        self.getAchievement()
+    }
+    
+    func recordSession() {
+        if let start = startTime {
+            let endTime = Date()
+            let session = Event(
+                label: "Learning History",
+                startTime: start,
+                endTime: endTime,
+                duration: Int(self.countdownInterval - remainingTime)
+            )
+            learningHistory.append(session)
+        }
+    }
+    
+    func updateDailyStreak() {
+        if let plan = self.plan {
+            streakService.updateDailyStreak(plan: plan, learningHistory: self.learningHistory)
+            
+            self.getLearningStreaks()
+        }
+    }
+    
+    func getLearningStreaks() {
+        if let plan = self.plan {
+            withAnimation {
+                let items = streakService.getLearningStreaks(plan: plan)
+                
+                self.learningStreaks = items
+                self.dailyStreak = items.count
+            }
+        }
+    }
+    
+    func checkTodayLearningState() {
+        self.todayLearningHasCompleted = self.learningStreaks.contains(where: {
+            Calendar.current.isDate($0.date!, equalTo: .now, toGranularity: .day)
+        })
+    }
+    
+    func getAchievement() {
+        self.badgeData = BadgeData.determineBadge(for: dailyStreak)
+        
+        withAnimation(.easeIn) {
+            self.showBadge = true
         }
     }
 }
