@@ -20,7 +20,7 @@ class OnboardingViewModel: ObservableObject {
     // Step One
     @Published var planTitle: String = ""
     @Published var planStartDate: Date = .now
-    @Published var planDuration: Int = 1
+    @Published var planDuration: Int = 7
     
     // Step Two
     @Published var weekDays: [Weekday] = [
