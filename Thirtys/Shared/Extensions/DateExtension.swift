@@ -16,4 +16,12 @@ extension Date {
             to: self
         )!
     }
+    
+    var minTime: Date {
+        Calendar.current.date(bySettingHour: 00, minute: 00, second: 00, of: self)!
+    }
+    
+    var maxTime: Date {
+        Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: self)!
+    }
 }
