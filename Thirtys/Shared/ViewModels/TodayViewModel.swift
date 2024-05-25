@@ -209,14 +209,14 @@ class TodayViewModel: ObservableObject {
     }
     
     func getAchievement() {
-        if let plan = self.plan, let badge = BadgeData.determineBadge(for: dailyStreak) {
+        if let badge = BadgeData.determineBadge(for: dailyStreak) {
             self.badgeData = badge
             
             withAnimation(.easeIn) {
                 self.showBadge = true
             }
             
-            streakService.collectBadge(plan: plan, badge: badge)
+            streakService.collectBadge(badge: badge)
         }
     }
 }
