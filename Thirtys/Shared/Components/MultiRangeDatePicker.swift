@@ -8,27 +8,19 @@
 import SwiftUI
 
 struct MultiRangeDatePicker: View {
-    
-    @State private var isConfirmationSheetOpen: Bool = true
-    @State private var dates: Set<DateComponents> = []
-    @State private var coba: String = "Choose your range schedule"
-    var uiColor = UIColor(red: 0.52, green: 0.86, blue: 0.78, alpha: 1.00)
-    
-    var titleColor = UIColor(red: 0.02, green: 0.25, blue: 0.20, alpha: 1.00)
-    
+    var dates: Set<DateComponents>
     
     var body: some View {
         VStack(alignment: .leading){
-            MultiDatePicker("Dates", selection: $dates, in: Date()...)
-            
+            MultiDatePicker("Dates", selection: .constant(dates))
                 .datePickerStyle(.graphical)
-                .tint(Color(uiColor: titleColor))
-                .clipped()
+                .tint(.orange)
+                .foregroundStyle(.kAccent)
         }
         
     }
 }
 
 #Preview {
-    MultiRangeDatePicker()
+    MultiRangeDatePicker(dates: [])
 }
