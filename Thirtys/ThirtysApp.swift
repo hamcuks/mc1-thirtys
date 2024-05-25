@@ -14,6 +14,7 @@ struct ThirtysApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.light)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(OnboardingViewModel())
                 .environmentObject(GoalViewModel())

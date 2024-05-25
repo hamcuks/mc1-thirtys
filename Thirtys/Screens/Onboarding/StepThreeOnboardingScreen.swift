@@ -65,7 +65,7 @@ struct StepThreeOnboardingScreen: View {
                     BackButton()
                 }
             })
-            .padding()
+            .padding(.horizontal)
             .navigationTitle("Step 3/3")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()
