@@ -32,24 +32,26 @@ struct AppDurationPicker: View {
                 
                 Spacer()
                 
-                if isEnabled {
-                    Picker("", selection: $selected) {
-                        ForEach(DurationType.allCases, id: \.hashValue) {
-                            Text($0.rawValue).tag($0)
-                        }
-                    }
-                    .frame(maxHeight: 0)
-                    .pickerStyle(.menu)
-                    .tint(.kTitleText)
-                    .padding(.zero)
-                }
+                Text("Day")
+                
+//                if isEnabled {
+//                    Picker("", selection: $selected) {
+//                        ForEach(DurationType.allCases, id: \.hashValue) {
+//                            Text($0.rawValue).tag($0)
+//                        }
+//                    }
+//                    .frame(maxHeight: 0)
+//                    .pickerStyle(.menu)
+//                    .tint(.kTitleText)
+//                    .padding(.zero)
+//                }
                 
             }
             .foregroundStyle(.kTitleText)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(16)
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 8)
                     .stroke(.kAccent, lineWidth: 2)
             )
             
