@@ -23,8 +23,8 @@ class TodayViewModel: ObservableObject {
     @Published var currentLearningTime: Event? = nil
     
     // Countdown Data
-    var countdownInterval: TimeInterval = 1800
-    @Published var remainingTime: TimeInterval = 1800 // 30 minutes in seconds
+    var countdownInterval: TimeInterval = 3
+    @Published var remainingTime: TimeInterval = 3 // 30 minutes in seconds
     @Published var isTimerActive: Bool = false
     @Published var hasStarted: Bool = false
     private var timer: AnyCancellable?
@@ -60,11 +60,7 @@ class TodayViewModel: ObservableObject {
             let learningTimes = userPrefService.getLearningTimes()
             let todayLearningTimes = learningTimes.filter { entity in entity.day == weekday - 1 }
             
-            print("Learning: \(weekday)")
-            print("Today: \(todayLearningTimes)")
-            
             todayLearningTimes.enumerated().forEach { index, current in
-                print("State: \(current.startTime) \(current.endTime)")
                 
                 if current.startTime! <= .now && .now <= current.endTime! || current.startTime! >= .now && .now <= current.endTime! {
                     self.currentLearningTime = Event(
@@ -81,7 +77,8 @@ class TodayViewModel: ObservableObject {
     }
     
     func getWeekday() {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        
         let now = Date()
         
         let weekday = calendar.component(.weekday, from: now)
@@ -89,6 +86,7 @@ class TodayViewModel: ObservableObject {
         
         var weekDates: [Date] = []
         for i in 0..<7 {
+            
             if let date = calendar.date(byAdding: .day, value: i, to: startOfWeek) {
                 weekDates.append(date)
             }
@@ -133,6 +131,7 @@ class TodayViewModel: ObservableObject {
         recordSession()
         self.todayLearningHasCompleted = true
         self.updateDailyStreak()
+        self.getLearningStreaks()
         self.getAchievement()
     }
     
@@ -171,12 +170,14 @@ class TodayViewModel: ObservableObject {
                 self.dailyStreak = items.count
             }
             
+            print("Weekdays: \(self.weekdays)")
+            
             if !self.weekdays.isEmpty {
                 self.weeklyStreaks = streakService.getLearningStreaks(
-                    planId: plan.objectID, from: self.weekdays.first!, to: self.weekdays.last!
+                    planId: plan.objectID,
+                    from: self.weekdays.first!,
+                    to: self.weekdays.last!
                 ).map { $0.date! }
-                
-                print("Streak: \(weeklyStreaks)")
             }
         }
     }
@@ -221,5 +222,13 @@ class TodayViewModel: ObservableObject {
             
             streakService.collectBadge(badge: badge)
         }
+    }
+    
+    func checkDailyStreakChecked(by date: Date) -> Bool {
+        let result = self.weeklyStreaks.contains(where: {
+            return Calendar.current.isDate($0, equalTo: date, toGranularity: .day)
+        })
+        
+        return result
     }
 }
