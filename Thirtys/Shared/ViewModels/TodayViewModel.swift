@@ -23,8 +23,8 @@ class TodayViewModel: ObservableObject {
     @Published var currentLearningTime: Event? = nil
     
     // Countdown Data
-    var countdownInterval: TimeInterval = 3
-    @Published var remainingTime: TimeInterval = 3 // 30 minutes in seconds
+    var countdownInterval: TimeInterval = 1800
+    @Published var remainingTime: TimeInterval = 1800 // 30 minutes in seconds
     @Published var isTimerActive: Bool = false
     @Published var hasStarted: Bool = false
     private var timer: AnyCancellable?
@@ -77,7 +77,7 @@ class TodayViewModel: ObservableObject {
     }
     
     func getWeekday() {
-        var calendar = Calendar.current
+        let calendar = Calendar.current
         
         let now = Date()
         
@@ -142,7 +142,7 @@ class TodayViewModel: ObservableObject {
                 label: "Learning History",
                 startTime: start,
                 endTime: endTime,
-                duration: Int(self.countdownInterval - remainingTime)
+                duration: Calendar.current.dateComponents([.second], from: start, to: endTime).second ?? 0
             )
             learningHistory.append(session)
         }
