@@ -15,6 +15,7 @@ struct AppDurationPicker: View {
     var placeholder: String = "Select Duration"
     
     @State private var selected: DurationType = .day
+    @State private var errorMessage: String? = nil
     @Environment(\.isEnabled) private var isEnabled
     
     var body: some View {
@@ -29,6 +30,15 @@ struct AppDurationPicker: View {
                 TextField(placeholder, value: $selection, format: .number)
                     .fontWeight(.medium)
                     .padding(.zero)
+                    .onChange(of: selection) { oldValue, newValue in
+                        if newValue < 7 {
+                            errorMessage = "Duration must be greater or equal than 7"
+                            
+                            return
+                        }
+                        
+                        errorMessage = nil
+                    }
                 
                 Spacer()
                 
@@ -54,6 +64,12 @@ struct AppDurationPicker: View {
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(.kAccent, lineWidth: 2)
             )
+            
+            if let message = errorMessage {
+                Text(message)
+                    .font(.footnote)
+                    .foregroundStyle(.kError)
+            }
             
         }
     }
