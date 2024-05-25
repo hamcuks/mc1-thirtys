@@ -47,7 +47,19 @@ class StreakService: ObservableObject {
         }
     }
     
-    func collectBadge(badge: BadgeData) {
+    func collectBadge(plan: PlanEntity, badge: BadgeData) {
+        let updatePlan = plan
         
+        let collectedBadge = BadgeEntity(context: database)
+        collectedBadge.id = badge.id
+        collectedBadge.collectedDate = .now
+        
+        updatePlan.badges = NSSet(array: [collectedBadge])
+        
+        do {
+            try database.save()
+        } catch {
+            print("Error: \(error.localizedDescription)")
+        }
     }
 }
