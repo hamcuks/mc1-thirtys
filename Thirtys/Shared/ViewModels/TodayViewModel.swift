@@ -39,6 +39,14 @@ class TodayViewModel: ObservableObject {
     @Published var showBadge: Bool = false
     @Published var badgeData: BadgeData? = nil
     
+    // This Week Streak
+    @Published var weekdays: [Date] = []
+    @Published var weeklyStreaks: [Date] = []
+    
+    init() {
+        self.getWeekday()
+    }
+    
     func getPlanData() {
         if let plan = planService.getAll().last {
             self.plan = plan
@@ -72,6 +80,24 @@ class TodayViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func getWeekday() {
+        let calendar = Calendar.current
+        let now = Date()
+        
+        let weekday = calendar.component(.weekday, from: now)
+        let startOfWeek = calendar.date(byAdding: .day, value: -(weekday - calendar.firstWeekday), to: now)!
+        
+        var weekDates: [Date] = []
+        for i in 0..<7 {
+            if let date = calendar.date(byAdding: .day, value: i, to: startOfWeek) {
+                weekDates.append(date)
+            }
+        }
+        
+        self.weekdays = weekDates
+        print(weekDates)
     }
     
     func startTimer() {
@@ -136,10 +162,18 @@ class TodayViewModel: ObservableObject {
     func getLearningStreaks() {
         if let plan = self.plan {
             withAnimation {
-                let items = streakService.getLearningStreaks(plan: plan)
+                let items = streakService.getLearningStreaks(planId: plan.objectID)
                 
                 self.learningStreaks = items
                 self.dailyStreak = items.count
+            }
+            
+            if !self.weekdays.isEmpty {
+                self.weeklyStreaks = streakService.getLearningStreaks(
+                    planId: plan.objectID, from: self.weekdays.first!, to: self.weekdays.last!
+                ).map { $0.date! }
+                
+                print("Streak: \(weeklyStreaks)")
             }
         }
     }

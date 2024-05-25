@@ -9,33 +9,34 @@ import SwiftUI
 
 struct DailyStreak: View {
     
-    let data = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+    @EnvironmentObject private var vm: TodayViewModel
     
     @State private var isDailyAchive: Bool = false
     
     var body: some View {
         
         HStack{
-            Grid(horizontalSpacing: 28, verticalSpacing: 0){
-                GridRow{
-                    ForEach(data, id: \.hashValue) { i in
-                        VStack{
-                            Text("\(i)")
-                                .font(.system(.caption2, weight: .semibold))
-                                .foregroundStyle(Color.kBody)
-                            //                                .padding(.bottom, 12)
-                            if isDailyAchive{
-                                Image("daily-achievement")
-                                    .frame(maxWidth: 24)
-                            } else {
-                                Circle()
-                                    .stroke(Color.kPlaceholder, lineWidth: 4)
-                                    .frame(maxWidth: 24)
-                            }
-                        }
+            
+            ForEach(vm.weekdays, id: \.hashValue) { day in
+                Spacer()
+                VStack{
+                    Text("\(day.formatted(.dateTime.weekday()))")
+                        .font(.system(.caption2, weight: .semibold))
+                        .foregroundStyle(Color.kBody)
+                    
+                    if vm.weeklyStreaks.contains(where: { streakDate in Calendar.current.isDate(streakDate, equalTo: day, toGranularity: .day) }){
+                        Image("daily-achievement")
+                            .frame(maxWidth: 24)
+                        
+                    } else {
+                        Circle()
+                            .stroke(Color.kPlaceholder, lineWidth: 4)
+                            .frame(maxWidth: 24)
                     }
                 }
+                Spacer()
             }
+            
         }
         .frame(maxWidth: .infinity)
         .padding(.top)
@@ -45,4 +46,5 @@ struct DailyStreak: View {
 
 #Preview {
     DailyStreak()
+        .environmentObject(TodayViewModel())
 }
