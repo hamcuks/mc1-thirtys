@@ -67,7 +67,7 @@ struct LearningTimeScreen: View {
                     BackButton()
                 }
             })
-            .padding()
+            .padding(.horizontal)
             .navigationTitle("Learning Time")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()

@@ -103,7 +103,6 @@ struct StreakScreen: View {
                     BadgeSheetView(collectedBadges: vm.badges)
                 }
                 .background(.kBackground)
-                .ignoresSafeArea()
               
             }
             .refreshable {
@@ -117,7 +116,6 @@ struct StreakScreen: View {
                 vm.getBadges()
             }
             .navigationTitle("Streak")
-            .toolbarBackground(.white, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
         }
     }

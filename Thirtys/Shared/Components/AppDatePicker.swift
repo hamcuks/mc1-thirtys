@@ -42,7 +42,7 @@ struct AppDatePicker: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(16)
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 8)
                     .stroke(.kAccent, lineWidth: 2)
             )
             
