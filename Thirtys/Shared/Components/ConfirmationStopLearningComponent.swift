@@ -29,29 +29,28 @@ struct ConfirmationStopLearningComponent: View {
                 } label: {
                     Text("Cancel")
                 }
-                .font(.system(.caption, weight: .bold))
-                .frame(width: 164, height: 41)
-                
-                .foregroundColor(Color.kLabel)
-                .background(Color.kAccent)
-                .cornerRadius(45)
+                .buttonStyle(AppButtonStyle())
                 
                 
                 Button {
                     resetAction()
                     isConfirmationStopOpen.toggle()
                 } label: {
-                    Image(systemName: "flag.fill")
-                    Text("Stop")
+                    HStack {
+                        Image(systemName: "flag.fill")
+                        Text("Stop")
+                    }
                 }
-                .frame(width: 164, height: 41)
-                .font(.system(.caption, weight: .bold))
-                .foregroundColor(Color.kError)
-                .background(Color.kError.opacity(0.15))
-                .cornerRadius(45)
+                .buttonStyle(
+                    AppButtonStyle(
+                        backgroundColor: .kError.opacity(0.1),
+                        foregroundColor: .kError
+                    )
+                )
             }
             
         }
+        .padding(.horizontal)
         .presentationDetents([.fraction(0.25)])
         .interactiveDismissDisabled()
     }
