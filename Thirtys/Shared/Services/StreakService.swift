@@ -33,8 +33,8 @@ class StreakService: ObservableObject {
             predicate = NSPredicate(
                 format: "plan == %@ && date >= %@ && date <= %@",
                 planId as NSManagedObjectID,
-                start as NSDate,
-                end as NSDate
+                start.minTime as NSDate,
+                end.maxTime as NSDate
             )
         } else {
             predicate = NSPredicate(format: "plan == %@", planId as NSManagedObjectID)
@@ -59,6 +59,7 @@ class StreakService: ObservableObject {
         
         let streak = StreakEntity(context: database)
         streak.date = .now
+        streak.plan = updatePlan
         streak.history = NSSet(
             array: learningHistory.map { history in
                 let learnHistory = LearningHistoryEntity(context: database)
@@ -68,8 +69,6 @@ class StreakService: ObservableObject {
                 return learnHistory
             }
         )
-        
-        updatePlan.streaks = NSSet(array: [streak])
         
         do {
             try database.save()

@@ -24,7 +24,8 @@ struct DailyStreak: View {
                         .font(.system(.caption2, weight: .semibold))
                         .foregroundStyle(Color.kBody)
                     
-                    if vm.weeklyStreaks.contains(where: { streakDate in Calendar.current.isDate(streakDate, equalTo: day, toGranularity: .day) }){
+                    
+                    if vm.checkDailyStreakChecked(by: day){
                         Image("daily-achievement")
                             .frame(maxWidth: 24)
                         

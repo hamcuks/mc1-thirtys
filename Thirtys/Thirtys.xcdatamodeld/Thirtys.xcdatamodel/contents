@@ -32,7 +32,7 @@
     <entity name="StreakEntity" representedClassName="StreakEntity" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="history" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LearningHistoryEntity" inverseName="streak" inverseEntity="LearningHistoryEntity"/>
+        <relationship name="history" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="LearningHistoryEntity" inverseName="streak" inverseEntity="LearningHistoryEntity"/>
         <relationship name="plan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlanEntity" inverseName="streaks" inverseEntity="PlanEntity"/>
     </entity>
     <entity name="WorkScheduleEntity" representedClassName="WorkScheduleEntity" syncable="YES" codeGenerationType="class">
