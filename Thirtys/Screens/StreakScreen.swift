@@ -35,11 +35,17 @@ struct StreakScreen: View {
                             }
                         }
                         
-                        Text("Congratulations on your \(vm.streaks.count)-day streak! 🎉 Keep up the great work—consistency is key to success. Just a 30 minutes each day can make a huge difference! 🚀")
+                        (
+                             vm.streaks.count == 0 ?
+                                Text("Let's start your learning journey today! Every great achievement begins with the first step")
+                             :
+                                Text("Congratulations on your \(vm.streaks.count)-day streak! 🎉 Keep up the great work—consistency is key to success. Just a 30 minutes each day can make a huge difference! 🚀")
+                            
+                        )
                             .font(.caption)
                             .fontWeight(.medium)
                             .foregroundColor(.kTitleText)
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
                             .background(.kBackground)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
