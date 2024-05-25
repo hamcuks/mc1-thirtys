@@ -9,24 +9,23 @@ import SwiftUI
 
 struct StreakScreen: View {
     
-    var badgeImage : [BadgeData] = BadgeData.items
-    
     @State private var isViewClicked: Bool = false
     
+    @EnvironmentObject private var vm: DailyStreakViewModel
     
     var body: some View {
         NavigationStack{
             ScrollView{
                 VStack(alignment: .leading, spacing: 24){
                     VStack (alignment: .leading, spacing: 16){
-                        HStack(spacing: 4) {
+                        HStack(spacing: 8) {
                             Image(systemName: "flame.fill")
                                 .resizable()
                                 .frame(width: 46, height: 53)
                                 .foregroundColor(Color.kStreak)
                             
                             VStack(alignment: .leading, spacing: 0) {
-                                Text("16")
+                                Text("\(vm.streaks.count)")
                                     .font(.largeTitle.bold())
                                     .foregroundColor(Color.kStreak)
                                 
@@ -36,7 +35,7 @@ struct StreakScreen: View {
                             }
                         }
                         
-                        Text("Congratulations on your 16-day streak! 🎉 Keep up the great work—consistency is key to success. Just a 30 minutes each day can make a huge difference! 🚀")
+                        Text("Congratulations on your \(vm.streaks.count)-day streak! 🎉 Keep up the great work—consistency is key to success. Just a 30 minutes each day can make a huge difference! 🚀")
                             .font(.caption)
                             .fontWeight(.medium)
                             .foregroundColor(.kTitleText)
@@ -62,16 +61,16 @@ struct StreakScreen: View {
                             }
                         }
                         HStack {
-                            ForEach(badgeImage.prefix(5), id: \.id){ image in
+                            ForEach(BadgeData.items.prefix(5), id: \.id){ badge in
                                 
                                 Spacer()
                                 
-                                Image("\(image.image)")
+                                Image("\(badge.image)")
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 56)
-                                    .opacity(image.isAchieved ? 1 : 0.5)
-                                    .grayscale(image.isAchieved ? 0 : 1)
+                                    .opacity(vm.isAchieved(badge: badge) ? 1 : 0.5)
+                                    .grayscale(vm.isAchieved(badge: badge) ? 0 : 1)
                                 
                                 Spacer()
                             }
@@ -103,6 +102,16 @@ struct StreakScreen: View {
                 .ignoresSafeArea()
               
             }
+            .refreshable {
+                vm.getPlan()
+                vm.getLearningStreaks()
+                vm.getBadges()
+            }
+            .onAppear {
+                vm.getPlan()
+                vm.getLearningStreaks()
+                vm.getBadges()
+            }
             .navigationTitle("Streak")
             .toolbarBackground(.white, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
@@ -113,6 +122,7 @@ struct StreakScreen: View {
 struct StreakScreen_Previews: PreviewProvider {
     static var previews: some View {
         StreakScreen()
+            .environmentObject(DailyStreakViewModel())
     }
 }
 

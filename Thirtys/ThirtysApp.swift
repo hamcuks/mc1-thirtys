@@ -18,6 +18,7 @@ struct ThirtysApp: App {
                 .environmentObject(OnboardingViewModel())
                 .environmentObject(GoalViewModel())
                 .environmentObject(TodayViewModel())
+                .environmentObject(DailyStreakViewModel())
         }
         
     }

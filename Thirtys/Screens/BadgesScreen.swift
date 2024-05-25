@@ -9,9 +9,10 @@ import SwiftUI
 
 struct BadgesScreen: View {
     
-    var columns = Array(repeating: GridItem(.flexible()), count: 4)
+    private var columns = Array(repeating: GridItem(.flexible()), count: 4)
+    private var badgeImage : [BadgeData] = BadgeData.items
     
-    var badgeImage : [BadgeData] = BadgeData.items
+    @EnvironmentObject private var vm: DailyStreakViewModel
     
     var body: some View {
         NavigationStack{
@@ -22,8 +23,8 @@ struct BadgesScreen: View {
                             .resizable()
                             .scaledToFit()
                             .frame(height: 80)
-                            .opacity(badge.isAchieved ? 1 : 0.5)
-                            .grayscale(badge.isAchieved ? 0 : 1)
+                            .opacity(vm.isAchieved(badge: badge) ? 1 : 0.5)
+                            .grayscale(vm.isAchieved(badge: badge) ? 0 : 1)
                     }
                 }
                 .padding()
@@ -36,4 +37,5 @@ struct BadgesScreen: View {
 
 #Preview {
     BadgesScreen()
+        .environmentObject(DailyStreakViewModel())
 }
