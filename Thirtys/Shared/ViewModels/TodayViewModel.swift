@@ -145,9 +145,33 @@ class TodayViewModel: ObservableObject {
     }
     
     func checkTodayLearningState() {
-        self.todayLearningHasCompleted = self.learningStreaks.contains(where: {
+        
+        // Get today learning history. If exist, it means the user
+        // has completed today learning session
+        guard let history = self.learningStreaks.first(where: {
             Calendar.current.isDate($0.date!, equalTo: .now, toGranularity: .day)
-        })
+        }) else {
+            
+            // Otherwise, user has not complete the learning session
+            self.todayLearningHasCompleted = false
+            return
+        }
+        
+        self.todayLearningHasCompleted = true
+        
+        // Transform array of LearningHistoryEntity into array of Event
+        self.learningHistory = (history.history?.allObjects as? Array<LearningHistoryEntity> ?? []).compactMap {
+            if let startTime = $0.startTime, let endTime = $0.endTime {
+                return Event(
+                    label: "Learning History",
+                    startTime: startTime,
+                    endTime: endTime,
+                    duration: Calendar.current.dateComponents([.second], from: startTime, to: endTime).second ?? 0
+                )
+            }
+            
+            return nil
+        }
     }
     
     func getAchievement() {
