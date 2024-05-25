@@ -69,8 +69,12 @@ struct StreakScreen: View {
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 56)
-                                    .opacity(vm.isAchieved(badge: badge) ? 1 : 0.5)
-                                    .grayscale(vm.isAchieved(badge: badge) ? 0 : 1)
+                                    .opacity(
+                                        vm.isAchieved(badge: badge) ? 1 : 0.5
+                                    )
+                                    .grayscale(
+                                        vm.isAchieved(badge: badge) ? 0 : 1
+                                    )
                                 
                                 Spacer()
                             }
@@ -96,7 +100,7 @@ struct StreakScreen: View {
                 }
                 .padding(.bottom, 32)
                 .sheet(isPresented: $isViewClicked){
-                    BadgesScreen()
+                    BadgesScreen(collectedBadges: vm.badges)
                 }
                 .background(.kBackground)
                 .ignoresSafeArea()

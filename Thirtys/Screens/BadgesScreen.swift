@@ -9,22 +9,28 @@ import SwiftUI
 
 struct BadgesScreen: View {
     
-    private var columns = Array(repeating: GridItem(.flexible()), count: 4)
-    private var badgeImage : [BadgeData] = BadgeData.items
+    var collectedBadges: [BadgeData]
     
-    @EnvironmentObject private var vm: DailyStreakViewModel
+    private let columns = Array(repeating: GridItem(.flexible()), count: 4)
+    
     
     var body: some View {
         NavigationStack{
             ScrollView{
-                LazyVGrid(columns: columns){
-                    ForEach(badgeImage, id: \.id){ badge in
-                        Image("\(badge.image)")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 80)
-                            .opacity(vm.isAchieved(badge: badge) ? 1 : 0.5)
-                            .grayscale(vm.isAchieved(badge: badge) ? 0 : 1)
+                LazyVGrid(columns: columns, spacing: 24){
+                    ForEach(BadgeData.items, id: \.id){ badge in
+                        VStack {
+                            Image("\(badge.image)")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 80)
+                                .opacity(
+                                    collectedBadges.contains(where: { $0.id == badge.id }) ? 1 : 0.5
+                                )
+                                .grayscale(
+                                    collectedBadges.contains(where: { $0.id == badge.id }) ? 0 : 1
+                                )
+                        }
                     }
                 }
                 .padding()
@@ -36,6 +42,5 @@ struct BadgesScreen: View {
 }
 
 #Preview {
-    BadgesScreen()
-        .environmentObject(DailyStreakViewModel())
+    BadgesScreen(collectedBadges: [])
 }

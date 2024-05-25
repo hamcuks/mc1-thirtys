@@ -13,7 +13,7 @@ class DailyStreakViewModel: ObservableObject {
     
     @Published var plan: PlanEntity? = nil
     @Published var streaks: [StreakEntity] = []
-    @Published var badges: [BadgeEntity] = []
+    @Published var badges: [BadgeData] = []
     
     func getPlan() {
         self.plan = planService.getAll().last
@@ -26,7 +26,9 @@ class DailyStreakViewModel: ObservableObject {
     }
     
     func getBadges() {
-        self.badges = streakService.getBadges()
+        self.badges = streakService.getBadges().compactMap {
+            BadgeData.determineBadge(by: $0.id!)
+        }
     }
     
     func isAchieved(badge: BadgeData) -> Bool {
