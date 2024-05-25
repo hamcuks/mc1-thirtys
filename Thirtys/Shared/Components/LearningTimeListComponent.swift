@@ -94,6 +94,15 @@ struct LearningTimeList: View {
                     .listStyle(.plain)
                 }
                 
+            } else {
+                Text("Oh, it looks like you're very busy!")
+                    .fontWeight(.semibold)
+                    .padding(16)
+                    .frame(maxWidth: .infinity)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 8)
+                            .strokeBorder(.kAccent, lineWidth: 1)
+                    }
             }
         }
     }
