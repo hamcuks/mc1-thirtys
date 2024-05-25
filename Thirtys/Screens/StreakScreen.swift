@@ -92,13 +92,24 @@ struct StreakScreen: View {
                     VStack(alignment: .leading){
                         Text("Calendar")
                             .font(.system(.body, weight: .bold))
-                        MultiRangeDatePicker()
-                            .padding(.horizontal, 5)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.kAccent, lineWidth: 2)
-                                    .frame(maxWidth: .infinity)
+                        
+                        MultiRangeDatePicker(
+                            dates: Set(
+                                vm.streaks.map {
+                                    Calendar.current.dateComponents(
+                                        [.day, .month, .year],
+                                        from: $0.date!
+                                    )
+                                }
                             )
+                        )
+                        .disabled(true)
+                        .padding(.horizontal, 5)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.kAccent, lineWidth: 2)
+                                .frame(maxWidth: .infinity)
+                        )
                         
                     }
                     .padding(16)
