@@ -23,8 +23,8 @@ class TodayViewModel: ObservableObject {
     @Published var currentLearningTime: Event? = nil
     
     // Countdown Data
-    var countdownInterval: TimeInterval = 3
-    @Published var remainingTime: TimeInterval = 3 // 30 minutes in seconds
+    var countdownInterval: TimeInterval = 10
+    @Published var remainingTime: TimeInterval = 10 // 30 minutes in seconds
     @Published var isTimerActive: Bool = false
     @Published var hasStarted: Bool = false
     private var timer: AnyCancellable?
@@ -123,6 +123,11 @@ class TodayViewModel: ObservableObject {
             )
             learningHistory.append(session)
         }
+    }
+    
+    var isWithinLearningTime: Bool {
+        guard let currentLearningTime = currentLearningTime else { return false }
+        return currentLearningTime.startTime <= .now && currentLearningTime.endTime >= .now
     }
     
     func updateDailyStreak() {
