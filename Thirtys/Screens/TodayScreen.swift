@@ -43,7 +43,7 @@ struct TodayScreen: View {
                         streakToolbar
                     }
                 }
-                .navigationTitle("Thirty's")
+                .navigationTitle("Today")
                 .navigationBarTitleDisplayMode(.inline)
                 
                 if todayVm.showBadge {
