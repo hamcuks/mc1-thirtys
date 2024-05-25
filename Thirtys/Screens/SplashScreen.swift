@@ -10,13 +10,19 @@ import SwiftUI
 
 struct SplashScreen: View {
     var body: some View {
-        Image(systemName: "book.fill")
-            .resizable()
-            .scaledToFit()
-            .frame(maxHeight: 64)
-            .foregroundStyle(.white)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.kSuccess)
+        ZStack{
+            Image(systemName: "book.fill")
+                .resizable()
+                .scaledToFill()
+                .rotationEffect(.degrees(21))
+                .foregroundStyle(.kTitleText.opacity(0.1))
+            Text("Thirty's")
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+        }
+        .foregroundStyle(.white)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.kSuccess)
     }
 }
 
