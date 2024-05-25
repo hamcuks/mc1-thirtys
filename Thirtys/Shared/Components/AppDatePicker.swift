@@ -49,7 +49,7 @@ struct AppDatePicker: View {
         }
         .sheet(isPresented: $isOpened) {
             VStack(spacing: 24){
-                DatePicker("", selection: $selection, displayedComponents: .date)
+                DatePicker("", selection: $selection, in: .now..., displayedComponents: .date)
                     .datePickerStyle(.graphical)
                 
                 Button("Set") {
