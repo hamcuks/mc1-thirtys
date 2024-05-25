@@ -12,36 +12,32 @@ struct LearningOutOfRangeSheet: View {
     let startLearningAnyway: () -> Void
     
     var body: some View {
-        VStack(spacing: 24) {
-            VStack(spacing: 16) {
-                Text("You are not within your scheduled learning time!")
+        VStack(alignment: .leading, spacing: 24) {
+            VStack(spacing: 16){
+                Text("There is no active learning time!")
                     .font(.system(.body, weight: .bold))
+                Text("You are not within your scheduled learning time. Are you still want to learn?")
+                    .font(.system(.subheadline, weight: .regular))
+                    .multilineTextAlignment(.center)
             }
+            
             
             HStack(spacing: 12) {
                 Button("Cancel") {
                     showOutOfRangeOptions = false
                 }
-                .font(.system(.caption, weight: .bold))
-                .frame(width: 164, height: 41)
-                .foregroundColor(Color.kLabel)
-                .background(Color.kAccent)
-                .cornerRadius(45)
+                .buttonStyle(AppButtonStyle())
                 
                 Button("Learn Anyway") {
                     showOutOfRangeOptions = false
                     startLearningAnyway()
                 }
-                .frame(width: 164, height: 41)
-                .font(.system(.caption, weight: .bold))
-                .foregroundColor(Color.kLabel)
-                .background(Color.kAccent)
-                .cornerRadius(45)
+                .buttonStyle(AppButtonStyle())
             }
         }
         .presentationDetents([.fraction(0.25)])
         .interactiveDismissDisabled()
-        .padding()
+        .padding(.horizontal)
     }
 }
 
