@@ -58,28 +58,26 @@ class TodayViewModel: ObservableObject {
         
         if let weekday = today.weekday {
             let learningTimes = userPrefService.getLearningTimes()
-            let todayLearningTimes = learningTimes.filter { entity in entity.day == weekday }
+            let todayLearningTimes = learningTimes.filter { entity in entity.day == weekday - 1 }
+            
+            print("Learning: \(weekday)")
+            print("Today: \(todayLearningTimes)")
             
             todayLearningTimes.enumerated().forEach { index, current in
-                if let next = learningTimes[safe: index + 1] {
-                    if current.startTime! >= .now && .now <= current.endTime! {
-                        self.currentLearningTime = Event(
-                            label: "Current Event Time",
-                            startTime: current.startTime!,
-                            endTime: current.endTime!,
-                            duration: Int(current.duration)
-                        )
-                    } else {
-                        self.currentLearningTime = Event(
-                            label: "Current Event Time",
-                            startTime: next.startTime!,
-                            endTime: next.endTime!,
-                            duration: Int(next.duration)
-                        )
-                    }
+                print("State: \(current.startTime) \(current.endTime)")
+                
+                if current.startTime! <= .now && .now <= current.endTime! || current.startTime! >= .now && .now <= current.endTime! {
+                    self.currentLearningTime = Event(
+                        label: "Current Event Time",
+                        startTime: current.startTime!,
+                        endTime: current.endTime!,
+                        duration: Int(current.duration)
+                    )
                 }
             }
         }
+        
+        
     }
     
     func getWeekday() {
