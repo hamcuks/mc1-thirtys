@@ -407,7 +407,7 @@
 				03E71A3E2BFC9F1700207B4F /* (null) in Sources */,
 				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
 				D97A503A2C019F7A00851290 /* LearningOutRangeSheet.swift in Sources */,
-				03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */,
+				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
 				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
 				034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
@@ -585,7 +585,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tamanmini.Thirtyshh;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tamanmini.Thirtys-mc1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
