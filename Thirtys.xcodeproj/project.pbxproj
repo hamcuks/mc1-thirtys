@@ -25,6 +25,7 @@
 		03E71A402BFCC90300207B4F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838282BFD9288004DDDFA /* BadgeSheetView.swift */; };
 		82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8C8362BFDCE8300214670 /* StreakScreen.swift */; };
+		D97A503A2C019F7A00851290 /* LearningOutRangeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97A50392C019F7A00851290 /* LearningOutRangeSheet.swift */; };
 		DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC232BFC922300529B16 /* BadgeComponent.swift */; };
 		DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */; };
 		E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */; };
@@ -82,6 +83,7 @@
 		03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
 		03F838282BFD9288004DDDFA /* BadgeSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSheetView.swift; sourceTree = "<group>"; };
 		82B8C8362BFDCE8300214670 /* StreakScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
+		D97A50392C019F7A00851290 /* LearningOutRangeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningOutRangeSheet.swift; sourceTree = "<group>"; };
 		DAA2CC232BFC922300529B16 /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
 		DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeData.swift; sourceTree = "<group>"; };
 		E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwoOnboardingScreen.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				DAA2CC232BFC922300529B16 /* BadgeComponent.swift */,
 				0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */,
 				E70A32542BFE13C90014563C /* LearningTimeListComponent.swift */,
+				D97A50392C019F7A00851290 /* LearningOutRangeSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -403,6 +406,8 @@
 				E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */,
 				03E71A3E2BFC9F1700207B4F /* (null) in Sources */,
 				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
+				D97A503A2C019F7A00851290 /* LearningOutRangeSheet.swift in Sources */,
+				03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */,
 				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
 				034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,

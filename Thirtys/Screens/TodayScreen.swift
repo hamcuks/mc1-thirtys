@@ -11,6 +11,7 @@ struct TodayScreen: View {
     @EnvironmentObject private var todayVm: TodayViewModel
     
     @State private var isConfirmationStopOpen: Bool = false
+    @State private var showOutOfRangeOptions: Bool = false
     
     var body: some View {
         NavigationView {
@@ -73,6 +74,11 @@ struct TodayScreen: View {
             ConfirmationStopLearningComponent(isConfirmationStopOpen: $isConfirmationStopOpen) {
                 todayVm.resetTimer()
                 todayVm.hasStarted = false
+            }
+        }
+        .sheet(isPresented: $showOutOfRangeOptions) {
+            LearningOutOfRangeSheet(showOutOfRangeOptions: $showOutOfRangeOptions) {
+                todayVm.startTimer()
             }
         }
     }
@@ -153,7 +159,11 @@ struct TodayScreen: View {
                 )
             } else {
                 Button {
-                    todayVm.startTimer()
+                    if todayVm.isWithinLearningTime {
+                        todayVm.startTimer()
+                    } else {
+                        showOutOfRangeOptions.toggle()
+                    }
                 } label: {
                     HStack {
                         Image(systemName: "play.fill")
