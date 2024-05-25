@@ -39,6 +39,14 @@ class TodayViewModel: ObservableObject {
     @Published var showBadge: Bool = false
     @Published var badgeData: BadgeData? = nil
     
+    // This Week Streak
+    @Published var weekdays: [Date] = []
+    @Published var weeklyStreaks: [Date] = []
+    
+    init() {
+        self.getWeekday()
+    }
+    
     func getPlanData() {
         if let plan = planService.getAll().last {
             self.plan = plan
@@ -72,6 +80,24 @@ class TodayViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func getWeekday() {
+        let calendar = Calendar.current
+        let now = Date()
+        
+        let weekday = calendar.component(.weekday, from: now)
+        let startOfWeek = calendar.date(byAdding: .day, value: -(weekday - calendar.firstWeekday), to: now)!
+        
+        var weekDates: [Date] = []
+        for i in 0..<7 {
+            if let date = calendar.date(byAdding: .day, value: i, to: startOfWeek) {
+                weekDates.append(date)
+            }
+        }
+        
+        self.weekdays = weekDates
+        print(weekDates)
     }
     
     func startTimer() {
@@ -136,18 +162,50 @@ class TodayViewModel: ObservableObject {
     func getLearningStreaks() {
         if let plan = self.plan {
             withAnimation {
-                let items = streakService.getLearningStreaks(plan: plan)
+                let items = streakService.getLearningStreaks(planId: plan.objectID)
                 
                 self.learningStreaks = items
                 self.dailyStreak = items.count
+            }
+            
+            if !self.weekdays.isEmpty {
+                self.weeklyStreaks = streakService.getLearningStreaks(
+                    planId: plan.objectID, from: self.weekdays.first!, to: self.weekdays.last!
+                ).map { $0.date! }
+                
+                print("Streak: \(weeklyStreaks)")
             }
         }
     }
     
     func checkTodayLearningState() {
-        self.todayLearningHasCompleted = self.learningStreaks.contains(where: {
+        
+        // Get today learning history. If exist, it means the user
+        // has completed today learning session
+        guard let history = self.learningStreaks.first(where: {
             Calendar.current.isDate($0.date!, equalTo: .now, toGranularity: .day)
-        })
+        }) else {
+            
+            // Otherwise, user has not complete the learning session
+            self.todayLearningHasCompleted = false
+            return
+        }
+        
+        self.todayLearningHasCompleted = true
+        
+        // Transform array of LearningHistoryEntity into array of Event
+        self.learningHistory = (history.history?.allObjects as? Array<LearningHistoryEntity> ?? []).compactMap {
+            if let startTime = $0.startTime, let endTime = $0.endTime {
+                return Event(
+                    label: "Learning History",
+                    startTime: startTime,
+                    endTime: endTime,
+                    duration: Calendar.current.dateComponents([.second], from: startTime, to: endTime).second ?? 0
+                )
+            }
+            
+            return nil
+        }
     }
     
     func getAchievement() {
