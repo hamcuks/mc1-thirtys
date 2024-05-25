@@ -65,6 +65,7 @@ struct GoalsScreen: View {
         }
         .onAppear {
             vm.getPlanData()
+            vm.getLearningTimes()
         }
     }
 }

@@ -7,12 +7,9 @@
 
 import SwiftUI
 
-struct BadgeComponent: View {
+struct BadgePopUp: View {
     
-    var image: String
-    var title: String
-    var desc: String
-    
+    var badge: BadgeData
     @Binding var showAchievementPopup: Bool
     
     var body: some View {
@@ -32,37 +29,33 @@ struct BadgeComponent: View {
                 .font(.title2)
                 .bold()
             
-            Image(image)
+            Image(badge.image)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200, height: 200)
+                .frame(height: 128)
             VStack(spacing: 8) {
-                Text(title)
+                Text(badge.greeting)
                     .font(.title3)
                     .bold()
-                Text(desc)
+                Text(badge.description)
                     .font(.subheadline)
                     .multilineTextAlignment(.center)
             }
         }
-        .padding(.vertical, 25)
-        .padding(.horizontal, 50)
+        .padding(.vertical, 32)
+        .padding(.horizontal, 24)
+        .background()
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .padding(.horizontal, 32)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(BlurView())
-        .cornerRadius(15)
-    }
-}
-struct BlurView : UIViewRepresentable {
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        
-    }
-    
-    func makeUIView(context: Context) -> some UIView {
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialLight))
-        return view
+        .background(.black.opacity(0.3))
+        .ignoresSafeArea()
     }
 }
 
 #Preview {
-    BadgeComponent(image: "1st-learning", title: "Congratulations! 🎉", desc: "You’ve completed your first learning session! You're off to a great start!", showAchievementPopup: .constant(true))
+    BadgePopUp(
+        badge: BadgeData.items.first!,
+        showAchievementPopup: .constant(false)
+    )
 }

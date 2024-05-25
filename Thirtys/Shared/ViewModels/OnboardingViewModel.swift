@@ -11,6 +11,9 @@ import CoreData
 class OnboardingViewModel: ObservableObject {
     var database: PersistenceController = PersistenceController.shared
     
+    private let planService: PlanService = PlanService.shared
+    private let userPreferenceService: UserPreferenceService = UserPreferenceService.shared
+    
     // Learning Time
     @Published var learningTimes: [GrouppedWeekdayEvent] = []
     
@@ -95,70 +98,32 @@ class OnboardingViewModel: ObservableObject {
         self.learningTimes = self.findFreeTime(
             grouppedEvents: grouppedEvents
         )
-        
-        print(self.learningTimes)
     }
     
     private func storeWorkSchedulesData() {
-        self.weekDays.forEach { day in
-            let data = WorkScheduleEntity(context: database.container.viewContext)
-            data.day = day.label.rawValue
-            data.startTime = day.event.startTime
-            data.endTime = day.event.endTime
-        }
-        
-        let bedTime = BedTimeEntity(context: database.container.viewContext)
-        bedTime.label = self.bedTime.label
-        bedTime.startTime = self.bedTime.startTime
-        bedTime.endTime = self.bedTime.endTime
-        
-        let wakeUpTime = BedTimeEntity(context: database.container.viewContext)
-        wakeUpTime.label = self.wakeUpTime.label
-        wakeUpTime.startTime = self.wakeUpTime.startTime
-        wakeUpTime.endTime = self.wakeUpTime.endTime
-        
-        do {
-            try database.container.viewContext.save()
-        } catch {
-            print("Error: \(error.localizedDescription)")
-        }
+        userPreferenceService.storeWorkSchedules(items: self.weekDays)
+    }
+    
+    private func storeBedSchedulesData() {
+        userPreferenceService.storeBedSchedule(bedTime: self.bedTime, wakeUpTime: self.wakeUpTime)
+    }
+    
+    private func storeLearningTime() {
+        userPreferenceService.storeLearningTime(items: self.learningTimes)
     }
     
     private func storePlanData() {
-        
-        let plan = PlanEntity(context: database.container.viewContext)
-        plan.title = self.planTitle
-        plan.startDate = self.planStartDate
-        plan.duration = Int16(self.planDuration)
-        
-        var learningTimeEntities: [LearningTimeEntity] = []
-        
-        learningTimeEntities = self.learningTimes.flatMap { time in
-            
-            return time.events.map { event in
-                let data = LearningTimeEntity(context: database.container.viewContext)
-                data.day = time.label.rawValue
-                data.startTime = event.startTime
-                data.endTime = event.endTime
-                data.duration = Int16(event.duration ?? 0)
-                
-                return data
-            }
-            
-        }
-        
-        plan.learningTimes = NSSet(array: learningTimeEntities)
-        
-        do {
-            try database.container.viewContext.save()
-            print("Stored successfully")
-        } catch {
-            print(error.localizedDescription)
-        }
+        planService.store(
+            title: self.planTitle,
+            startDate: self.planStartDate,
+            duration: self.planDuration
+        )
     }
     
     func storeData() {
         self.storeWorkSchedulesData()
+        self.storeBedSchedulesData()
+        self.storeLearningTime()
         self.storePlanData()
     }
 }

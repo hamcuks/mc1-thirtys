@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LearningHistory: View {
     
-    var historyLearning: [CountdownTimer]
+    var historyLearning: [Event]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24){
@@ -19,9 +19,9 @@ struct LearningHistory: View {
             
             if historyLearning.count > 0 {
                 VStack(spacing: 16){
-                    ForEach(historyLearning, id: \.id){ session in
+                    ForEach(historyLearning, id: \.hashValue){ session in
                         HStack{
-                            Text("\(Int(session.duration / 60)) minutes")
+                            Text("\(Int((session.duration ?? 0) / 60)) minutes")
                                 .frame(maxWidth: .infinity,alignment: .leading)
                                 .font(.system(.subheadline, weight: .semibold))
                             
@@ -70,6 +70,5 @@ struct LearningHistory: View {
 
 
 #Preview {
-    LearningHistory(historyLearning: CountdownTimerViewModel().learningHistory)
-        .environmentObject(CountdownTimerViewModel())
+    LearningHistory(historyLearning: [])
 }
