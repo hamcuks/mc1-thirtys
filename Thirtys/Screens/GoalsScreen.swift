@@ -27,7 +27,7 @@ struct GoalsScreen: View {
                         label: "Plan Start Date"
                     )
                     
-                    if var startDate = vm.plan?.startDate, let duration = vm.plan?.duration {
+                    if let startDate = vm.plan?.startDate, let duration = vm.plan?.duration {
                         let endDate = Calendar.current.date(
                             byAdding: .day,
                             value: Int(duration),
@@ -63,6 +63,7 @@ struct GoalsScreen: View {
             .navigationBarTitleDisplayMode(.inline)
             
         }
+        .background(.kBackground)
         .onAppear {
             vm.getPlanData()
             vm.getLearningTimes()

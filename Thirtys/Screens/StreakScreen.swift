@@ -100,11 +100,9 @@ struct StreakScreen: View {
                     BadgesScreen()
                 }
                 .background(.kBackground)
-                .ignoresSafeArea()
               
             }
             .navigationTitle("Streak")
-            .toolbarBackground(.white, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
         }
     }
