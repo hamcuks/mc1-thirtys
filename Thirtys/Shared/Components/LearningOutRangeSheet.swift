@@ -7,12 +7,34 @@
 
 import SwiftUI
 
-struct LearningOutRangeSheet: View {
+struct LearningOutOfRangeSheet: View {
+    @Binding var showOutOfRangeOptions: Bool
+    let startLearningAnyway: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("You are not within your scheduled learning time.")
+                .font(.headline)
+                .padding()
+            
+            HStack {
+                Button("Cancel") {
+                    showOutOfRangeOptions = false
+                }
+                .buttonStyle(AppButtonStyle())
+                
+                Button("Learn Anyway") {
+                    showOutOfRangeOptions = false
+                    startLearningAnyway()
+                }
+                .buttonStyle(AppButtonStyle())
+            }
+        }
+        .padding()
     }
 }
 
 #Preview {
-    LearningOutRangeSheet()
+    LearningOutOfRangeSheet(showOutOfRangeOptions: .constant(true)) {
+    }
 }
