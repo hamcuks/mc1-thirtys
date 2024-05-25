@@ -38,64 +38,63 @@ struct LearningTimeList: View {
                 }
             }
             if let learningTime = items.first(where: { $0.label == selectedDay }) {
-                List {
-                    
-                    
-                    ForEach(
-                        learningTime.events,
-                        id: \.hashValue
-                    ) { time in
-                        HStack {
-                            Text(time.startTime, style: .time)
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(.kTitleText)
-                            Text("-")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(.kTitleText)
-                            Text(time.endTime, style: .time)
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(.kTitleText)
-                        }
+                
+                if learningTime.events.isEmpty {
+                    Text("Oh, it looks like you're very busy!")
+                        .fontWeight(.semibold)
                         .padding(16)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity)
                         .overlay {
                             RoundedRectangle(cornerRadius: 8)
-                                .strokeBorder(
-                                    .kAccent, lineWidth: 1.5
-                                )
+                                .strokeBorder(.kAccent, lineWidth: 1)
                         }
-                        .listRowInsets(
-                            EdgeInsets(
-                                .init(
-                                    top: 0,
-                                    leading: 0,
-                                    bottom: 16,
-                                    trailing: 0
+                } else {
+                    List {
+                        ForEach(
+                            learningTime.events,
+                            id: \.hashValue
+                        ) { time in
+                            HStack {
+                                Text(time.startTime, style: .time)
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.kTitleText)
+                                Text("-")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.kTitleText)
+                                Text(time.endTime, style: .time)
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.kTitleText)
+                            }
+                            .padding(16)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .strokeBorder(
+                                        .kAccent, lineWidth: 1.5
+                                    )
+                            }
+                            .listRowInsets(
+                                EdgeInsets(
+                                    .init(
+                                        top: 0,
+                                        leading: 0,
+                                        bottom: 16,
+                                        trailing: 0
+                                    )
                                 )
                             )
-                        )
-                        .listRowSeparator(.hidden)
+                            .listRowSeparator(.hidden)
+                        }
+                        
+                        
                     }
-                    
-                    
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
                 
-            } else {
-                Text("Oh, it looks like you're very busy!")
-                    .fontWeight(.semibold)
-                    .padding(16)
-                    .frame(maxWidth: .infinity)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 8)
-                            .strokeBorder(.kAccent, lineWidth: 1)
-                    }
             }
-            
-            
         }
     }
 }
