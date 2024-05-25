@@ -23,7 +23,7 @@
 		03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E992BFA27D300C3A248 /* ViewExtension.swift */; };
 		03E71A3E2BFC9F1700207B4F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		03E71A402BFCC90300207B4F /* (null) in Sources */ = {isa = PBXBuildFile; };
-		03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838282BFD9288004DDDFA /* BadgesScreen.swift */; };
+		03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838282BFD9288004DDDFA /* BadgeSheetView.swift */; };
 		82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8C8362BFDCE8300214670 /* StreakScreen.swift */; };
 		DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC232BFC922300529B16 /* BadgeComponent.swift */; };
 		DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */; };
@@ -80,7 +80,7 @@
 		03D85E952BFA25E600C3A248 /* ComponentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDate.swift; sourceTree = "<group>"; };
 		03D85E992BFA27D300C3A248 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
-		03F838282BFD9288004DDDFA /* BadgesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
+		03F838282BFD9288004DDDFA /* BadgeSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSheetView.swift; sourceTree = "<group>"; };
 		82B8C8362BFDCE8300214670 /* StreakScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
 		DAA2CC232BFC922300529B16 /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
 		DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeData.swift; sourceTree = "<group>"; };
@@ -191,7 +191,6 @@
 		E72EB3082BF84ED000237B58 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				03F838282BFD9288004DDDFA /* BadgesScreen.swift */,
 				E72EB3202BF84FBF00237B58 /* TodayScreen.swift */,
 				E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */,
 				E7C2FBF72BFB2ADC00AFE597 /* Onboarding */,
@@ -252,6 +251,7 @@
 		E72EB30D2BF84EF400237B58 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				03F838282BFD9288004DDDFA /* BadgeSheetView.swift */,
 				03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */,
 				03A122302BFDF039000BD12A /* FinishComponent.swift */,
 				03A122322BFDF05E000BD12A /* LearningHistory.swift */,
@@ -402,7 +402,7 @@
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
 				E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */,
 				03E71A3E2BFC9F1700207B4F /* (null) in Sources */,
-				03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */,
+				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
 				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
 				034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,

@@ -100,7 +100,7 @@ struct StreakScreen: View {
                 }
                 .padding(.bottom, 32)
                 .sheet(isPresented: $isViewClicked){
-                    BadgesScreen(collectedBadges: vm.badges)
+                    BadgeSheetView(collectedBadges: vm.badges)
                 }
                 .background(.kBackground)
                 .ignoresSafeArea()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BadgesScreen: View {
+struct BadgeSheetView: View {
     
     var collectedBadges: [BadgeData]
     
@@ -42,5 +42,5 @@ struct BadgesScreen: View {
 }
 
 #Preview {
-    BadgesScreen(collectedBadges: [])
+    BadgeSheetView(collectedBadges: [])
 }
