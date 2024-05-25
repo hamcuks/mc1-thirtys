@@ -84,6 +84,7 @@
 		03F838282BFD9288004DDDFA /* BadgeSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSheetView.swift; sourceTree = "<group>"; };
 		82B8C8362BFDCE8300214670 /* StreakScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
 		D97A50392C019F7A00851290 /* LearningOutRangeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningOutRangeSheet.swift; sourceTree = "<group>"; };
+		D998CC0C2C021BBC0032DCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA2CC232BFC922300529B16 /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
 		DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeData.swift; sourceTree = "<group>"; };
 		E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwoOnboardingScreen.swift; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 		E72EB2F42BF84EC300237B58 /* Thirtys */ = {
 			isa = PBXGroup;
 			children = (
+				D998CC0C2C021BBC0032DCAD /* Info.plist */,
 				D9F5FAF52BFD99C50043F428 /* Helpers */,
 				E72EB3092BF84ED800237B58 /* Shared */,
 				E72EB3082BF84ED000237B58 /* Screens */,
@@ -574,6 +576,7 @@
 				DEVELOPMENT_TEAM = 57BYB3NG56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Thirtys/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Thirty's";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -608,6 +611,7 @@
 				DEVELOPMENT_TEAM = 57BYB3NG56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Thirtys/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Thirty's";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
