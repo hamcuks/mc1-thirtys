@@ -25,41 +25,19 @@ struct AppTextField: View {
                 .foregroundStyle(.kTitleText)
             
             TextField(placeholder, text: $selection)
-            //            .placeholder(when: fieldText.isEmpty, placeholder: {
-            //                Text("e.g Belajar SwiftUI")
-            //                    .foregroundColor(.gray)
-            //            })
                 .frame(maxWidth: .infinity)
                 .padding(16)
-            //            .tint(.kTitleText)
                 .fontWeight(.medium)
                 .foregroundStyle(.kTitleText)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .strokeBorder(Color.kAccent, lineWidth: 1.5)
+                    RoundedRectangle(cornerRadius: 8)
+                        .strokeBorder(Color.kAccent, lineWidth: 2)
                 )
                 .onChange(of: selection) { oldValue, newValue in
                     if selection.count > charTextLimit{
                         selection = String(newValue.prefix(charTextLimit))
                     }
                 }
-                .onSubmit {
-                    //                if fieldText.isEmpty{
-                    //                    print("next button disabled")
-                    //                    firstShow.toggle()
-                    ////                    print(firstShow)
-                    //                }
-                }
-            //
-            //            if fieldText.isEmpty && !firstShow{
-            //                Text("\(errorDesc)")
-            //                    .frame(maxWidth: .infinity,alignment: .leading)
-            //                    .font(.footnote)
-            //                    .padding(.horizontal, 5)
-            //                    .foregroundColor(.red)
-            //                    .bold()
-            //            }
-            
             
         }
     }
