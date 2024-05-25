@@ -12,8 +12,18 @@ class StreakService: ObservableObject {
     private let database: NSManagedObjectContext = PersistenceController.shared.container.viewContext
     static let shared: StreakService = StreakService()
     
-    func getBadges(planId: UUID) -> [BadgeData] {
-        return []
+    func getBadges() -> [BadgeEntity] {
+        let request: NSFetchRequest = NSFetchRequest<BadgeEntity>(entityName: "BadgeEntity")
+        
+        do {
+            let items = try database.fetch(request)
+            
+            return items
+        } catch {
+            print("Error: \(error.localizedDescription)")
+            
+            return []
+        }
     }
     
     func getLearningStreaks(planId: NSManagedObjectID, from startDate: Date? = nil, to endDate: Date? = nil) -> [StreakEntity] {
@@ -68,14 +78,11 @@ class StreakService: ObservableObject {
         }
     }
     
-    func collectBadge(plan: PlanEntity, badge: BadgeData) {
-        let updatePlan = plan
+    func collectBadge(badge: BadgeData) {
         
         let collectedBadge = BadgeEntity(context: database)
         collectedBadge.id = badge.id
         collectedBadge.collectedDate = .now
-        
-        updatePlan.badges = NSSet(array: [collectedBadge])
         
         do {
             try database.save()

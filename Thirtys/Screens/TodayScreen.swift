@@ -88,13 +88,16 @@ struct TodayScreen: View {
         VStack(spacing: 8) {
             Text("\(todayVm.plan?.title ?? "Plan Title")")
                 .font(.system(.title2, weight: .bold))
+                .foregroundStyle(.kTitleText)
             
             if let event = todayVm.currentLearningTime {
-                (Text(event.startTime >= .now && event.endTime <= .now ? "Your learning time is at " : "Your next learning time will be available at ") +
+                (Text(event.startTime <= .now && event.endTime >= .now ? "Your learning time is at " : "Your next learning time will be available at ") +
                  Text(event.startTime, style: .time) +
                  Text(" - ") +
                  Text(event.endTime, style: .time))
-                .font(.system(.footnote, weight: .regular))
+                .font(.system(.subheadline, weight: .regular))
+                .foregroundStyle(.kBody)
+                .multilineTextAlignment(.center)
             } else {
                 Text("You do not have active learning time")
                     .font(.system(.footnote, weight: .regular))

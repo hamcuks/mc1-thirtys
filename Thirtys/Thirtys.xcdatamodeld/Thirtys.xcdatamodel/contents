@@ -2,16 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23D60" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BadgeEntity" representedClassName="BadgeEntity" syncable="YES" codeGenerationType="class">
         <attribute name="collectedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="plan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlanEntity" inverseName="badges" inverseEntity="PlanEntity"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
     </entity>
     <entity name="BedTimeEntity" representedClassName="BedTimeEntity" syncable="YES" codeGenerationType="class">
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="label" optional="YES" attributeType="String"/>
         <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-    </entity>
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="LearningHistoryEntity" representedClassName="LearningHistoryEntity" syncable="YES" codeGenerationType="class">
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -31,7 +27,6 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="badges" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BadgeEntity" inverseName="plan" inverseEntity="BadgeEntity"/>
         <relationship name="streaks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StreakEntity" inverseName="plan" inverseEntity="StreakEntity"/>
     </entity>
     <entity name="StreakEntity" representedClassName="StreakEntity" syncable="YES" codeGenerationType="class">

@@ -23,9 +23,7 @@
 		03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E992BFA27D300C3A248 /* ViewExtension.swift */; };
 		03E71A3E2BFC9F1700207B4F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		03E71A402BFCC90300207B4F /* (null) in Sources */ = {isa = PBXBuildFile; };
-		03F838292BFD9288004DDDFA /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838272BFD9288004DDDFA /* TimerUI.swift */; };
-		03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838282BFD9288004DDDFA /* BadgesScreen.swift */; };
-		82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82265C162BFB2322000F5F92 /* TimerUI.swift */; };
+		03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838282BFD9288004DDDFA /* BadgeSheetView.swift */; };
 		82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8C8362BFDCE8300214670 /* StreakScreen.swift */; };
 		D97A503A2C019F7A00851290 /* LearningOutRangeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97A50392C019F7A00851290 /* LearningOutRangeSheet.swift */; };
 		DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC232BFC922300529B16 /* BadgeComponent.swift */; };
@@ -59,12 +57,12 @@
 		E741256C2C007C5000812EB1 /* PlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741256B2C007C5000812EB1 /* PlanService.swift */; };
 		E741256E2C00804D00812EB1 /* UserPreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741256D2C00804D00812EB1 /* UserPreferenceService.swift */; };
 		E74125702C00BEAD00812EB1 /* StreakService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741256F2C00BEAD00812EB1 /* StreakService.swift */; };
+		E7605E022C01C38F00CD5153 /* DailyStreakViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7605E012C01C38F00CD5153 /* DailyStreakViewModel.swift */; };
 		E790B4892C00EB6600F22321 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790B4882C00EB6600F22321 /* SplashScreen.swift */; };
 		E7C2C4B92BFF0A0100CAF782 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E7C2C4BB2BFF0A3E00CAF782 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		E7C2C4BD2BFF116800CAF782 /* TabViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4BC2BFF116800CAF782 /* TabViewComponent.swift */; };
 		E7C2C4BF2BFF1C6700CAF782 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4BE2BFF1C6700CAF782 /* TodayViewModel.swift */; };
-		E7EF50B62BFF301C00F47901 /* StreakScreen.swift in Resources */ = {isa = PBXBuildFile; fileRef = E7EF50B42BFF301C00F47901 /* StreakScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,9 +81,7 @@
 		03D85E952BFA25E600C3A248 /* ComponentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDate.swift; sourceTree = "<group>"; };
 		03D85E992BFA27D300C3A248 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		03F207A22BFB760A00FF07A3 /* StaticFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
-		03F838272BFD9288004DDDFA /* TimerUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerUI.swift; sourceTree = "<group>"; };
-		03F838282BFD9288004DDDFA /* BadgesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgesScreen.swift; sourceTree = "<group>"; };
-		82265C162BFB2322000F5F92 /* TimerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUI.swift; sourceTree = "<group>"; };
+		03F838282BFD9288004DDDFA /* BadgeSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSheetView.swift; sourceTree = "<group>"; };
 		82B8C8362BFDCE8300214670 /* StreakScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
 		D97A50392C019F7A00851290 /* LearningOutRangeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningOutRangeSheet.swift; sourceTree = "<group>"; };
 		DAA2CC232BFC922300529B16 /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
@@ -120,10 +116,10 @@
 		E741256B2C007C5000812EB1 /* PlanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanService.swift; sourceTree = "<group>"; };
 		E741256D2C00804D00812EB1 /* UserPreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferenceService.swift; sourceTree = "<group>"; };
 		E741256F2C00BEAD00812EB1 /* StreakService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakService.swift; sourceTree = "<group>"; };
+		E7605E012C01C38F00CD5153 /* DailyStreakViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStreakViewModel.swift; sourceTree = "<group>"; };
 		E790B4882C00EB6600F22321 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		E7C2C4BC2BFF116800CAF782 /* TabViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewComponent.swift; sourceTree = "<group>"; };
 		E7C2C4BE2BFF1C6700CAF782 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
-		E7EF50B42BFF301C00F47901 /* StreakScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,15 +193,11 @@
 		E72EB3082BF84ED000237B58 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E7EF50B42BFF301C00F47901 /* StreakScreen.swift */,
-				03F838282BFD9288004DDDFA /* BadgesScreen.swift */,
-				03F838272BFD9288004DDDFA /* TimerUI.swift */,
 				E72EB3202BF84FBF00237B58 /* TodayScreen.swift */,
 				E72EB3222BF84FCE00237B58 /* GetStartedScreen.swift */,
 				E7C2FBF72BFB2ADC00AFE597 /* Onboarding */,
 				E72EB3282BF8504100237B58 /* GoalsScreen.swift */,
 				82B8C8362BFDCE8300214670 /* StreakScreen.swift */,
-				82265C162BFB2322000F5F92 /* TimerUI.swift */,
 				E790B4882C00EB6600F22321 /* SplashScreen.swift */,
 			);
 			path = Screens;
@@ -243,6 +235,7 @@
 				E70A32372BFC22780014563C /* OnboardingViewModel.swift */,
 				E7C2C4BE2BFF1C6700CAF782 /* TodayViewModel.swift */,
 				034970502BFF54BA00CB2E28 /* NotificationHandler.swift */,
+				E7605E012C01C38F00CD5153 /* DailyStreakViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -260,6 +253,7 @@
 		E72EB30D2BF84EF400237B58 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				03F838282BFD9288004DDDFA /* BadgeSheetView.swift */,
 				03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */,
 				03A122302BFDF039000BD12A /* FinishComponent.swift */,
 				03A122322BFDF05E000BD12A /* LearningHistory.swift */,
@@ -379,7 +373,6 @@
 			files = (
 				E72EB2FD2BF84EC500237B58 /* Preview Assets.xcassets in Resources */,
 				E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */,
-				E7EF50B62BFF301C00F47901 /* StreakScreen.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,19 +399,20 @@
 				03545AA42BFDDA7600F731D8 /* CircularProgressBar.swift in Sources */,
 				E70A32512BFD90520014563C /* StaticFieldComponent.swift in Sources */,
 				E7C2C4BF2BFF1C6700CAF782 /* TodayViewModel.swift in Sources */,
-				82265C172BFB2322000F5F92 /* TimerUI.swift in Sources */,
 				03A122332BFDF05E000BD12A /* LearningHistory.swift in Sources */,
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
 				E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */,
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
 				E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */,
 				03E71A3E2BFC9F1700207B4F /* (null) in Sources */,
+				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
 				D97A503A2C019F7A00851290 /* LearningOutRangeSheet.swift in Sources */,
-				03F8382A2BFD9288004DDDFA /* BadgesScreen.swift in Sources */,
+				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
 				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
 				034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
 				03545AA62BFDDA7F00F731D8 /* TimeFormattingHelper.swift in Sources */,
+				E7605E022C01C38F00CD5153 /* DailyStreakViewModel.swift in Sources */,
 				82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */,
 				03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */,
 				E70A323A2BFCF12D0014563C /* Event.swift in Sources */,
@@ -428,7 +422,6 @@
 				E70A32382BFC22780014563C /* OnboardingViewModel.swift in Sources */,
 				E70A32402BFCF1A80014563C /* CollectionExtension.swift in Sources */,
 				E790B4892C00EB6600F22321 /* SplashScreen.swift in Sources */,
-				03F838292BFD9288004DDDFA /* TimerUI.swift in Sources */,
 				E72EB3212BF84FBF00237B58 /* TodayScreen.swift in Sources */,
 				03A1222F2BFDEFEB000BD12A /* DailyStreak.swift in Sources */,
 				E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */,
@@ -592,7 +585,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tamanmini.Thirtyshh;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tamanmini.Thirtys-mc1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

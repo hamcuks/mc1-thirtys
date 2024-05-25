@@ -44,6 +44,9 @@ struct LearningTimeScreen: View {
                 
                 NavigationLink(
                     destination: TabViewComponent()
+                        .onAppear {
+                            isFirstInstall = false
+                        }
                 ) {
                     Text("Save")
                 }
@@ -52,7 +55,6 @@ struct LearningTimeScreen: View {
             }
             .onDisappear {
                 vm.storeData()
-                isFirstInstall = false
                 for learningTime in vm.learningTimes{
                     for eventTime in learningTime.events {
                         notification.scheduleLearningNotifications(suggestionTimes: [eventTime])
