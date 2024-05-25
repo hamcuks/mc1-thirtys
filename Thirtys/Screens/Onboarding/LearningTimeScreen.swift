@@ -44,20 +44,20 @@ struct LearningTimeScreen: View {
                 
                 NavigationLink(
                     destination: TabViewComponent()
+                        .onAppear {
+                            vm.storeData()
+                            isFirstInstall = false
+                            for learningTime in vm.learningTimes{
+                                for eventTime in learningTime.events {
+                                    notification.scheduleLearningNotifications(suggestionTimes: [eventTime])
+                                }
+                            }
+                        }
                 ) {
                     Text("Save")
                 }
                 .buttonStyle(AppButtonStyle())
                 
-            }
-            .onDisappear {
-                vm.storeData()
-                isFirstInstall = false
-                for learningTime in vm.learningTimes{
-                    for eventTime in learningTime.events {
-                        notification.scheduleLearningNotifications(suggestionTimes: [eventTime])
-                    }
-                }
             }
             .scrollIndicators(.hidden)
             .toolbar(content: {
