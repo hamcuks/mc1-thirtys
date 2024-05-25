@@ -16,11 +16,32 @@ class StreakService: ObservableObject {
         return []
     }
     
-    func getLearningStreaks(plan: PlanEntity) -> [StreakEntity] {
-        // TODO: get learning strike by plan id
-        let items = plan.streaks?.allObjects as? Array<StreakEntity> ?? []
+    func getLearningStreaks(planId: NSManagedObjectID, from startDate: Date? = nil, to endDate: Date? = nil) -> [StreakEntity] {
+        var predicate: NSPredicate? = nil
         
-        return items
+        if let start = startDate, let end = endDate {
+            predicate = NSPredicate(
+                format: "plan == %@ && date >= %@ && date <= %@",
+                planId as NSManagedObjectID,
+                start as NSDate,
+                end as NSDate
+            )
+        } else {
+            predicate = NSPredicate(format: "plan == %@", planId as NSManagedObjectID)
+        }
+        
+        let request: NSFetchRequest = NSFetchRequest<StreakEntity>(entityName: "StreakEntity")
+        request.predicate = predicate
+        
+        do {
+            let items = try database.fetch(request)
+            
+            return items
+        } catch {
+            print("Error: \(error.localizedDescription)")
+            
+            return []
+        }
     }
     
     func updateDailyStreak(plan: PlanEntity, learningHistory: [Event]) {
