@@ -11,7 +11,7 @@ struct LearningTimeScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
     
-    @AppStorage("isFirstInstall") private var isFirstInstall = true
+    @AppStorage("firstInstall") private var isFirstInstall = true
     
     var notification = NotificationHandler()
     

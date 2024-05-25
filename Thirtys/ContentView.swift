@@ -11,16 +11,29 @@ import CoreData
 struct ContentView: View {
     
     let notification = NotificationHandler()
-
-    @AppStorage("firstInstall") private var isFirstInstall = false
+    
+    @State var isSplashActive: Bool = true
+    @AppStorage("firstInstall") private var isFirstInstall = true
     var body: some View {
-        if isFirstInstall {
-            GetStartedScreen()
-                .onAppear{
-                    notification.askPermission()
+        if isSplashActive {
+            SplashScreen()
+                .onAppear {
+                    print("First Install: \(isFirstInstall)")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        withAnimation(.easeOut) {
+                            isSplashActive.toggle()
+                        }
+                    }
                 }
         } else {
-            TabViewComponent()
+            if isFirstInstall {
+                GetStartedScreen()
+                    .onAppear{
+                        notification.askPermission()
+                    }
+            } else {
+                TabViewComponent()
+            }
         }
     }
     
