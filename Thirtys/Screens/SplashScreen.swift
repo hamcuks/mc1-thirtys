@@ -16,9 +16,17 @@ struct SplashScreen: View {
                 .scaledToFill()
                 .rotationEffect(.degrees(21))
                 .foregroundStyle(.kTitleText.opacity(0.1))
-            Text("Thirty's")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
+            VStack {
+                Image(systemName: "book.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 32)
+                    .foregroundStyle(.white)
+                
+                Text("Thirty's")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+            }
         }
         .foregroundStyle(.white)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
