@@ -40,9 +40,8 @@ struct GetStartedScreen: View {
                 .buttonStyle(AppButtonStyle())
                 
             }
-            .padding()
+            .padding(.horizontal)
         }
-        .preferredColorScheme(.light)
     }
 }
 
