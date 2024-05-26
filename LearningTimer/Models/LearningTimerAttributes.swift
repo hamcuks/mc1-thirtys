@@ -16,4 +16,6 @@ struct LearningTimerAttributes: ActivityAttributes {
         var pauseDate: Date?
         var timer: Date
     }
+    
+    var countdownInterval: TimeInterval
 }
