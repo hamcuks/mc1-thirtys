@@ -9,9 +9,9 @@ import SwiftUI
 
 struct StepThreeOnboardingScreen: View {
     
-    @State private var isTimePickerOpened: Bool = true
+    @State private var isTimePickerOpened: Bool = false
     @EnvironmentObject private var vm: OnboardingViewModel
-    @Binding var path: NavigationPath
+    @EnvironmentObject var pathHolder: PathHandler
     
     var body: some View {
         VStack {
@@ -50,12 +50,22 @@ struct StepThreeOnboardingScreen: View {
             
             Spacer()
             
-            NavigationLink(
-                destination: LearningTimeScreen(path: $path)
-            ) {
+            Button {
+                pathHolder.path.append("learning")
+            } label: {
                 Text("Next")
             }
             .buttonStyle(AppButtonStyle())
+            
+//            NavigationLink(
+//                destination: LearningTimeScreen()
+//            ) {
+//                Text("Next")
+//            }
+//            .buttonStyle(AppButtonStyle())
+//            .onAppear(perform: {
+//                pathHolder.path.append("LearningTimeScreen")
+//            })
             
         }
         .scrollIndicators(.hidden)
@@ -73,7 +83,9 @@ struct StepThreeOnboardingScreen: View {
 }
 
 
+
+
 #Preview {
-    StepThreeOnboardingScreen(path: .constant(NavigationPath()))
+    StepThreeOnboardingScreen()
         .environmentObject(OnboardingViewModel())
 }

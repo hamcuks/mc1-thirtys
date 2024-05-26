@@ -11,8 +11,7 @@ struct LearningTimeScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
     @AppStorage("firstInstall") private var isFirstInstall = true
-    
-    @Binding var path: NavigationPath
+    @EnvironmentObject var pathHolder: PathHandler
     
     var notification = NotificationHandler()
     
@@ -41,41 +40,57 @@ struct LearningTimeScreen: View {
                 
                 Spacer()
                 
-//                
+                Button {
+                    
+                    if pathHolder.isSettingOpen{
+                        pathHolder.path.removeLast(pathHolder.path.count)
+                    } else {
+                        isFirstInstall = false
+                    }
+                } label: {
+                    Text("Next")
+                }
+                .buttonStyle(AppButtonStyle())
+                
+                
 //                NavigationLink(
 //                    destination: TabViewComponent()
 //                        .onAppear {
 //                            isFirstInstall = false
 //                            
+//                            if pathHolder.isSettingOpen {
+//                                pathHolder.path.removeLast(pathHolder.path.count)
+//                            }
+                            
 //                            if svm.isFromSetting{
 //                                
 //                                print("coba \(svm.path)")
 //                                svm.path.removeLast(svm.path.count)
 //                                isFirstInstall = false
 //                            }
-//                            
-//                            
+                            
+                            
 //                        }
 //                ) {
 //                    Text("Save")
 //                }
 //                .buttonStyle(AppButtonStyle())
                 
-                Button{
-                    if isFirstInstall {
-                        NavigationLink(destination: TabViewComponent(), isActive: $isFirstInstall) {
-                            EmptyView()
-                                .onAppear{
-                                    isFirstInstall = false
-                                }
-                        }
-                    } else if !isFirstInstall {
-                        path.removeLast(path.count)
-                    }
-                } label: {
-                    Text("Save")
-                }
-                .buttonStyle(AppButtonStyle())
+//                Button{
+//                    if isFirstInstall {
+//                        NavigationLink(destination: TabViewComponent(), isActive: $isFirstInstall) {
+//                            EmptyView()
+//                                .onAppear{
+//                                    isFirstInstall = false
+//                                }
+//                        }
+//                    } else if !isFirstInstall {
+//                        path.removeLast(path.count)
+//                    }
+//                } label: {
+//                    Text("Save")
+//                }
+//                .buttonStyle(AppButtonStyle())
                 
                 
             }
@@ -108,6 +123,6 @@ struct LearningTimeScreen: View {
 }
 
 #Preview {
-    LearningTimeScreen(path: .constant(NavigationPath()))
+    LearningTimeScreen()
         .environmentObject(OnboardingViewModel())
 }

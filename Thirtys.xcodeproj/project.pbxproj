@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0321E8962C03814600432F12 /* PathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321E8952C03814600432F12 /* PathHandler.swift */; };
 		0349704F2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */; };
 		034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034970502BFF54BA00CB2E28 /* NotificationHandler.swift */; };
 		034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292D2BFB74200030D448 /* LearningTimeScreen.swift */; };
@@ -108,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0321E8952C03814600432F12 /* PathHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathHandler.swift; sourceTree = "<group>"; };
 		0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationStopLearningComponent.swift; sourceTree = "<group>"; };
 		034970502BFF54BA00CB2E28 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		034E292D2BFB74200030D448 /* LearningTimeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningTimeScreen.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				E741256B2C007C5000812EB1 /* PlanService.swift */,
 				E741256D2C00804D00812EB1 /* UserPreferenceService.swift */,
 				E741256F2C00BEAD00812EB1 /* StreakService.swift */,
+				0321E8952C03814600432F12 /* PathHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */,
 				E70A324A2BFCFDF90014563C /* TimePickerComponent.swift in Sources */,
 				E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */,
+				0321E8962C03814600432F12 /* PathHandler.swift in Sources */,
 				E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */,
 				DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */,
 			);

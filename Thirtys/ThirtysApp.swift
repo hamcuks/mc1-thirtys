@@ -21,6 +21,7 @@ struct ThirtysApp: App {
                 .environmentObject(TodayViewModel())
                 .environmentObject(DailyStreakViewModel())
                 .environmentObject(SettingViewModel())
+                .environmentObject(PathHandler())
         }
         
     }

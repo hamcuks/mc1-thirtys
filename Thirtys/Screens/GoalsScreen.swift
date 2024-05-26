@@ -10,10 +10,10 @@ import SwiftUI
 struct GoalsScreen: View {
     
     @EnvironmentObject private var vm: GoalViewModel
-    @State private var path = NavigationPath()
+    
     
     var body: some View {
-        NavigationStack(path: $path){
+        NavigationStack(){
             
             VStack(spacing: 24){
                 

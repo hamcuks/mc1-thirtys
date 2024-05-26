@@ -11,61 +11,72 @@ struct StepTwoOnboardingScreen: View {
     
     @State private var isTimePickerOpened: Bool = false
     @EnvironmentObject private var vm: OnboardingViewModel
-    @Binding var path: NavigationPath
+    @EnvironmentObject var pathHolder: PathHandler
     
     var body: some View {
         
-            ScrollView {
-                VStack(spacing: 40) {
-                    Image(.workSchedules)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxHeight: 210)
-                    
-                    VStack (spacing: 16) {
-                        Text("Your Work Schedules!")
-                            .font(.title2)
-                            .bold()
-                            .foregroundStyle(.kTitleText)
-                        Text("Setting your work hours allows us to allocate your time effectively")
-                            .font(.callout)
-                            .fontWeight(.medium)
-                            .foregroundStyle(.kBody)
-                            .multilineTextAlignment(.center)
-                    }
-                    
-                    VStack(spacing: 16) {
-                        ForEach(Array(vm.weekDays.enumerated()), id: \.offset) { (index, day) in
-                            ListItemComponent(
-                                data: $vm.weekDays[index]
-                            )
-                        }
-                    }
-                    
-                    NavigationLink(
-                        destination: StepThreeOnboardingScreen( path: $path)
-                    ) {
-                        Text("Next")
-                    }
-                    .buttonStyle(AppButtonStyle())
-                   
+        ScrollView {
+            VStack(spacing: 40) {
+                Image(.workSchedules)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 210)
+                
+                VStack (spacing: 16) {
+                    Text("Your Work Schedules!")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(.kTitleText)
+                    Text("Setting your work hours allows us to allocate your time effectively")
+                        .font(.callout)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.kBody)
+                        .multilineTextAlignment(.center)
                 }
-            }
-            .scrollIndicators(.hidden)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    BackButton()
+                
+                VStack(spacing: 16) {
+                    ForEach(Array(vm.weekDays.enumerated()), id: \.offset) { (index, day) in
+                        ListItemComponent(
+                            data: $vm.weekDays[index]
+                        )
+                    }
                 }
+                
+                Button {
+                    print("ini value path \(pathHolder.path)")
+                    pathHolder.path.append("three")
+                } label: {
+                    Text("Next")
+                }
+                .buttonStyle(AppButtonStyle())
+                
+                //                    NavigationLink(
+                //                        destination: StepThreeOnboardingScreen()
+                //                    ) {
+                //                        Text("Next")
+                //                    }
+                //                    .buttonStyle(AppButtonStyle())
+                //                    .onAppear(perform: {
+                //                        pathHolder.path.append("StepThreeOnboardingScreen")
+                //                    })
+                
             }
-            .contentMargins(16, for: .scrollContent)
-            .navigationTitle("Step 2/3")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden()
         }
-  
+        .scrollIndicators(.hidden)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                BackButton()
+            }
+        }
+        .contentMargins(16, for: .scrollContent)
+        .navigationTitle("Step 2/3")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
+    }
+    
 }
 
 #Preview {
-    StepTwoOnboardingScreen( path: .constant(NavigationPath()))
+    StepTwoOnboardingScreen()
         .environmentObject(OnboardingViewModel())
 }

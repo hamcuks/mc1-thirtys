@@ -51,7 +51,7 @@ struct StepOneOnboardingScreen: View {
                     }
                     
                     NavigationLink(
-                        destination: StepTwoOnboardingScreen( path: .constant(NavigationPath()))
+                        destination: StepTwoOnboardingScreen()
                     ) {
                         Text("Next")
                     }
