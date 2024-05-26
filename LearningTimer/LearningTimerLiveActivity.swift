@@ -56,8 +56,9 @@ struct LearningTimerLiveActivity: Widget {
                     .hidden()
                     .overlay {
                         Text(
-                            context.state.timer,
-                            style: .timer
+                            timerInterval: context.state.startDate...context.state.timer,
+                            pauseTime: context.state.pauseDate,
+                            countsDown: true
                         )
                         .bold()
                     }
@@ -89,9 +90,11 @@ struct LearningTimerLiveActivity: Widget {
                     .hidden()
                     .overlay {
                         Text(
-                            context.state.timer,
-                            style: .timer
+                            timerInterval: context.state.startDate...context.state.timer,
+                            pauseTime: context.state.pauseDate,
+                            countsDown: true
                         )
+                        .bold()
                     }
                     .foregroundStyle(.kSuccess)
                     .bold()
@@ -130,7 +133,7 @@ extension LearningTimerAttributes.ContentState {
     }
 }
 
-#Preview("Notification", as: .dynamicIsland(.compact), using: LearningTimerAttributes.preview) {
+#Preview("Notification", as: .dynamicIsland(.expanded), using: LearningTimerAttributes.preview) {
     LearningTimerLiveActivity()
 } contentStates: {
     LearningTimerAttributes.ContentState.smiley

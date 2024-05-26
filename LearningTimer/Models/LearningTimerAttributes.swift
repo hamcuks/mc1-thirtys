@@ -13,6 +13,7 @@ struct LearningTimerAttributes: ActivityAttributes {
     
     public struct ContentState: Codable, Hashable {
         var startDate: Date
+        var pauseDate: Date?
         var timer: Date
     }
 }
