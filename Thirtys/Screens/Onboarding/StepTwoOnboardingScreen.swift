@@ -12,6 +12,7 @@ struct StepTwoOnboardingScreen: View {
     @State private var isTimePickerOpened: Bool = false
     @EnvironmentObject private var vm: OnboardingViewModel
     @EnvironmentObject var pathHolder: PathHandler
+    var isOnboarding: Bool = false
     
     var body: some View {
         
@@ -46,7 +47,7 @@ struct StepTwoOnboardingScreen: View {
                     Task {
                            if pathHolder.isSettingOpen {
                                pathHolder.path.append("threeFromSetting")
-                           } else {
+                           } else if isOnboarding{
                                pathHolder.path.append("threeOnBoard")
                            }
                        }

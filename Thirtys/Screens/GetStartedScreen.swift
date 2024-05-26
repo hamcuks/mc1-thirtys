@@ -45,7 +45,7 @@ struct GetStartedScreen: View {
                     if value == "oneOnBoard"{
                         StepOneOnboardingScreen()
                     } else if value == "twoOnBoard"{
-                        StepTwoOnboardingScreen()
+                        StepTwoOnboardingScreen(isOnboarding: true)
                     } else if value == "threeOnBoard" {
                         StepThreeOnboardingScreen()
                     } else if value == "fourOnBoard" {
