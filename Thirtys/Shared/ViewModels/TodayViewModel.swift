@@ -123,10 +123,7 @@ class TodayViewModel: ObservableObject {
     
     func startLiveActivity() async {
         let attributes = LearningTimerAttributes(countdownInterval: countdownInterval)
-        let state = LearningTimerAttributes.ContentState(
-            startDate: self.startTime ?? .now,
-            timer: (self.startTime ?? .now).addingTimeInterval(countdownInterval)
-        )
+        let state = LearningTimerAttributes.ContentState()
         
         let activityContent = ActivityContent(
             state: state,
@@ -146,11 +143,9 @@ class TodayViewModel: ObservableObject {
     
     func pauseLiveActivity() async {
         let pause = Date.now.addingTimeInterval(self.remainingTime)
-
+        
         let state = LearningTimerAttributes.ContentState(
-            startDate: .now,
-            pauseDate: pause,
-            timer: pause
+            pauseTime: self.remainingTime
         )
         
         let activityContent = ActivityContent(
@@ -164,10 +159,7 @@ class TodayViewModel: ObservableObject {
     func resumeLiveActivity() async {
         let timer = Date.now.addingTimeInterval(self.remainingTime)
         
-        let state = LearningTimerAttributes.ContentState(
-            startDate: .now,
-            timer: timer
-        )
+        let state = LearningTimerAttributes.ContentState()
         
         let activityContent = ActivityContent(
             state: state,
@@ -179,8 +171,6 @@ class TodayViewModel: ObservableObject {
     
     func stopLiveActivity() async {
         let state = LearningTimerAttributes.ContentState(
-            startDate: self.startTime ?? .now,
-            timer: (self.startTime ?? .now).addingTimeInterval(countdownInterval)
         )
         
         let activityContent = ActivityContent(

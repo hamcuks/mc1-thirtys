@@ -12,9 +12,7 @@ struct LearningTimerAttributes: ActivityAttributes {
     public typealias TimerStatus = ContentState
     
     public struct ContentState: Codable, Hashable {
-        var startDate: Date
-        var pauseDate: Date?
-        var timer: Date
+        var pauseTime: TimeInterval?
     }
     
     var countdownInterval: TimeInterval

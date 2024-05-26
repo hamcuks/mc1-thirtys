@@ -77,8 +77,12 @@ struct LearningTimerLiveActivity: Widget {
                     .hidden()
                     .overlay {
                         Text(
-                            timerInterval: context.state.startDate...context.state.timer,
-                            pauseTime: context.state.pauseDate,
+                            timerInterval: .now...Date.now.addingTimeInterval(
+                                context.state.pauseTime ?? context.attributes.countdownInterval
+                            ),
+                            pauseTime: .now.addingTimeInterval(
+                                context.state.pauseTime ?? 0
+                            ),
                             countsDown: true
                         )
                         .bold()
@@ -90,9 +94,9 @@ struct LearningTimerLiveActivity: Widget {
                 
             } compactLeading: {
                 
-                if let pause = context.state.pauseDate {
+                if let pause = context.state.pauseTime {
                     ProgressView(
-                        value: pause.timeIntervalSinceNow,
+                        value: pause,
                         total: context.attributes.countdownInterval
                     ) {
                         Image(systemName: "book.fill")
@@ -106,14 +110,10 @@ struct LearningTimerLiveActivity: Widget {
                     .frame(height: 24)
                     .tint(.kSuccess)
                     .padding(.trailing, 24)
-                    .onAppear {
-                        print(pause.timeIntervalSinceNow)
-                        print(context.state.startDate.timeIntervalSinceNow)
-                        print(context.state.timer.timeIntervalSinceNow)
-                    }
                 } else {
                     ProgressView(
-                        timerInterval: context.state.startDate...context.state.timer,
+                        timerInterval: .now...Date.now.addingTimeInterval(context.attributes.countdownInterval
+                        ),
                         countsDown: true,
                         label: { EmptyView() }
                     ) {
@@ -135,8 +135,12 @@ struct LearningTimerLiveActivity: Widget {
                     .hidden()
                     .overlay {
                         Text(
-                            timerInterval: context.state.startDate...context.state.timer,
-                            pauseTime: context.state.pauseDate,
+                            timerInterval: .now...Date.now.addingTimeInterval(
+                                context.state.pauseTime ?? context.attributes.countdownInterval
+                            ),
+                            pauseTime: .now.addingTimeInterval(
+                                context.state.pauseTime ?? 0
+                            ),
                             countsDown: true
                         )
                         .bold()
@@ -145,21 +149,41 @@ struct LearningTimerLiveActivity: Widget {
                     .bold()
                 
             } minimal: {
-                ProgressView(
-                    timerInterval: context.state.startDate...context.state.timer,
-                    countsDown: true,
-                    label: { EmptyView() }
-                ) {
-                    Image(systemName: "book.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 10)
-                        .foregroundStyle(.kSuccess)
+                if let pause = context.state.pauseTime {
+                    ProgressView(
+                        value: pause,
+                        total: context.attributes.countdownInterval
+                    ) {
+                        Image(systemName: "book.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10)
+                            .foregroundStyle(.kSuccess)
+                    }
+                    .labelsHidden()
+                    .progressViewStyle(.circular)
+                    .frame(height: 24)
+                    .tint(.kSuccess)
+                    .padding(.trailing, 24)
+                } else {
+                    ProgressView(
+                        timerInterval: .now...Date.now.addingTimeInterval(context.attributes.countdownInterval
+                                                                         ),
+                        countsDown: true,
+                        label: { EmptyView() }
+                    ) {
+                        Image(systemName: "book.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10)
+                            .foregroundStyle(.kSuccess)
+                    }
+                    .labelsHidden()
+                    .progressViewStyle(.circular)
+                    .frame(height: 24)
+                    .tint(.kSuccess)
+                    .padding(.trailing, 24)
                 }
-                .labelsHidden()
-                .progressViewStyle(.circular)
-                .frame(height: 24)
-                .tint(.kSuccess)
             }
             .keylineTint(.kAccent)
         }
@@ -174,11 +198,7 @@ extension LearningTimerAttributes {
 
 extension LearningTimerAttributes.ContentState {
     fileprivate static var smiley: LearningTimerAttributes.ContentState {
-        LearningTimerAttributes.ContentState(
-            startDate: .now,
-            pauseDate: .now.addingTimeInterval(5),
-            timer: .now.addingTimeInterval(10)
-        )
+        LearningTimerAttributes.ContentState()
     }
 }
 
