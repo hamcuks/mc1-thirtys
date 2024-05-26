@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 import Combine
 import SwiftUI
+import ActivityKit
 
 class TodayViewModel: ObservableObject {
     var database: PersistenceController = PersistenceController.shared
@@ -42,6 +43,8 @@ class TodayViewModel: ObservableObject {
     // This Week Streak
     @Published var weekdays: [Date] = []
     @Published var weeklyStreaks: [Date] = []
+    
+    private var activity: Activity<LearningTimerAttributes>? = nil
     
     init() {
         self.getWeekday()
@@ -108,12 +111,78 @@ class TodayViewModel: ObservableObject {
                 }
             }
         }
+        
+        Task {
+            if self.remainingTime == self.countdownInterval {
+                await self.startLiveActivity()
+            } else {
+                await self.resumeLiveActivity()
+            }
+        }
+    }
+    
+    func startLiveActivity() async {
+        let attributes = LearningTimerAttributes(countdownInterval: countdownInterval)
+        let state = LearningTimerAttributes.ContentState()
+        
+        let activityContent = ActivityContent(
+            state: state,
+            staleDate: nil
+        )
+        
+        do {
+            self.activity = try Activity<LearningTimerAttributes>.request(
+                attributes: attributes,
+                content: activityContent,
+                pushType: nil
+            )
+        } catch {
+            print("Error: \(error.localizedDescription)")
+        }
+    }
+    
+    func pauseLiveActivity() async {
+        let state = LearningTimerAttributes.ContentState(
+            pauseTime: self.remainingTime
+        )
+        
+        let activityContent = ActivityContent(
+            state: state,
+            staleDate: nil
+        )
+        
+        await self.activity?.update(activityContent)
+    }
+    
+    func resumeLiveActivity() async {
+        let state = LearningTimerAttributes.ContentState()
+        
+        let activityContent = ActivityContent(
+            state: state,
+            staleDate: nil
+        )
+        
+        await self.activity?.update(activityContent)
+    }
+    
+    func stopLiveActivity() async {
+        let state = LearningTimerAttributes.ContentState()
+        
+        let activityContent = ActivityContent(
+            state: state,
+            staleDate: nil
+        )
+        
+        await self.activity?.end(activityContent, dismissalPolicy:.immediate)
     }
     
     func pauseTimer() {
         isTimerActive = false
         timer?.cancel()
         recordSession()
+        Task {
+            await self.pauseLiveActivity()
+        }
     }
     
     func resetTimer() {
@@ -123,6 +192,10 @@ class TodayViewModel: ObservableObject {
         timer?.cancel()
         startTime = nil
         learningHistory.removeAll()
+        
+        Task {
+            await self.stopLiveActivity()
+        }
     }
     
     func completeSession() {
@@ -133,6 +206,10 @@ class TodayViewModel: ObservableObject {
         self.updateDailyStreak()
         self.getLearningStreaks()
         self.getAchievement()
+        
+        Task {
+            await self.stopLiveActivity()
+        }
     }
     
     func recordSession() {

@@ -56,8 +56,8 @@ struct StepOneOnboardingScreen: View {
                         Text("Next")
                     }
                     .buttonStyle(AppButtonStyle())
-                    .grayscale(vm.planTitle.isEmpty ? 1 : 0)
-                    .disabled(vm.planTitle.isEmpty)
+                    .grayscale((vm.planTitle.isEmpty || vm.planDuration < 7) ? 1 : 0)
+                    .disabled((vm.planTitle.isEmpty || vm.planDuration < 7))
                 }
                 
                 
