@@ -17,7 +17,7 @@
 		03A1222F2BFDEFEB000BD12A /* DailyStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */; };
 		03A122312BFDF039000BD12A /* FinishComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A122302BFDF039000BD12A /* FinishComponent.swift */; };
 		03A122332BFDF05E000BD12A /* LearningHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A122322BFDF05E000BD12A /* LearningHistory.swift */; };
-		03A74E3C2C02CCC400CAF2BC /* ReconfigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E3B2C02CCC400CAF2BC /* ReconfigureView.swift */; };
+		03A74E3C2C02CCC400CAF2BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E3B2C02CCC400CAF2BC /* SettingsView.swift */; };
 		03A74E3E2C02D5A600CAF2BC /* WorkScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E3D2C02D5A600CAF2BC /* WorkScheduleView.swift */; };
 		03A74E402C02D5C000CAF2BC /* BedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E3F2C02D5C000CAF2BC /* BedTimeView.swift */; };
 		03A74E422C02F36D00CAF2BC /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E412C02F36D00CAF2BC /* SettingViewModel.swift */; };
@@ -118,7 +118,7 @@
 		03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStreak.swift; sourceTree = "<group>"; };
 		03A122302BFDF039000BD12A /* FinishComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishComponent.swift; sourceTree = "<group>"; };
 		03A122322BFDF05E000BD12A /* LearningHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHistory.swift; sourceTree = "<group>"; };
-		03A74E3B2C02CCC400CAF2BC /* ReconfigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconfigureView.swift; sourceTree = "<group>"; };
+		03A74E3B2C02CCC400CAF2BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		03A74E3D2C02D5A600CAF2BC /* WorkScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkScheduleView.swift; sourceTree = "<group>"; };
 		03A74E3F2C02D5C000CAF2BC /* BedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedTimeView.swift; sourceTree = "<group>"; };
 		03A74E412C02F36D00CAF2BC /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
@@ -330,7 +330,7 @@
 				03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */,
 				03A122302BFDF039000BD12A /* FinishComponent.swift */,
 				03A122322BFDF05E000BD12A /* LearningHistory.swift */,
-				03A74E3B2C02CCC400CAF2BC /* ReconfigureView.swift */,
+				03A74E3B2C02CCC400CAF2BC /* SettingsView.swift */,
 				03A74E3D2C02D5A600CAF2BC /* WorkScheduleView.swift */,
 				03A74E3F2C02D5C000CAF2BC /* BedTimeView.swift */,
 			);
@@ -570,7 +570,7 @@
 				03A74E402C02D5C000CAF2BC /* BedTimeView.swift in Sources */,
 				E70A324F2BFD90410014563C /* GoalViewModel.swift in Sources */,
 				E7C2C4B92BFF0A0100CAF782 /* (null) in Sources */,
-				03A74E3C2C02CCC400CAF2BC /* ReconfigureView.swift in Sources */,
+				03A74E3C2C02CCC400CAF2BC /* SettingsView.swift in Sources */,
 				03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */,
 				E70A323E2BFCF17A0014563C /* WeekdayTypeEnum.swift in Sources */,
 				E70A32422BFCF1B40014563C /* DateExtension.swift in Sources */,
