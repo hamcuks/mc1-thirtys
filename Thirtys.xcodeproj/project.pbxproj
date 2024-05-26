@@ -57,6 +57,18 @@
 		E741256C2C007C5000812EB1 /* PlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741256B2C007C5000812EB1 /* PlanService.swift */; };
 		E741256E2C00804D00812EB1 /* UserPreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741256D2C00804D00812EB1 /* UserPreferenceService.swift */; };
 		E74125702C00BEAD00812EB1 /* StreakService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741256F2C00BEAD00812EB1 /* StreakService.swift */; };
+		E74E341C2C02530E001E0E93 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74E341B2C02530E001E0E93 /* WidgetKit.framework */; };
+		E74E341E2C02530E001E0E93 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74E341D2C02530E001E0E93 /* SwiftUI.framework */; };
+		E74E34212C02530E001E0E93 /* LearningTimerBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74E34202C02530E001E0E93 /* LearningTimerBundle.swift */; };
+		E74E34232C02530E001E0E93 /* LearningTimerLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74E34222C02530E001E0E93 /* LearningTimerLiveActivity.swift */; };
+		E74E34252C02530E001E0E93 /* LearningTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74E34242C02530E001E0E93 /* LearningTimer.swift */; };
+		E74E34272C025310001E0E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74E34262C025310001E0E93 /* Assets.xcassets */; };
+		E74E342B2C025310001E0E93 /* LearningTimerExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E74E34192C02530E001E0E93 /* LearningTimerExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E74E34302C02C798001E0E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72EB2F92BF84EC500237B58 /* Assets.xcassets */; };
+		E74E34332C02CC51001E0E93 /* LearningTimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74E34322C02CC51001E0E93 /* LearningTimerAttributes.swift */; };
+		E74E34342C02D96A001E0E93 /* AppButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB30F2BF84F1700237B58 /* AppButtonComponent.swift */; };
+		E75E9F222C02E1F800A205E0 /* LearningTimerAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74E34322C02CC51001E0E93 /* LearningTimerAttributes.swift */; };
+		E75E9F232C02EA6700A205E0 /* TimeFormattingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03545AA52BFDDA7F00F731D8 /* TimeFormattingHelper.swift */; };
 		E7605E022C01C38F00CD5153 /* DailyStreakViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7605E012C01C38F00CD5153 /* DailyStreakViewModel.swift */; };
 		E790B4892C00EB6600F22321 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790B4882C00EB6600F22321 /* SplashScreen.swift */; };
 		E7C2C4B92BFF0A0100CAF782 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -64,6 +76,30 @@
 		E7C2C4BD2BFF116800CAF782 /* TabViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4BC2BFF116800CAF782 /* TabViewComponent.swift */; };
 		E7C2C4BF2BFF1C6700CAF782 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2C4BE2BFF1C6700CAF782 /* TodayViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E74E34292C025310001E0E93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E72EB2EA2BF84EC300237B58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E74E34182C02530E001E0E93;
+			remoteInfo = LearningTimerExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E74E342C2C025310001E0E93 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E74E342B2C025310001E0E93 /* LearningTimerExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationStopLearningComponent.swift; sourceTree = "<group>"; };
@@ -117,6 +153,15 @@
 		E741256B2C007C5000812EB1 /* PlanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanService.swift; sourceTree = "<group>"; };
 		E741256D2C00804D00812EB1 /* UserPreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferenceService.swift; sourceTree = "<group>"; };
 		E741256F2C00BEAD00812EB1 /* StreakService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakService.swift; sourceTree = "<group>"; };
+		E74E34192C02530E001E0E93 /* LearningTimerExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LearningTimerExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74E341B2C02530E001E0E93 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E74E341D2C02530E001E0E93 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E74E34202C02530E001E0E93 /* LearningTimerBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTimerBundle.swift; sourceTree = "<group>"; };
+		E74E34222C02530E001E0E93 /* LearningTimerLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTimerLiveActivity.swift; sourceTree = "<group>"; };
+		E74E34242C02530E001E0E93 /* LearningTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTimer.swift; sourceTree = "<group>"; };
+		E74E34262C025310001E0E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E74E34282C025310001E0E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E74E34322C02CC51001E0E93 /* LearningTimerAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTimerAttributes.swift; sourceTree = "<group>"; };
 		E7605E012C01C38F00CD5153 /* DailyStreakViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStreakViewModel.swift; sourceTree = "<group>"; };
 		E790B4882C00EB6600F22321 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		E7C2C4BC2BFF116800CAF782 /* TabViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewComponent.swift; sourceTree = "<group>"; };
@@ -128,6 +173,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74E34162C02530E001E0E93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74E341E2C02530E001E0E93 /* SwiftUI.framework in Frameworks */,
+				E74E341C2C02530E001E0E93 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				E72EB2F42BF84EC300237B58 /* Thirtys */,
+				E74E341F2C02530E001E0E93 /* LearningTimer */,
+				E74E341A2C02530E001E0E93 /* Frameworks */,
 				E72EB2F32BF84EC300237B58 /* Products */,
 				03545A9C2BFDDA3800F731D8 /* Recovered References */,
 			);
@@ -163,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				E72EB2F22BF84EC300237B58 /* Thirtys.app */,
+				E74E34192C02530E001E0E93 /* LearningTimerExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,6 +361,36 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E74E341A2C02530E001E0E93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E74E341B2C02530E001E0E93 /* WidgetKit.framework */,
+				E74E341D2C02530E001E0E93 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E74E341F2C02530E001E0E93 /* LearningTimer */ = {
+			isa = PBXGroup;
+			children = (
+				E74E34312C02CC42001E0E93 /* Models */,
+				E74E34202C02530E001E0E93 /* LearningTimerBundle.swift */,
+				E74E34222C02530E001E0E93 /* LearningTimerLiveActivity.swift */,
+				E74E34242C02530E001E0E93 /* LearningTimer.swift */,
+				E74E34262C025310001E0E93 /* Assets.xcassets */,
+				E74E34282C025310001E0E93 /* Info.plist */,
+			);
+			path = LearningTimer;
+			sourceTree = "<group>";
+		};
+		E74E34312C02CC42001E0E93 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E74E34322C02CC51001E0E93 /* LearningTimerAttributes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E7C2FBF72BFB2ADC00AFE597 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,15 +412,34 @@
 				E72EB2EE2BF84EC300237B58 /* Sources */,
 				E72EB2EF2BF84EC300237B58 /* Frameworks */,
 				E72EB2F02BF84EC300237B58 /* Resources */,
+				E74E342C2C025310001E0E93 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E74E342A2C025310001E0E93 /* PBXTargetDependency */,
 			);
 			name = Thirtys;
 			productName = Thirtys;
 			productReference = E72EB2F22BF84EC300237B58 /* Thirtys.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E74E34182C02530E001E0E93 /* LearningTimerExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E74E342F2C025310001E0E93 /* Build configuration list for PBXNativeTarget "LearningTimerExtension" */;
+			buildPhases = (
+				E74E34152C02530E001E0E93 /* Sources */,
+				E74E34162C02530E001E0E93 /* Frameworks */,
+				E74E34172C02530E001E0E93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LearningTimerExtension;
+			productName = LearningTimerExtension;
+			productReference = E74E34192C02530E001E0E93 /* LearningTimerExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -346,6 +452,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					E72EB2F12BF84EC300237B58 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					E74E34182C02530E001E0E93 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -364,6 +473,7 @@
 			projectRoot = "";
 			targets = (
 				E72EB2F12BF84EC300237B58 /* Thirtys */,
+				E74E34182C02530E001E0E93 /* LearningTimerExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -375,6 +485,15 @@
 			files = (
 				E72EB2FD2BF84EC500237B58 /* Preview Assets.xcassets in Resources */,
 				E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74E34172C02530E001E0E93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74E34302C02C798001E0E93 /* Assets.xcassets in Resources */,
+				E74E34272C025310001E0E93 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +552,7 @@
 				E70A323E2BFCF17A0014563C /* WeekdayTypeEnum.swift in Sources */,
 				E70A32422BFCF1B40014563C /* DateExtension.swift in Sources */,
 				034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */,
+				E74E34332C02CC51001E0E93 /* LearningTimerAttributes.swift in Sources */,
 				E7C2C4BB2BFF0A3E00CAF782 /* (null) in Sources */,
 				E74125702C00BEAD00812EB1 /* StreakService.swift in Sources */,
 				E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */,
@@ -443,7 +563,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E74E34152C02530E001E0E93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74E34252C02530E001E0E93 /* LearningTimer.swift in Sources */,
+				E74E34232C02530E001E0E93 /* LearningTimerLiveActivity.swift in Sources */,
+				E75E9F222C02E1F800A205E0 /* LearningTimerAttributes.swift in Sources */,
+				E75E9F232C02EA6700A205E0 /* TimeFormattingHelper.swift in Sources */,
+				E74E34212C02530E001E0E93 /* LearningTimerBundle.swift in Sources */,
+				E74E34342C02D96A001E0E93 /* AppButtonComponent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E74E342A2C025310001E0E93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E74E34182C02530E001E0E93 /* LearningTimerExtension */;
+			targetProxy = E74E34292C025310001E0E93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E72EB3032BF84EC500237B58 /* Debug */ = {
@@ -568,6 +709,7 @@
 		E72EB3062BF84EC500237B58 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -579,6 +721,7 @@
 				INFOPLIST_FILE = Thirtys/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Thirty's";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -603,6 +746,7 @@
 		E72EB3072BF84EC500237B58 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -614,6 +758,7 @@
 				INFOPLIST_FILE = Thirtys/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Thirty's";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -635,6 +780,60 @@
 			};
 			name = Release;
 		};
+		E74E342D2C025310001E0E93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57BYB3NG56;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LearningTimer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LearningTimer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tamanmini.Thirtys-mc1.LearningTimer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E74E342E2C025310001E0E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57BYB3NG56;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LearningTimer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LearningTimer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tamanmini.Thirtys-mc1.LearningTimer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -652,6 +851,15 @@
 			buildConfigurations = (
 				E72EB3062BF84EC500237B58 /* Debug */,
 				E72EB3072BF84EC500237B58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E74E342F2C025310001E0E93 /* Build configuration list for PBXNativeTarget "LearningTimerExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74E342D2C025310001E0E93 /* Debug */,
+				E74E342E2C025310001E0E93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
