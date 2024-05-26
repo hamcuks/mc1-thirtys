@@ -13,6 +13,10 @@ struct TodayScreen: View {
     @State private var isConfirmationStopOpen: Bool = false
     @State private var showOutOfRangeOptions: Bool = false
     
+    let pausePub = NotificationCenter.default.publisher(for: Notification.Name.pauseTimer)
+    let resumePub = NotificationCenter.default.publisher(for: Notification.Name.resumeTimer)
+    let stopPub = NotificationCenter.default.publisher(for: Notification.Name.stopTimer)
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -57,6 +61,15 @@ struct TodayScreen: View {
                     
                 }
             }
+        }
+        .onReceive(pausePub) { _ in
+            todayVm.pauseTimer()
+        }
+        .onReceive(resumePub) { _ in
+            todayVm.startTimer()
+        }
+        .onReceive(stopPub) { _ in
+            todayVm.resetTimer()
         }
         .refreshable {
             todayVm.getPlanData()

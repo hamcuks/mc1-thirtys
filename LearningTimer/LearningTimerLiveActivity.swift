@@ -8,6 +8,7 @@
 import ActivityKit
 import WidgetKit
 import SwiftUI
+import AppIntents
 
 struct LearningTimerLiveActivity: Widget {
     @State var bookAppear: Int = 0
@@ -28,12 +29,12 @@ struct LearningTimerLiveActivity: Widget {
                             Image(systemName: "book.fill")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20)
+                                .frame(width: 16)
                                 .foregroundStyle(.kSuccess)
                         }
                         .labelsHidden()
                         .progressViewStyle(.circular)
-                        .frame(height: 48)
+                        .frame(height: 40)
                         .tint(.kSuccess)
                     } else {
                         ProgressView(
@@ -44,12 +45,12 @@ struct LearningTimerLiveActivity: Widget {
                             Image(systemName: "book.fill")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 20)
+                                .frame(width: 16)
                                 .foregroundStyle(.kSuccess)
                         }
                         .labelsHidden()
                         .progressViewStyle(.circular)
-                        .frame(height: 48)
+                        .frame(height: 40)
                         .tint(.kSuccess)
                     }
                     
@@ -71,31 +72,36 @@ struct LearningTimerLiveActivity: Widget {
                                 )
                                 .bold()
                             }
-                            .font(.largeTitle.bold())
+                            .font(.title.bold())
                             .foregroundStyle(.kSuccess)
                     }
                     
                     Spacer()
                     
-                    HStack {
-                        Image(systemName: "pause.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(14)
-                            .frame(width: 48, height: 48)
-                            .foregroundStyle(.orange)
-                            .background(.orange.opacity(0.2))
-                            .clipShape(Circle())
+                    HStack(spacing: 4) {
+                        if context.state.pauseTime != nil {
+                            LAButton(
+                                icon: "play.fill",
+                                size: 32,
+                                intent: ResumeButtonIntent(),
+                                foregroundStyle: .orange,
+                                tint: .orange
+                            )
+                        } else {
+                            LAButton(
+                                icon: "pause.fill",
+                                size: 32,
+                                intent: PauseButtonIntent(),
+                                foregroundStyle: .orange,
+                                tint: .orange
+                            )
+                        }
                         
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(14)
-                            .bold()
-                            .frame(width: 48, height: 48)
-                            .foregroundStyle(.white)
-                            .background(.white.opacity(0.2))
-                            .clipShape(Circle())
+                        LAButton(
+                            icon: "xmark",
+                            size: 32,
+                            intent: StopButtonIntent()
+                        )
                     }
                 }
             }
@@ -107,33 +113,40 @@ struct LearningTimerLiveActivity: Widget {
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading, priority: 2) {
-                    HStack {
-                        Image(systemName: "pause.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(14)
-                            .frame(width: 48, height: 48)
-                            .foregroundStyle(.orange)
-                            .background(.orange.opacity(0.2))
-                            .clipShape(Circle())
+                    HStack(spacing: 0) {
+                        if context.state.pauseTime != nil {
+                            LAButton(
+                                icon: "play.fill",
+                                size: 32, 
+                                intent: ResumeButtonIntent(),
+                                foregroundStyle: .orange,
+                                tint: .orange
+                            )
+                        } else {
+                            LAButton(
+                                icon: "pause.fill",
+                                size: 32,
+                                intent: PauseButtonIntent(),
+                                foregroundStyle: .orange,
+                                tint: .orange
+                            )
+                        }
                         
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(14)
-                            .bold()
-                            .frame(width: 48, height: 48)
-                            .foregroundStyle(.white)
-                            .background(.white.opacity(0.2))
-                            .clipShape(Circle())
+                        LAButton(
+                            icon: "xmark",
+                            size: 32,
+                            intent: StopButtonIntent()
+                        )
                     }
                 }
                 DynamicIslandExpandedRegion(.center) {
-                    
-                        Text("Remaining")
-                            .font(.subheadline)
-                            .foregroundStyle(.kSuccess)
-                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 48, alignment: .trailing)
+                       HStack {
+                            Spacer()
+                            Text("Remaining")
+                                .font(.subheadline)
+                                .foregroundStyle(.kSuccess)
+                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 48, alignment: .trailing)
+                        }
                 }
                 DynamicIslandExpandedRegion(.trailing, priority: 0) {
                     
@@ -264,8 +277,29 @@ extension LearningTimerAttributes.ContentState {
     }
 }
 
-#Preview("Notification", as: .content, using: LearningTimerAttributes.preview) {
+#Preview("Notification", as: .dynamicIsland(.expanded), using: LearningTimerAttributes.preview) {
     LearningTimerLiveActivity()
 } contentStates: {
     LearningTimerAttributes.ContentState.smiley
+}
+
+struct LAButton: View {
+    var icon: String
+    var size: Double = 40
+    var intent: any LiveActivityIntent
+    var foregroundStyle: Color = .white
+    var tint: Color = .white
+    
+    var body: some View {
+        Button(intent: intent) {
+            Image(systemName: icon)
+                .resizable()
+                .scaledToFit()
+                .padding(10)
+                .frame(width: size, height: size)
+        }
+        .foregroundStyle(foregroundStyle)
+        .tint(tint)
+        .clipShape(Circle())
+    }
 }
