@@ -136,6 +136,8 @@ class TodayViewModel: ObservableObject {
                 content: activityContent,
                 pushType: nil
             )
+            
+            print("start")
         } catch {
             print("Error: \(error.localizedDescription)")
         }
