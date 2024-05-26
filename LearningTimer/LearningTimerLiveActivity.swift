@@ -16,23 +16,87 @@ struct LearningTimerLiveActivity: Widget {
             // Lock screen/banner UI goes here
             VStack(alignment:.leading, spacing: 16) {
                 Text("Learning Session")
+                    .foregroundStyle(.kBackground)
+                    .bold()
                 
-                VStack(spacing: 16) {
-                    HStack {
-                        Image(systemName: "book.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 24)
-                            .foregroundStyle(.kSuccess)
-                        
-                        Spacer()
-                        
-                        
+                HStack(spacing: 16) {
+                    if let pause = context.state.pauseTime {
+                        ProgressView(
+                            value: pause,
+                            total: context.attributes.countdownInterval
+                        ) {
+                            Image(systemName: "book.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                                .foregroundStyle(.kSuccess)
+                        }
+                        .labelsHidden()
+                        .progressViewStyle(.circular)
+                        .frame(height: 48)
+                        .tint(.kSuccess)
+                    } else {
+                        ProgressView(
+                            timerInterval: .now...Date.now.addingTimeInterval(context.attributes.countdownInterval),
+                            countsDown: true,
+                            label: { EmptyView() }
+                        ) {
+                            Image(systemName: "book.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                                .foregroundStyle(.kSuccess)
+                        }
+                        .labelsHidden()
+                        .progressViewStyle(.circular)
+                        .frame(height: 48)
+                        .tint(.kSuccess)
                     }
                     
-                    ProgressView(value: 1600, total: 1800)
-                        .background(.kAccent.opacity(0.5))
-                        .tint(.kSuccess)
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("Remaining")
+                            .font(.subheadline)
+                            .foregroundStyle(.kSuccess)
+                        Text("00:00")
+                            .hidden()
+                            .overlay {
+                                Text(
+                                    timerInterval: .now...Date.now.addingTimeInterval(
+                                        context.state.pauseTime ?? context.attributes.countdownInterval
+                                    ),
+                                    pauseTime: .now.addingTimeInterval(
+                                        context.state.pauseTime ?? 0
+                                    ),
+                                    countsDown: true
+                                )
+                                .bold()
+                            }
+                            .font(.largeTitle.bold())
+                            .foregroundStyle(.kSuccess)
+                    }
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Image(systemName: "pause.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(14)
+                            .frame(width: 48, height: 48)
+                            .foregroundStyle(.orange)
+                            .background(.orange.opacity(0.2))
+                            .clipShape(Circle())
+                        
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(14)
+                            .bold()
+                            .frame(width: 48, height: 48)
+                            .foregroundStyle(.white)
+                            .background(.white.opacity(0.2))
+                            .clipShape(Circle())
+                    }
                 }
             }
             .padding()
@@ -164,7 +228,6 @@ struct LearningTimerLiveActivity: Widget {
                     .progressViewStyle(.circular)
                     .frame(height: 24)
                     .tint(.kSuccess)
-                    .padding(.trailing, 24)
                 } else {
                     ProgressView(
                         timerInterval: .now...Date.now.addingTimeInterval(context.attributes.countdownInterval
@@ -182,7 +245,6 @@ struct LearningTimerLiveActivity: Widget {
                     .progressViewStyle(.circular)
                     .frame(height: 24)
                     .tint(.kSuccess)
-                    .padding(.trailing, 24)
                 }
             }
             .keylineTint(.kAccent)
@@ -202,7 +264,7 @@ extension LearningTimerAttributes.ContentState {
     }
 }
 
-#Preview("Notification", as: .dynamicIsland(.compact), using: LearningTimerAttributes.preview) {
+#Preview("Notification", as: .content, using: LearningTimerAttributes.preview) {
     LearningTimerLiveActivity()
 } contentStates: {
     LearningTimerAttributes.ContentState.smiley
