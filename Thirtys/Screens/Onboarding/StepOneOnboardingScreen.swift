@@ -10,6 +10,7 @@ import SwiftUI
 struct StepOneOnboardingScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
+    @EnvironmentObject var pathHolder: PathHandler
     
     var body: some View {
         
@@ -50,14 +51,20 @@ struct StepOneOnboardingScreen: View {
                         )
                     }
                     
-                    NavigationLink(
-                        destination: StepTwoOnboardingScreen()
-                    ) {
+                    Button{
+                        if pathHolder.isSettingOpen{
+                            pathHolder.path.append("twoFromSetting")
+                        } else {
+                            pathHolder.path.append("twoOnBoard")
+                        }
+                        
+                    }label: {
                         Text("Next")
                     }
                     .buttonStyle(AppButtonStyle())
                     .grayscale((vm.planTitle.isEmpty || vm.planDuration < 7) ? 1 : 0)
                     .disabled((vm.planTitle.isEmpty || vm.planDuration < 7))
+                    
                 }
                 
                 

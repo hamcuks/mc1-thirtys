@@ -43,8 +43,14 @@ struct StepTwoOnboardingScreen: View {
                 }
                 
                 Button {
-                    print("ini value path \(pathHolder.path)")
-                    pathHolder.path.append("three")
+                    Task {
+                           if pathHolder.isSettingOpen {
+                               pathHolder.path.append("threeFromSetting")
+                           } else {
+                               pathHolder.path.append("threeOnBoard")
+                           }
+                       }
+                    
                 } label: {
                     Text("Next")
                 }

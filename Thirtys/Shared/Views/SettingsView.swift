@@ -7,14 +7,12 @@
 
 import SwiftUI
 
-struct ReconfigureView: View {
-    @StateObject private var pathHolder = PathHandler()
+struct SettingsView: View {
+    @EnvironmentObject var pathHolder: PathHandler
     @EnvironmentObject var vm : SettingViewModel
-    @Binding var rootIsActive: Bool
-    @Binding var path: NavigationPath
     
     var body: some View {
-        NavigationStack(path: $pathHolder.path){
+        
             VStack{
                 List{
                     Section(header: Text("Schedules Information")) {
@@ -39,32 +37,23 @@ struct ReconfigureView: View {
                 
                 Button{
                     pathHolder.isSettingOpen.toggle()
-                    pathHolder.path.append("two")
-                    pathHolder.path.append("three")
-                    pathHolder.path.append("learning")
+                    pathHolder.path.append("twoFromSetting")
                 } label: {
                     Text("Reconfigure Schedules")
                 }
                 .padding()
                 .buttonStyle(AppButtonStyle())
-                .navigationDestination(for: String.self) { value in
-                    if value == "two"{
-                        StepTwoOnboardingScreen()
-                    } else if value == "three" {
-                        StepThreeOnboardingScreen()
-                    } else if value == "learning" {
-                        LearningTimeScreen()
-                    }
-                }
+                
                 
                 Spacer()
             }
             .onAppear{
                 vm.getBedSchedule()
                 vm.getWorkingSchedule()
-            }
         }
     }
+    
+    
     private func destinationView(for setting: Platform) -> some View {
         if setting.name == "Work Time" {
             return AnyView(WorkScheduleView(vm: vm))
@@ -84,7 +73,7 @@ struct ReconfigureView: View {
 
 
 #Preview {
-    ReconfigureView(rootIsActive: .constant(false), path: .constant(NavigationPath()))
+    SettingsView()
         .environmentObject(SettingViewModel())
 }
 

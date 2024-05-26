@@ -51,7 +51,11 @@ struct StepThreeOnboardingScreen: View {
             Spacer()
             
             Button {
-                pathHolder.path.append("learning")
+                if pathHolder.isSettingOpen{
+                    pathHolder.path.append("fourFromSetting")
+                } else {
+                    pathHolder.path.append("fourOnBoard")
+                }
             } label: {
                 Text("Next")
             }

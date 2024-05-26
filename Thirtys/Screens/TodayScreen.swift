@@ -10,14 +10,14 @@ import SwiftUI
 struct TodayScreen: View {
     @EnvironmentObject private var todayVm: TodayViewModel
     @EnvironmentObject private var vm: SettingViewModel
+    @StateObject private var pathHolder = PathHandler()
     
     @State private var isConfirmationStopOpen: Bool = false
     @State private var showOutOfRangeOptions: Bool = false
-    @State var isActive : Bool = false
-    @State private var path = NavigationPath()
+
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $pathHolder.path) {
             ZStack {
                 ScrollView {
                     VStack(spacing: 24) {
@@ -92,10 +92,9 @@ struct TodayScreen: View {
                 todayVm.startTimer()
             }
         }
-        .onSubmit {
-            print("today screen \(isActive)")
-        }
+        .environmentObject(pathHolder)
     }
+    
     
     // Subview learning time info
     private var learningTimeInfo: some View {
@@ -205,8 +204,21 @@ struct TodayScreen: View {
     // Subview settings toolbar
     private var settingToolbar: some View {
         HStack {
-            NavigationLink(destination: ReconfigureView(rootIsActive: self.$isActive, path: $path), isActive: self.$isActive) {
+            Button{
+                pathHolder.path.append("setting")
+            } label: {
                 Image(systemName: "gear.circle.fill")
+            }
+            .navigationDestination(for: String.self) { value in
+                if value == "setting"{
+                    SettingsView()
+                } else if value == "twoFromSetting"{
+                    StepTwoOnboardingScreen()
+                } else if value == "threeFromSetting" {
+                    StepThreeOnboardingScreen()
+                } else if value == "fourFromSetting" {
+                    LearningTimeScreen()
+                }
             }
         }
         .foregroundStyle(Color.kBody)
