@@ -42,7 +42,7 @@ struct LearningTimeScreen: View {
                 
                 Button {
                     
-                    if pathHolder.isSettingOpen{
+                    if !isFirstInstall{
                         pathHolder.path.removeLast(pathHolder.path.count)
                     } else {
                         isFirstInstall = false

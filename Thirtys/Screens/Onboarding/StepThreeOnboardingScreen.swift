@@ -12,6 +12,7 @@ struct StepThreeOnboardingScreen: View {
     @State private var isTimePickerOpened: Bool = false
     @EnvironmentObject private var vm: OnboardingViewModel
     @EnvironmentObject var pathHolder: PathHandler
+    var isOnboarding: Bool = false
     
     var body: some View {
         VStack {
@@ -51,7 +52,7 @@ struct StepThreeOnboardingScreen: View {
             Spacer()
             
             Button {
-                if pathHolder.isSettingOpen{
+                if !isOnboarding{
                     pathHolder.path.append("fourFromSetting")
                 } else {
                     pathHolder.path.append("fourOnBoard")

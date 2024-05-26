@@ -43,11 +43,11 @@ struct GetStartedScreen: View {
                 .buttonStyle(AppButtonStyle())
                 .navigationDestination(for: String.self) { value in
                     if value == "oneOnBoard"{
-                        StepOneOnboardingScreen()
+                        StepOneOnboardingScreen(isOnboarding: true)
                     } else if value == "twoOnBoard"{
                         StepTwoOnboardingScreen(isOnboarding: true)
                     } else if value == "threeOnBoard" {
-                        StepThreeOnboardingScreen()
+                        StepThreeOnboardingScreen(isOnboarding: true)
                     } else if value == "fourOnBoard" {
                         LearningTimeScreen()
                     }

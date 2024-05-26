@@ -11,6 +11,7 @@ struct StepOneOnboardingScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
     @EnvironmentObject var pathHolder: PathHandler
+    var isOnboarding: Bool = false
     
     var body: some View {
         
@@ -52,7 +53,7 @@ struct StepOneOnboardingScreen: View {
                     }
                     
                     Button{
-                        if pathHolder.isSettingOpen{
+                        if !isOnboarding{
                             pathHolder.path.append("twoFromSetting")
                         } else {
                             pathHolder.path.append("twoOnBoard")

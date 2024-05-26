@@ -45,7 +45,7 @@ struct StepTwoOnboardingScreen: View {
                 
                 Button {
                     Task {
-                           if pathHolder.isSettingOpen {
+                           if !isOnboarding {
                                pathHolder.path.append("threeFromSetting")
                            } else if isOnboarding{
                                pathHolder.path.append("threeOnBoard")
