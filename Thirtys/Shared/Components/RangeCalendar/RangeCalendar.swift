@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct RangeCalendar: View {
-
     @State private var dateRange: ClosedRange<Date>? = nil
+    @EnvironmentObject var onboardingViewModel: OnboardingViewModel
     
     var body: some View {
         VStack {
-//            Text("Date Range").font(.title).padding()
             MDP(dateRange: self.$dateRange)
-//            if let range = dateRange {
-//                Text("\(range)").padding()
-//            } else {
-//                Text("Select two dates").padding()
-//            }
         }
         .onChange(of: self.dateRange) { dateRange in
             print("Range selected: \(String(describing: dateRange))")
+            if let range = dateRange {
+                onboardingViewModel.planStartDate = range.lowerBound
+                onboardingViewModel.planEndDate = range.upperBound
+                print("Start Date: \(range.lowerBound)")
+                print("End Date: \(range.upperBound)")
+            }
         }
     }
 }
 
 #Preview(body: {
-    RangeCalendar()
+    RangeCalendar().environmentObject(OnboardingViewModel())
 })
