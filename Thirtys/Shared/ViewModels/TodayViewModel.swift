@@ -24,8 +24,8 @@ class TodayViewModel: ObservableObject {
     @Published var currentLearningTime: Event? = nil
     
     // Countdown Data
-    var countdownInterval: TimeInterval = 30
-    @Published var remainingTime: TimeInterval = 30 // 30 minutes in seconds
+    var countdownInterval: TimeInterval = 1800
+    @Published var remainingTime: TimeInterval = 1800 // 30 minutes in seconds
     @Published var isTimerActive: Bool = false
     @Published var hasStarted: Bool = false
     private var timer: AnyCancellable?
@@ -142,8 +142,6 @@ class TodayViewModel: ObservableObject {
     }
     
     func pauseLiveActivity() async {
-        let pause = Date.now.addingTimeInterval(self.remainingTime)
-        
         let state = LearningTimerAttributes.ContentState(
             pauseTime: self.remainingTime
         )
@@ -157,8 +155,6 @@ class TodayViewModel: ObservableObject {
     }
     
     func resumeLiveActivity() async {
-        let timer = Date.now.addingTimeInterval(self.remainingTime)
-        
         let state = LearningTimerAttributes.ContentState()
         
         let activityContent = ActivityContent(
@@ -170,8 +166,7 @@ class TodayViewModel: ObservableObject {
     }
     
     func stopLiveActivity() async {
-        let state = LearningTimerAttributes.ContentState(
-        )
+        let state = LearningTimerAttributes.ContentState()
         
         let activityContent = ActivityContent(
             state: state,
