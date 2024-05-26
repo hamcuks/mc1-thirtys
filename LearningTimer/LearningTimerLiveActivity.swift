@@ -10,14 +10,35 @@ import WidgetKit
 import SwiftUI
 
 struct LearningTimerLiveActivity: Widget {
+    @State var bookAppear: Int = 0
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: LearningTimerAttributes.self) { context in
             // Lock screen/banner UI goes here
-            VStack {
-//                Text("Hello \(context.state.emoji)")
+            VStack(alignment:.leading, spacing: 16) {
+                Text("Learning Session")
+                
+                VStack(spacing: 16) {
+                    HStack {
+                        Image(systemName: "book.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 24)
+                            .foregroundStyle(.kSuccess)
+                        
+                        Spacer()
+                        
+                        
+                    }
+                    
+                    ProgressView(value: 1600, total: 1800)
+                        .background(.kAccent.opacity(0.5))
+                        .tint(.kSuccess)
+                }
             }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .foregroundColor(.white)
+            .background(.black)
             
         } dynamicIsland: { context in
             DynamicIsland {
@@ -68,22 +89,46 @@ struct LearningTimerLiveActivity: Widget {
                 }
                 
             } compactLeading: {
-                ProgressView(
-                    timerInterval: context.state.startDate...context.state.timer,
-                    countsDown: true,
-                    label: { EmptyView() }
-                ) {
-                    Image(systemName: "book.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 10)
-                        .foregroundStyle(.kSuccess)
+                
+                if let pause = context.state.pauseDate {
+                    ProgressView(
+                        value: pause.timeIntervalSinceNow,
+                        total: context.attributes.countdownInterval
+                    ) {
+                        Image(systemName: "book.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10)
+                            .foregroundStyle(.kSuccess)
+                    }
+                    .labelsHidden()
+                    .progressViewStyle(.circular)
+                    .frame(height: 24)
+                    .tint(.kSuccess)
+                    .padding(.trailing, 24)
+                    .onAppear {
+                        print(pause.timeIntervalSinceNow)
+                        print(context.state.startDate.timeIntervalSinceNow)
+                        print(context.state.timer.timeIntervalSinceNow)
+                    }
+                } else {
+                    ProgressView(
+                        timerInterval: context.state.startDate...context.state.timer,
+                        countsDown: true,
+                        label: { EmptyView() }
+                    ) {
+                        Image(systemName: "book.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 10)
+                            .foregroundStyle(.kSuccess)
+                    }
+                    .labelsHidden()
+                    .progressViewStyle(.circular)
+                    .frame(height: 24)
+                    .tint(.kSuccess)
+                    .padding(.trailing, 24)
                 }
-                .labelsHidden()
-                .progressViewStyle(.circular)
-                .frame(height: 24)
-                .tint(.kSuccess)
-                .padding(.trailing, 24)
                 
             } compactTrailing: {
                 Text("00:00")
@@ -123,17 +168,21 @@ struct LearningTimerLiveActivity: Widget {
 
 extension LearningTimerAttributes {
     fileprivate static var preview: LearningTimerAttributes {
-        LearningTimerAttributes()
+        LearningTimerAttributes(countdownInterval: 10)
     }
 }
 
 extension LearningTimerAttributes.ContentState {
     fileprivate static var smiley: LearningTimerAttributes.ContentState {
-        LearningTimerAttributes.ContentState(startDate: .now, timer: .now)
+        LearningTimerAttributes.ContentState(
+            startDate: .now,
+            pauseDate: .now.addingTimeInterval(5),
+            timer: .now.addingTimeInterval(10)
+        )
     }
 }
 
-#Preview("Notification", as: .dynamicIsland(.expanded), using: LearningTimerAttributes.preview) {
+#Preview("Notification", as: .dynamicIsland(.compact), using: LearningTimerAttributes.preview) {
     LearningTimerLiveActivity()
 } contentStates: {
     LearningTimerAttributes.ContentState.smiley
