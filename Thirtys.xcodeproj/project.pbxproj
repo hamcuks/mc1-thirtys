@@ -50,6 +50,10 @@
 		E70A324F2BFD90410014563C /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A324E2BFD90410014563C /* GoalViewModel.swift */; };
 		E70A32512BFD90520014563C /* StaticFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32502BFD90520014563C /* StaticFieldComponent.swift */; };
 		E70A32552BFE13C90014563C /* LearningTimeListComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A32542BFE13C90014563C /* LearningTimeListComponent.swift */; };
+		E70F06F02C0330AC006B8D9C /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F06EF2C0330AC006B8D9C /* NotificationExtension.swift */; };
+		E70F06F12C0331C8006B8D9C /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F06EF2C0330AC006B8D9C /* NotificationExtension.swift */; };
+		E70F06F32C03326C006B8D9C /* TimerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F06F22C03326C006B8D9C /* TimerIntent.swift */; };
+		E70F06F42C0333B2006B8D9C /* TimerIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F06F22C03326C006B8D9C /* TimerIntent.swift */; };
 		E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */; };
 		E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72EB2F72BF84EC300237B58 /* ContentView.swift */; };
 		E72EB2FA2BF84EC500237B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72EB2F92BF84EC500237B58 /* Assets.xcassets */; };
@@ -152,6 +156,8 @@
 		E70A324E2BFD90410014563C /* GoalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		E70A32502BFD90520014563C /* StaticFieldComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticFieldComponent.swift; sourceTree = "<group>"; };
 		E70A32542BFE13C90014563C /* LearningTimeListComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTimeListComponent.swift; sourceTree = "<group>"; };
+		E70F06EF2C0330AC006B8D9C /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		E70F06F22C03326C006B8D9C /* TimerIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerIntent.swift; sourceTree = "<group>"; };
 		E72EB2F22BF84EC300237B58 /* Thirtys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thirtys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72EB2F52BF84EC300237B58 /* ThirtysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtysApp.swift; sourceTree = "<group>"; };
 		E72EB2F72BF84EC300237B58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 				03D85E992BFA27D300C3A248 /* ViewExtension.swift */,
 				E70A323F2BFCF1A80014563C /* CollectionExtension.swift */,
 				E70A32412BFCF1B40014563C /* DateExtension.swift */,
+				E70F06EF2C0330AC006B8D9C /* NotificationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -400,6 +407,7 @@
 				E74E34242C02530E001E0E93 /* LearningTimer.swift */,
 				E74E34262C025310001E0E93 /* Assets.xcassets */,
 				E74E34282C025310001E0E93 /* Info.plist */,
+				E70F06F22C03326C006B8D9C /* TimerIntent.swift */,
 			);
 			path = LearningTimer;
 			sourceTree = "<group>";
@@ -531,6 +539,7 @@
 				0349704F2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift in Sources */,
 				034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */,
 				E7C2C4BD2BFF116800CAF782 /* TabViewComponent.swift in Sources */,
+				E70F06F02C0330AC006B8D9C /* NotificationExtension.swift in Sources */,
 				E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */,
 				DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */,
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
@@ -580,6 +589,7 @@
 				034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */,
 				E74E34332C02CC51001E0E93 /* LearningTimerAttributes.swift in Sources */,
 				E7C2C4BB2BFF0A3E00CAF782 /* (null) in Sources */,
+				E70F06F32C03326C006B8D9C /* TimerIntent.swift in Sources */,
 				E74125702C00BEAD00812EB1 /* StreakService.swift in Sources */,
 				E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */,
 				E70A324A2BFCFDF90014563C /* TimePickerComponent.swift in Sources */,
@@ -599,7 +609,9 @@
 				E75E9F222C02E1F800A205E0 /* LearningTimerAttributes.swift in Sources */,
 				E75E9F232C02EA6700A205E0 /* TimeFormattingHelper.swift in Sources */,
 				E74E34212C02530E001E0E93 /* LearningTimerBundle.swift in Sources */,
+				E70F06F12C0331C8006B8D9C /* NotificationExtension.swift in Sources */,
 				E74E34342C02D96A001E0E93 /* AppButtonComponent.swift in Sources */,
+				E70F06F42C0333B2006B8D9C /* TimerIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
