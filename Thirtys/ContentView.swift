@@ -51,5 +51,6 @@ private let itemFormatter: DateFormatter = {
         .environmentObject(OnboardingViewModel())
         .environmentObject(GoalViewModel())
         .environmentObject(TodayViewModel())
+        .environmentObject(SettingViewModel())
 
 }

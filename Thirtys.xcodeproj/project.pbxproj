@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0321E8962C03814600432F12 /* PathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321E8952C03814600432F12 /* PathHandler.swift */; };
 		0349704F2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */; };
 		034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034970502BFF54BA00CB2E28 /* NotificationHandler.swift */; };
 		034E292E2BFB74200030D448 /* LearningTimeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E292D2BFB74200030D448 /* LearningTimeScreen.swift */; };
@@ -17,6 +18,12 @@
 		03A1222F2BFDEFEB000BD12A /* DailyStreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */; };
 		03A122312BFDF039000BD12A /* FinishComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A122302BFDF039000BD12A /* FinishComponent.swift */; };
 		03A122332BFDF05E000BD12A /* LearningHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A122322BFDF05E000BD12A /* LearningHistory.swift */; };
+		03A74E3C2C02CCC400CAF2BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E3B2C02CCC400CAF2BC /* SettingsView.swift */; };
+		03A74E3E2C02D5A600CAF2BC /* WorkScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E3D2C02D5A600CAF2BC /* WorkScheduleView.swift */; };
+		03A74E402C02D5C000CAF2BC /* BedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E3F2C02D5C000CAF2BC /* BedTimeView.swift */; };
+		03A74E422C02F36D00CAF2BC /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E412C02F36D00CAF2BC /* SettingViewModel.swift */; };
+		03A74E442C0307F900CAF2BC /* AproxTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E432C0307F900CAF2BC /* AproxTime.swift */; };
+		03A74E462C031CC300CAF2BC /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A74E452C031CC300CAF2BC /* Platform.swift */; };
 		03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B4D0652BFA299000C6643F /* TextFieldComponent.swift */; };
 		03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */; };
 		03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D85E952BFA25E600C3A248 /* ComponentDate.swift */; };
@@ -106,6 +113,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0321E8952C03814600432F12 /* PathHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathHandler.swift; sourceTree = "<group>"; };
 		0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationStopLearningComponent.swift; sourceTree = "<group>"; };
 		034970502BFF54BA00CB2E28 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		034E292D2BFB74200030D448 /* LearningTimeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningTimeScreen.swift; sourceTree = "<group>"; };
@@ -116,6 +124,12 @@
 		03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStreak.swift; sourceTree = "<group>"; };
 		03A122302BFDF039000BD12A /* FinishComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishComponent.swift; sourceTree = "<group>"; };
 		03A122322BFDF05E000BD12A /* LearningHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningHistory.swift; sourceTree = "<group>"; };
+		03A74E3B2C02CCC400CAF2BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		03A74E3D2C02D5A600CAF2BC /* WorkScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkScheduleView.swift; sourceTree = "<group>"; };
+		03A74E3F2C02D5C000CAF2BC /* BedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedTimeView.swift; sourceTree = "<group>"; };
+		03A74E412C02F36D00CAF2BC /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		03A74E432C0307F900CAF2BC /* AproxTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AproxTime.swift; sourceTree = "<group>"; };
+		03A74E452C031CC300CAF2BC /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		03B4D0652BFA299000C6643F /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
 		03D85E932BFA203C00C3A248 /* MultiRangeDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRangeDatePicker.swift; sourceTree = "<group>"; };
 		03D85E952BFA25E600C3A248 /* ComponentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDate.swift; sourceTree = "<group>"; };
@@ -289,6 +303,7 @@
 				E70A32392BFCF12D0014563C /* Event.swift */,
 				E70A323B2BFCF1630014563C /* Weekday.swift */,
 				DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */,
+				03A74E452C031CC300CAF2BC /* Platform.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +316,7 @@
 				E7C2C4BE2BFF1C6700CAF782 /* TodayViewModel.swift */,
 				034970502BFF54BA00CB2E28 /* NotificationHandler.swift */,
 				E7605E012C01C38F00CD5153 /* DailyStreakViewModel.swift */,
+				03A74E412C02F36D00CAF2BC /* SettingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -323,6 +339,9 @@
 				03A1222E2BFDEFEB000BD12A /* DailyStreak.swift */,
 				03A122302BFDF039000BD12A /* FinishComponent.swift */,
 				03A122322BFDF05E000BD12A /* LearningHistory.swift */,
+				03A74E3B2C02CCC400CAF2BC /* SettingsView.swift */,
+				03A74E3D2C02D5A600CAF2BC /* WorkScheduleView.swift */,
+				03A74E3F2C02D5C000CAF2BC /* BedTimeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +364,7 @@
 				0349704E2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift */,
 				E70A32542BFE13C90014563C /* LearningTimeListComponent.swift */,
 				D97A50392C019F7A00851290 /* LearningOutRangeSheet.swift */,
+				03A74E432C0307F900CAF2BC /* AproxTime.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -364,6 +384,7 @@
 				E741256B2C007C5000812EB1 /* PlanService.swift */,
 				E741256D2C00804D00812EB1 /* UserPreferenceService.swift */,
 				E741256F2C00BEAD00812EB1 /* StreakService.swift */,
+				0321E8952C03814600432F12 /* PathHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -524,12 +545,15 @@
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
 				E70A32552BFE13C90014563C /* LearningTimeListComponent.swift in Sources */,
 				03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */,
+				03A74E422C02F36D00CAF2BC /* SettingViewModel.swift in Sources */,
 				E741256C2C007C5000812EB1 /* PlanService.swift in Sources */,
+				03A74E3E2C02D5A600CAF2BC /* WorkScheduleView.swift in Sources */,
 				03A122312BFDF039000BD12A /* FinishComponent.swift in Sources */,
 				03545AA42BFDDA7600F731D8 /* CircularProgressBar.swift in Sources */,
 				E70A32512BFD90520014563C /* StaticFieldComponent.swift in Sources */,
 				E7C2C4BF2BFF1C6700CAF782 /* TodayViewModel.swift in Sources */,
 				03A122332BFDF05E000BD12A /* LearningHistory.swift in Sources */,
+				03A74E442C0307F900CAF2BC /* AproxTime.swift in Sources */,
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
 				E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */,
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
@@ -537,7 +561,6 @@
 				03E71A3E2BFC9F1700207B4F /* (null) in Sources */,
 				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
 				D97A503A2C019F7A00851290 /* LearningOutRangeSheet.swift in Sources */,
-				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
 				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
 				034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
@@ -546,6 +569,7 @@
 				82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */,
 				03D85E962BFA25E600C3A248 /* ComponentDate.swift in Sources */,
 				E70A323A2BFCF12D0014563C /* Event.swift in Sources */,
+				03A74E462C031CC300CAF2BC /* Platform.swift in Sources */,
 				E72EB2F62BF84EC300237B58 /* ThirtysApp.swift in Sources */,
 				03E71A402BFCC90300207B4F /* (null) in Sources */,
 				E741256E2C00804D00812EB1 /* UserPreferenceService.swift in Sources */,
@@ -555,8 +579,10 @@
 				E72EB3212BF84FBF00237B58 /* TodayScreen.swift in Sources */,
 				03A1222F2BFDEFEB000BD12A /* DailyStreak.swift in Sources */,
 				E72EB3252BF84FF100237B58 /* StepOneOnboardingScreen.swift in Sources */,
+				03A74E402C02D5C000CAF2BC /* BedTimeView.swift in Sources */,
 				E70A324F2BFD90410014563C /* GoalViewModel.swift in Sources */,
 				E7C2C4B92BFF0A0100CAF782 /* (null) in Sources */,
+				03A74E3C2C02CCC400CAF2BC /* SettingsView.swift in Sources */,
 				03D85E942BFA203C00C3A248 /* MultiRangeDatePicker.swift in Sources */,
 				E70A323E2BFCF17A0014563C /* WeekdayTypeEnum.swift in Sources */,
 				E70A32422BFCF1B40014563C /* DateExtension.swift in Sources */,
@@ -568,6 +594,7 @@
 				E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */,
 				E70A324A2BFCFDF90014563C /* TimePickerComponent.swift in Sources */,
 				E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */,
+				0321E8962C03814600432F12 /* PathHandler.swift in Sources */,
 				E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */,
 				DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */,
 			);
@@ -799,7 +826,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 57BYB3NG56;
+				DEVELOPMENT_TEAM = F44CLK4937;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LearningTimer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LearningTimer;
@@ -826,7 +853,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 57BYB3NG56;
+				DEVELOPMENT_TEAM = F44CLK4937;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LearningTimer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LearningTimer;

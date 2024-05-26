@@ -10,15 +10,13 @@ import SwiftUI
 struct LearningTimeScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
-    
     @AppStorage("firstInstall") private var isFirstInstall = true
+    @EnvironmentObject var pathHolder: PathHandler
     
     var notification = NotificationHandler()
     
     var body: some View {
-        NavigationStack {
             VStack {
-                
                 VStack(spacing: 40) {
                     Image(.learningTime)
                         .resizable()
@@ -42,15 +40,58 @@ struct LearningTimeScreen: View {
                 
                 Spacer()
                 
-                NavigationLink(
-                    destination: TabViewComponent()
-                        .onAppear {
-                            isFirstInstall = false
-                        }
-                ) {
-                    Text("Save")
+                Button {
+                    
+                    if !isFirstInstall{
+                        pathHolder.path.removeLast(pathHolder.path.count)
+                    } else {
+                        isFirstInstall = false
+                    }
+                } label: {
+                    Text("Next")
                 }
                 .buttonStyle(AppButtonStyle())
+                
+                
+//                NavigationLink(
+//                    destination: TabViewComponent()
+//                        .onAppear {
+//                            isFirstInstall = false
+//                            
+//                            if pathHolder.isSettingOpen {
+//                                pathHolder.path.removeLast(pathHolder.path.count)
+//                            }
+                            
+//                            if svm.isFromSetting{
+//                                
+//                                print("coba \(svm.path)")
+//                                svm.path.removeLast(svm.path.count)
+//                                isFirstInstall = false
+//                            }
+                            
+                            
+//                        }
+//                ) {
+//                    Text("Save")
+//                }
+//                .buttonStyle(AppButtonStyle())
+                
+//                Button{
+//                    if isFirstInstall {
+//                        NavigationLink(destination: TabViewComponent(), isActive: $isFirstInstall) {
+//                            EmptyView()
+//                                .onAppear{
+//                                    isFirstInstall = false
+//                                }
+//                        }
+//                    } else if !isFirstInstall {
+//                        path.removeLast(path.count)
+//                    }
+//                } label: {
+//                    Text("Save")
+//                }
+//                .buttonStyle(AppButtonStyle())
+                
                 
             }
             .onDisappear {
@@ -61,6 +102,7 @@ struct LearningTimeScreen: View {
                     }
                 }
             }
+            
             .scrollIndicators(.hidden)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarLeading) {
@@ -74,9 +116,10 @@ struct LearningTimeScreen: View {
             .onAppear {
                 vm.getLearningTime()
             }
-        }
+      
         
     }
+    
 }
 
 #Preview {
