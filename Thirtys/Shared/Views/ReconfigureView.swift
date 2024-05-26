@@ -9,64 +9,70 @@ import SwiftUI
 
 struct ReconfigureView: View {
     
-    @State private var navigateToReconfigSchedule = false
+    @EnvironmentObject var vm : SettingViewModel
+    @Binding var rootIsActive: Bool
     
     var body: some View {
-        NavigationStack{
-            Form{
-                Section {
-                    NavigationLink(destination: WorkScheduleView()) {
-                        HStack {
-                            Image(systemName: "bag.fill")
-                                .foregroundStyle(Color.white)
-                                .frame(width: 30, height: 30)
-                                .background(Color.orange)
-                                .cornerRadius(7)
-                            Text("Work Schedules")
-                            
-                        }
-                    }
-                    
-                    NavigationLink(destination: BedTimeView()) {
-                        HStack {
-                            Image(systemName: "bed.double.fill")
-                                .foregroundStyle(Color.white)
-                                .frame(width: 30, height: 30)
-                                .background(Color.green)
-                                .cornerRadius(7)
-                            Text("Bed Time")
+        NavigationView{
+            VStack{
+                List{
+                    Section(header: Text("Schedules Information")) {
+                        ForEach(vm.setting, id: \.id){ i in
+                            NavigationLink(destination: destinationView(for: i)){
+                                HStack {
+                                    Image(systemName: i.imageName)
+                                        .foregroundStyle(Color.white)
+                                        .frame(width: 30, height: 30)
+                                        .background(i.color)
+                                        .cornerRadius(7)
+                                    Text(i.name)
+                                }
+                            }
                         }
                     }
                 }
-            header: {
-                Text("General Information")
-            }
+                .frame(maxWidth: .infinity, maxHeight: 150)
+                .listRowSpacing(8)
+                .listStyle(.plain)
                 
-                Section {
-                    Button{
-                        navigateToReconfigSchedule.toggle()
-                    } label: {
-                        Text("Reconfigure Schedules")
-                            .bold()
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .foregroundStyle(Color.kLabel)
-                    }
-                    .background{
-                        navigationDestination(isPresented: $navigateToReconfigSchedule) {
-                            WorkScheduleView()
-                        }
-                        .hidden()
-                    }
-                    
+                
+                NavigationLink(destination: StepTwoOnboardingScreen( rootIsActive: self.$rootIsActive)) {
+                    Text("Reconfigure Schedules")
                 }
-                .listRowBackground(Color.kAccent)
+                .padding()
+                .buttonStyle(AppButtonStyle())
+                .onSubmit {
+                    print("reconfigure \(rootIsActive)")
+                }
+                Spacer()
             }
-            .navigationTitle("Setting")
-            .navigationBarTitleDisplayMode(.inline)
+        }
+        
+//        .navigationTitle("Settings")
+        .navigationBarBackButtonHidden()
+        .onAppear{
+            vm.getBedSchedule()
+            vm.getWorkingSchedule()
+        }
+        
+    }
+    
+    private func destinationView(for setting: Platform) -> some View {
+        if setting.name == "Work Time" {
+            return AnyView(WorkScheduleView(vm: vm))
+        } else if setting.name == "Bed Time" {
+            return AnyView(BedTimeView(vm: vm))
+        } else {
+            // Handle other cases here
+            return AnyView(EmptyView())
         }
     }
 }
 
+
+
 #Preview {
-    ReconfigureView()
+    ReconfigureView(rootIsActive: .constant(false))
+        .environmentObject(SettingViewModel())
 }
+

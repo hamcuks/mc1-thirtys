@@ -9,9 +9,11 @@ import SwiftUI
 
 struct TodayScreen: View {
     @EnvironmentObject private var todayVm: TodayViewModel
+    @EnvironmentObject private var vm: SettingViewModel
     
     @State private var isConfirmationStopOpen: Bool = false
     @State private var showOutOfRangeOptions: Bool = false
+    @State var isActive : Bool = false
     
     var body: some View {
         NavigationView {
@@ -41,8 +43,16 @@ struct TodayScreen: View {
                     .background(.kBackground)
                     .padding(.bottom, 60)
                     .toolbar {
-                        streakToolbar
+                        ToolbarItem(placement: .topBarLeading) {
+                            settingToolbar
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            streakToolbar
+                        }
+                        
                     }
+                    
+                    
                 }
                 .navigationTitle("Today")
                 .navigationBarTitleDisplayMode(.inline)
@@ -69,6 +79,7 @@ struct TodayScreen: View {
             todayVm.getTodayLearningPlan()
             todayVm.getLearningStreaks()
             todayVm.checkTodayLearningState()
+            
         }
         .sheet(isPresented: $isConfirmationStopOpen) {
             ConfirmationStopLearningComponent(isConfirmationStopOpen: $isConfirmationStopOpen) {
@@ -80,6 +91,9 @@ struct TodayScreen: View {
             LearningOutOfRangeSheet(showOutOfRangeOptions: $showOutOfRangeOptions) {
                 todayVm.startTimer()
             }
+        }
+        .onSubmit {
+            print("today screen \(isActive)")
         }
     }
     
@@ -187,9 +201,20 @@ struct TodayScreen: View {
         }
         .foregroundStyle(Color.kStreak)
     }
+    
+    // Subview settings toolbar
+    private var settingToolbar: some View {
+        HStack {
+            NavigationLink(destination: ReconfigureView(rootIsActive: self.$isActive), isActive: self.$isActive) {
+                Image(systemName: "gear.circle.fill")
+            }
+        }
+        .foregroundStyle(Color.kBody)
+    }
 }
 
 #Preview {
     TodayScreen()
         .environmentObject(TodayViewModel())
+        .environmentObject(SettingViewModel())
 }

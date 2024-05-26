@@ -11,9 +11,10 @@ struct StepThreeOnboardingScreen: View {
     
     @State private var isTimePickerOpened: Bool = false
     @EnvironmentObject private var vm: OnboardingViewModel
+    @Binding var isRootActive: Bool
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 
                 VStack(spacing: 40) {
@@ -52,11 +53,14 @@ struct StepThreeOnboardingScreen: View {
                 Spacer()
                 
                 NavigationLink(
-                    destination: LearningTimeScreen()
+                    destination: LearningTimeScreen( shouldPopToRootView: self.$isRootActive)
                 ) {
                     Text("Next")
                 }
                 .buttonStyle(AppButtonStyle())
+                .onSubmit {
+                    print("step 3 \(isRootActive)")
+                }
                 
             }
             .scrollIndicators(.hidden)
@@ -75,6 +79,6 @@ struct StepThreeOnboardingScreen: View {
 
 
 #Preview {
-    StepThreeOnboardingScreen()
+    StepThreeOnboardingScreen( isRootActive: .constant(false))
         .environmentObject(OnboardingViewModel())
 }

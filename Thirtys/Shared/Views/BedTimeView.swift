@@ -9,8 +9,7 @@ import SwiftUI
 
 struct BedTimeView: View {
     
-    @State private var startTime = Date()
-    @State private var endTime = Date()
+    @ObservedObject var vm: SettingViewModel
     
     var body: some View {
         Form {
@@ -21,7 +20,7 @@ struct BedTimeView: View {
                         .frame(width: 30, height: 30)
                         .background(Color.green)
                         .cornerRadius(7)
-                    DatePicker("Start Time", selection: $startTime, displayedComponents: .hourAndMinute)
+                    DatePicker("Start Time", selection: $vm.bedTime.startTime, displayedComponents: .hourAndMinute)
                         .disabled(true)
                     
                 }
@@ -32,14 +31,9 @@ struct BedTimeView: View {
                         .background(Color.blue)
                         .cornerRadius(7)
                     DatePicker("End Time",
-                               selection: $endTime,
-                               in: startTime...Calendar.current.date(
-                                bySettingHour: 23,
-                                minute: 59,
-                                second: 59,
-                                of: Date())!,
+                               selection: $vm.wakeUpTime.endTime,
                                displayedComponents: .hourAndMinute)
-                    .disabled(true)
+                        .disabled(true)
                 }
             } header: {
                 Text("Bed Time")
@@ -48,6 +42,8 @@ struct BedTimeView: View {
     }
 }
 
+
+
 #Preview {
-    BedTimeView()
+    BedTimeView(vm: SettingViewModel())
 }

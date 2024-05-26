@@ -11,12 +11,16 @@ struct LearningTimeScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
     
+    @EnvironmentObject private var svm: SettingViewModel
+    
     @AppStorage("firstInstall") private var isFirstInstall = true
+    
+    @Binding var shouldPopToRootView: Bool
     
     var notification = NotificationHandler()
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
                 
                 VStack(spacing: 40) {
@@ -42,15 +46,45 @@ struct LearningTimeScreen: View {
                 
                 Spacer()
                 
-                NavigationLink(
-                    destination: TabViewComponent()
-                        .onAppear {
-                            isFirstInstall = false
+//                
+//                NavigationLink(
+//                    destination: TabViewComponent()
+//                        .onAppear {
+//                            isFirstInstall = false
+//                            
+//                            if svm.isFromSetting{
+//                                
+//                                print("coba \(svm.path)")
+//                                svm.path.removeLast(svm.path.count)
+//                                isFirstInstall = false
+//                            }
+//                            
+//                            
+//                        }
+//                ) {
+//                    Text("Save")
+//                }
+//                .buttonStyle(AppButtonStyle())
+                
+                Button{
+                    if isFirstInstall {
+                        NavigationLink(destination: TabViewComponent(), isActive: $isFirstInstall) {
+                            EmptyView()
+                                .onAppear{
+                                    isFirstInstall = false
+                                }
                         }
-                ) {
+                    } else if !isFirstInstall {
+                        print("coba \(shouldPopToRootView)")
+                        self.shouldPopToRootView = false
+                    }
+                } label: {
                     Text("Save")
                 }
                 .buttonStyle(AppButtonStyle())
+                .onSubmit {
+                    print("learning time screen \(shouldPopToRootView)")
+                }
                 
             }
             .onDisappear {
@@ -61,6 +95,7 @@ struct LearningTimeScreen: View {
                     }
                 }
             }
+            
             .scrollIndicators(.hidden)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarLeading) {
@@ -75,11 +110,13 @@ struct LearningTimeScreen: View {
                 vm.getLearningTime()
             }
         }
+        .navigationBarBackButtonHidden()
         
     }
+    
 }
 
 #Preview {
-    LearningTimeScreen()
+    LearningTimeScreen( shouldPopToRootView: .constant(true))
         .environmentObject(OnboardingViewModel())
 }

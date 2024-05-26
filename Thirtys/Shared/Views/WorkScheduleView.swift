@@ -9,26 +9,35 @@ import SwiftUI
 
 struct WorkScheduleView: View {
     
-    @State private var startTime = Date()
-    @State private var endTime = Date()
+    @ObservedObject var vm: SettingViewModel
     
     var body: some View {
-        Form {
-            DisplaySectionWeek(day: "Sunday", startTime: $startTime, endTime: $endTime)
-            DisplaySectionWeek(day: "Monday", startTime: $startTime, endTime: $endTime)
-            DisplaySectionWeek(day: "Tuesday", startTime: $startTime, endTime: $endTime)
-            DisplaySectionWeek(day: "Wednesday", startTime: $startTime, endTime: $endTime)
-            DisplaySectionWeek(day: "Thusday", startTime: $startTime, endTime: $endTime)
-            DisplaySectionWeek(day: "Friday", startTime: $startTime, endTime: $endTime)
-            DisplaySectionWeek(day: "Saturday", startTime: $startTime, endTime: $endTime)
-            
-            
+            Form {
+                ForEach(vm.workingTimes, id: \.id) { weekdayEvent in
+                    DisplaySectionWeek(
+                        day: "\(weekdayEvent.label.term)",
+                        startTime: Binding(
+                            get: { weekdayEvent.events.first?.startTime ?? Date() },
+                            set: { newStartTime in
+                                // Implement update method in SettingViewModel
+                            }
+                        ),
+                        endTime: Binding(
+                            get: { weekdayEvent.events.first?.endTime ?? Date() },
+                            set: { newEndTime in
+                                // Implement update method in SettingViewModel
+                            }
+                        )
+                    )
+                }
+            }
+            .onAppear {
+                vm.getWorkingSchedule()
+            }
         }
-    }
 }
 
 struct DisplaySectionWeek: View {
-    
     var day: String
     @Binding var startTime: Date
     @Binding var endTime: Date
@@ -43,7 +52,6 @@ struct DisplaySectionWeek: View {
                     .cornerRadius(7)
                 DatePicker("Start Time", selection: $startTime, displayedComponents: .hourAndMinute)
                     .disabled(true)
-                
             }
             HStack {
                 Image(systemName: "clock.fill")
@@ -68,5 +76,5 @@ struct DisplaySectionWeek: View {
 }
 
 #Preview {
-    WorkScheduleView()
+    WorkScheduleView(vm: SettingViewModel())
 }
