@@ -14,9 +14,10 @@ struct TodayScreen: View {
     @State private var isConfirmationStopOpen: Bool = false
     @State private var showOutOfRangeOptions: Bool = false
     @State var isActive : Bool = false
+    @State private var path = NavigationPath()
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $path) {
             ZStack {
                 ScrollView {
                     VStack(spacing: 24) {
@@ -63,8 +64,7 @@ struct TodayScreen: View {
                             badge: badge,
                             showAchievementPopup: $todayVm.showBadge
                         )
-                    }
-                    
+                    }   
                 }
             }
         }
@@ -205,7 +205,7 @@ struct TodayScreen: View {
     // Subview settings toolbar
     private var settingToolbar: some View {
         HStack {
-            NavigationLink(destination: ReconfigureView(rootIsActive: self.$isActive), isActive: self.$isActive) {
+            NavigationLink(destination: ReconfigureView(rootIsActive: self.$isActive, path: $path), isActive: self.$isActive) {
                 Image(systemName: "gear.circle.fill")
             }
         }

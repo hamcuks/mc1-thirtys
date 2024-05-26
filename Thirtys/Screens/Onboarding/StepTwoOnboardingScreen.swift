@@ -11,10 +11,10 @@ struct StepTwoOnboardingScreen: View {
     
     @State private var isTimePickerOpened: Bool = false
     @EnvironmentObject private var vm: OnboardingViewModel
-    @Binding var rootIsActive: Bool
+    @Binding var path: NavigationPath
     
     var body: some View {
-        NavigationView {
+        
             ScrollView {
                 VStack(spacing: 40) {
                     Image(.workSchedules)
@@ -43,15 +43,12 @@ struct StepTwoOnboardingScreen: View {
                     }
                     
                     NavigationLink(
-                        destination: StepThreeOnboardingScreen( isRootActive: self.$rootIsActive)
-                            .navigationBarBackButtonHidden()
+                        destination: StepThreeOnboardingScreen( path: $path)
                     ) {
                         Text("Next")
                     }
                     .buttonStyle(AppButtonStyle())
-                    .onSubmit {
-                        print("step 2 \(rootIsActive)")
-                    }
+                   
                 }
             }
             .scrollIndicators(.hidden)
@@ -65,10 +62,10 @@ struct StepTwoOnboardingScreen: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()
         }
-    }
+  
 }
 
 #Preview {
-    StepTwoOnboardingScreen(rootIsActive: .constant(false))
+    StepTwoOnboardingScreen( path: .constant(NavigationPath()))
         .environmentObject(OnboardingViewModel())
 }

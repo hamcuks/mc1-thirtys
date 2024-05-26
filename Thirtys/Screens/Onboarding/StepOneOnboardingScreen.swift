@@ -12,7 +12,7 @@ struct StepOneOnboardingScreen: View {
     @EnvironmentObject private var vm: OnboardingViewModel
     
     var body: some View {
-        NavigationView {
+        
             ScrollView {
                 VStack(spacing: 40) {
                     Image(.goals)
@@ -51,7 +51,7 @@ struct StepOneOnboardingScreen: View {
                     }
                     
                     NavigationLink(
-                        destination: StepTwoOnboardingScreen(rootIsActive: .constant(false))
+                        destination: StepTwoOnboardingScreen( path: .constant(NavigationPath()))
                     ) {
                         Text("Next")
                     }
@@ -71,7 +71,7 @@ struct StepOneOnboardingScreen: View {
             .navigationTitle("Step 1/3")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()
-        }
+        
     }
 }
 

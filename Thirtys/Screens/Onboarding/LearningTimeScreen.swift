@@ -10,19 +10,14 @@ import SwiftUI
 struct LearningTimeScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
-    
-    @EnvironmentObject private var svm: SettingViewModel
-    
     @AppStorage("firstInstall") private var isFirstInstall = true
     
-    @Binding var shouldPopToRootView: Bool
+    @Binding var path: NavigationPath
     
     var notification = NotificationHandler()
     
     var body: some View {
-        NavigationView {
             VStack {
-                
                 VStack(spacing: 40) {
                     Image(.learningTime)
                         .resizable()
@@ -75,16 +70,13 @@ struct LearningTimeScreen: View {
                                 }
                         }
                     } else if !isFirstInstall {
-                        print("coba \(shouldPopToRootView)")
-                        self.shouldPopToRootView = false
+                        path.removeLast(path.count)
                     }
                 } label: {
                     Text("Save")
                 }
                 .buttonStyle(AppButtonStyle())
-                .onSubmit {
-                    print("learning time screen \(shouldPopToRootView)")
-                }
+                
                 
             }
             .onDisappear {
@@ -109,14 +101,13 @@ struct LearningTimeScreen: View {
             .onAppear {
                 vm.getLearningTime()
             }
-        }
-        .navigationBarBackButtonHidden()
+      
         
     }
     
 }
 
 #Preview {
-    LearningTimeScreen( shouldPopToRootView: .constant(true))
+    LearningTimeScreen(path: .constant(NavigationPath()))
         .environmentObject(OnboardingViewModel())
 }
