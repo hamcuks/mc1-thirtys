@@ -11,67 +11,83 @@ struct StepThreeOnboardingScreen: View {
     
     @State private var isTimePickerOpened: Bool = false
     @EnvironmentObject private var vm: OnboardingViewModel
+    @EnvironmentObject var pathHolder: PathHandler
+    var isOnboarding: Bool = false
     
     var body: some View {
-        NavigationStack {
-            VStack {
+        VStack {
+            VStack(spacing: 40) {
+                Image(.bedTime)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxHeight: 210)
                 
-                VStack(spacing: 40) {
-                    Image(.bedTime)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxHeight: 210)
-                    
-                    VStack (spacing: 16) {
-                        Text("Let Us Know Your Bed Time!")
-                            .font(.title2)
-                            .bold()
-                            .foregroundStyle(.kTitleText)
-                        Text("Setting your bedtime helps us provide more accurate recommendations")
-                            .font(.callout)
-                            .fontWeight(.medium)
-                            .foregroundStyle(.kBody)
-                            .multilineTextAlignment(.center)
-                    }
-                    
-                    VStack(spacing: 16) {
-                        TimePickerThrough(
-                            label: "Bed Time",
-                            selection: $vm.bedTime.startTime,
-                            in: ...vm.bedTime.endTime
-                        )
-                        
-                        TimePickerFrom(
-                            label: "Wake Up Time",
-                            selection: $vm.wakeUpTime.endTime,
-                            in: vm.wakeUpTime.startTime...
-                        )
-                    }
+                VStack (spacing: 16) {
+                    Text("Let Us Know Your Bed Time!")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(.kTitleText)
+                    Text("Setting your bedtime helps us provide more accurate recommendations")
+                        .font(.callout)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.kBody)
+                        .multilineTextAlignment(.center)
                 }
                 
-                Spacer()
-                
-                NavigationLink(
-                    destination: LearningTimeScreen()
-                ) {
-                    Text("Next")
+                VStack(spacing: 16) {
+                    TimePickerThrough(
+                        label: "Bed Time",
+                        selection: $vm.bedTime.startTime,
+                        in: ...vm.bedTime.endTime
+                    )
+                    
+                    TimePickerFrom(
+                        label: "Wake Up Time",
+                        selection: $vm.wakeUpTime.endTime,
+                        in: vm.wakeUpTime.startTime...
+                    )
                 }
-                .buttonStyle(AppButtonStyle())
-                
             }
-            .scrollIndicators(.hidden)
-            .toolbar(content: {
-                ToolbarItem(placement: .topBarLeading) {
-                    BackButton()
+            
+            Spacer()
+            
+            Button {
+                if !isOnboarding{
+                    pathHolder.path.append("fourFromSetting")
+                } else {
+                    pathHolder.path.append("fourOnBoard")
                 }
-            })
-            .padding(.horizontal)
-            .navigationTitle("Step 3/3")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden()
+            } label: {
+                Text("Next")
+            }
+            .buttonStyle(AppButtonStyle())
+            
+//            NavigationLink(
+//                destination: LearningTimeScreen()
+//            ) {
+//                Text("Next")
+//            }
+//            .buttonStyle(AppButtonStyle())
+//            .onAppear(perform: {
+//                pathHolder.path.append("LearningTimeScreen")
+//            })
+            
         }
+        .scrollIndicators(.hidden)
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarLeading) {
+                BackButton()
+            }
+        })
+        .padding(.horizontal)
+        .navigationTitle("Step 3/3")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
     }
+    
 }
+
+
 
 
 #Preview {

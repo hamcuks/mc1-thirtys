@@ -11,8 +11,9 @@ struct GoalsScreen: View {
     
     @EnvironmentObject private var vm: GoalViewModel
     
+    
     var body: some View {
-        NavigationStack{
+        NavigationStack(){
             
             VStack(spacing: 24){
                 

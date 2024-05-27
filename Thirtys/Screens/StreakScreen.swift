@@ -10,11 +10,12 @@ import SwiftUI
 struct StreakScreen: View {
     
     @State private var isViewClicked: Bool = false
+    @State private var path = NavigationPath()
     
     @EnvironmentObject private var vm: DailyStreakViewModel
     
     var body: some View {
-        NavigationStack{
+        NavigationStack(path: $path){
             ScrollView{
                 VStack(alignment: .leading, spacing: 24){
                     VStack (alignment: .leading, spacing: 16){

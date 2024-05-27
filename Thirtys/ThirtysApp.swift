@@ -20,6 +20,8 @@ struct ThirtysApp: App {
                 .environmentObject(GoalViewModel())
                 .environmentObject(TodayViewModel())
                 .environmentObject(DailyStreakViewModel())
+                .environmentObject(SettingViewModel())
+                .environmentObject(PathHandler())
         }
         
     }
