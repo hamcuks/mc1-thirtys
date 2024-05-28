@@ -12,6 +12,7 @@ struct StepOneOnboardingScreen: View {
     @EnvironmentObject private var vm: OnboardingViewModel
     @EnvironmentObject var pathHolder: PathHandler
     var isOnboarding: Bool = false
+    @State var numberi: Int = 0
     
     var body: some View {
         
@@ -42,14 +43,15 @@ struct StepOneOnboardingScreen: View {
                         )
                         AppDatePicker(
                             selection: $vm.planStartDate,
-                            label: "Estimated Duration of Learning Plan",
+                            label: "Start Date of Learning Plan",
                             placeholder: "e.g., May 5 - June 5 2024"
                         )
                         AppDurationPicker(
                             selection: $vm.planDuration,
-                            label: "How fast can you achieve this goal?",
+                            label: "Days Estimate to achieve this goal?",
                             placeholder: "e.g., May 5 - June 5 2024"
-                        )
+                        ).keyboardType(.numberPad)
+                        
                     }
                     
                     Button{

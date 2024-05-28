@@ -38,13 +38,15 @@ struct StepThreeOnboardingScreen: View {
                     TimePickerThrough(
                         label: "Bed Time",
                         selection: $vm.bedTime.startTime,
-                        in: ...vm.bedTime.endTime
+                        in: ...vm.bedTime.endTime,
+                        textTitle: "Set Up Your Bedtime"
                     )
                     
                     TimePickerFrom(
                         label: "Wake Up Time",
                         selection: $vm.wakeUpTime.endTime,
-                        in: vm.wakeUpTime.startTime...
+                        in: vm.wakeUpTime.startTime..., 
+                        textTitle: "Set Up Your Wake Up Time"
                     )
                 }
             }

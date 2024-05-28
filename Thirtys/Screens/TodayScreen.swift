@@ -117,7 +117,7 @@ struct TodayScreen: View {
                 .foregroundStyle(.kTitleText)
             
             if let event = todayVm.currentLearningTime {
-                (Text(event.startTime <= .now && event.endTime >= .now ? "Your learning time is at " : "Your next learning time will be available at ") +
+                (Text(event.startTime <= .now && event.endTime >= .now ? "Your learning time is at \n" : "Your next learning time will be available at \n") +
                  Text(event.startTime, style: .time) +
                  Text(" - ") +
                  Text(event.endTime, style: .time))

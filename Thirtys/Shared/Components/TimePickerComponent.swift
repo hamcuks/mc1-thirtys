@@ -10,18 +10,22 @@ import SwiftUI
 struct TimePickerFrom: View {
     @State private var isOpen: Bool = false
     
+    
     var label: String
     var selection: Binding<Date>
     var range: PartialRangeFrom<Date>
+    var textTitle: String
     
     init(
         label: String,
         selection: Binding<Date>,
-        in timeRange: PartialRangeFrom<Date>
+        in timeRange: PartialRangeFrom<Date>,
+        textTitle: String
     ) {
         self.label = label
         self.selection = selection
         self.range = timeRange
+        self.textTitle = textTitle
     }
     
     var body: some View {
@@ -62,7 +66,7 @@ struct TimePickerFrom: View {
             VStack {
                 
                 Spacer()
-                Text("Set Up Work Time Range")
+                Text("\(textTitle)")
                     .fontWeight(.semibold)
                     .font(.title3)
                 
@@ -93,15 +97,18 @@ struct TimePickerThrough: View {
     var label: String
     var selection: Binding<Date>
     var range: PartialRangeThrough<Date>
+    var textTitle: String
     
     init(
         label: String,
         selection: Binding<Date>,
-        in timeRange: PartialRangeThrough<Date>
+        in timeRange: PartialRangeThrough<Date>,
+        textTitle: String
     ) {
         self.label = label
         self.selection = selection
         self.range = timeRange
+        self.textTitle = textTitle
     }
     
     var body: some View {
@@ -142,7 +149,7 @@ struct TimePickerThrough: View {
             VStack {
                 
                 Spacer()
-                Text("Set Up Work Time Range")
+                Text("\(textTitle)")
                     .fontWeight(.semibold)
                     .font(.title3)
                 
@@ -171,6 +178,7 @@ struct TimePickerThrough: View {
     TimePickerFrom(
         label: "Start Time",
         selection: .constant(.now),
-        in: Date.now...
+        in: Date.now..., 
+        textTitle: "Set Bedtime"
     )
 }

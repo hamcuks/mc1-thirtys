@@ -16,7 +16,7 @@ struct LearningOutOfRangeSheet: View {
             VStack(spacing: 16){
                 Text("There is no active learning time!")
                     .font(.system(.body, weight: .bold))
-                Text("You are not within your scheduled learning time. Are you still want to learn?")
+                Text("You are not within your scheduled learning time. Do you still want to learn?")
                     .font(.system(.subheadline, weight: .regular))
                     .multilineTextAlignment(.center)
             }

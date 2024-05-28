@@ -33,10 +33,28 @@ struct LearningTimeScreen: View {
                             .fontWeight(.medium)
                             .foregroundStyle(.kBody)
                             .multilineTextAlignment(.center)
+
+                        
                     }
                     
-                    LearningTimeList(items: vm.learningTimes)
+                    
+                    VStack{
+                        Text("Range of available schedules time")
+                            .font(.body)
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity,alignment: .leading)
+                            .padding(.bottom, 10)
+                        LearningTimeList(items: vm.learningTimes)
+                            .frame(height: 175)
+                        Text("Notes: This schedule might be same as your work time and bed time input")
+                            .font(.caption2)
+                            .fontWeight(.semibold)
+                            .frame(width: .infinity, height: 30,alignment: .leading)
+                    }
+                    
                 }
+                
+               
                 
                 Spacer()
                 
