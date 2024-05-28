@@ -10,15 +10,13 @@ import SwiftUI
 struct LearningTimeScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
-    
     @AppStorage("firstInstall") private var isFirstInstall = true
+    @EnvironmentObject var pathHolder: PathHandler
     
     var notification = NotificationHandler()
     
     var body: some View {
-        NavigationStack {
             VStack {
-                
                 VStack(spacing: 40) {
                     Image(.learningTime)
                         .resizable()
@@ -35,22 +33,83 @@ struct LearningTimeScreen: View {
                             .fontWeight(.medium)
                             .foregroundStyle(.kBody)
                             .multilineTextAlignment(.center)
+
+                        
                     }
                     
-                    LearningTimeList(items: vm.learningTimes)
+                    
+                    VStack{
+                        Text("Range of available schedules time")
+                            .font(.body)
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity,alignment: .leading)
+                            .padding(.bottom, 10)
+                        LearningTimeList(items: vm.learningTimes)
+                            .frame(height: 175)
+                        Text("Notes: This schedule might be same as your work time and bed time input")
+                            .font(.caption2)
+                            .fontWeight(.semibold)
+                            .frame(width: .infinity, height: 30,alignment: .leading)
+                    }
+                    
                 }
+                
+               
                 
                 Spacer()
                 
-                NavigationLink(
-                    destination: TabViewComponent()
-                        .onAppear {
-                            isFirstInstall = false
-                        }
-                ) {
-                    Text("Save")
+                Button {
+                    
+                    if !isFirstInstall{
+                        pathHolder.path.removeLast(pathHolder.path.count)
+                    } else {
+                        isFirstInstall = false
+                    }
+                } label: {
+                    Text("Next")
                 }
                 .buttonStyle(AppButtonStyle())
+                
+                
+//                NavigationLink(
+//                    destination: TabViewComponent()
+//                        .onAppear {
+//                            isFirstInstall = false
+//                            
+//                            if pathHolder.isSettingOpen {
+//                                pathHolder.path.removeLast(pathHolder.path.count)
+//                            }
+                            
+//                            if svm.isFromSetting{
+//                                
+//                                print("coba \(svm.path)")
+//                                svm.path.removeLast(svm.path.count)
+//                                isFirstInstall = false
+//                            }
+                            
+                            
+//                        }
+//                ) {
+//                    Text("Save")
+//                }
+//                .buttonStyle(AppButtonStyle())
+                
+//                Button{
+//                    if isFirstInstall {
+//                        NavigationLink(destination: TabViewComponent(), isActive: $isFirstInstall) {
+//                            EmptyView()
+//                                .onAppear{
+//                                    isFirstInstall = false
+//                                }
+//                        }
+//                    } else if !isFirstInstall {
+//                        path.removeLast(path.count)
+//                    }
+//                } label: {
+//                    Text("Save")
+//                }
+//                .buttonStyle(AppButtonStyle())
+                
                 
             }
             .onDisappear {
@@ -61,6 +120,7 @@ struct LearningTimeScreen: View {
                     }
                 }
             }
+            
             .scrollIndicators(.hidden)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarLeading) {
@@ -74,9 +134,10 @@ struct LearningTimeScreen: View {
             .onAppear {
                 vm.getLearningTime()
             }
-        }
+      
         
     }
+    
 }
 
 #Preview {

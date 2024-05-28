@@ -10,9 +10,12 @@ import SwiftUI
 struct StepOneOnboardingScreen: View {
     
     @EnvironmentObject private var vm: OnboardingViewModel
+    @EnvironmentObject var pathHolder: PathHandler
+    var isOnboarding: Bool = false
+    @State var numberi: Int = 0
     
     var body: some View {
-        NavigationStack {
+        
             ScrollView {
                 VStack(spacing: 40) {
                     Image(.goals)
@@ -40,24 +43,31 @@ struct StepOneOnboardingScreen: View {
                         )
                         AppDatePicker(
                             selection: $vm.planStartDate,
-                            label: "Estimated Duration of Learning Plan",
+                            label: "Start Date of Learning Plan",
                             placeholder: "e.g., May 5 - June 5 2024"
                         )
                         AppDurationPicker(
                             selection: $vm.planDuration,
-                            label: "How fast can you achieve this goal?",
+                            label: "Days Estimate to achieve this goal?",
                             placeholder: "e.g., May 5 - June 5 2024"
-                        )
+                        ).keyboardType(.numberPad)
+                        
                     }
                     
-                    NavigationLink(
-                        destination: StepTwoOnboardingScreen()
-                    ) {
+                    Button{
+                        if !isOnboarding{
+                            pathHolder.path.append("twoFromSetting")
+                        } else {
+                            pathHolder.path.append("twoOnBoard")
+                        }
+                        
+                    }label: {
                         Text("Next")
                     }
                     .buttonStyle(AppButtonStyle())
                     .grayscale((vm.planTitle.isEmpty || vm.planDuration < 7) ? 1 : 0)
                     .disabled((vm.planTitle.isEmpty || vm.planDuration < 7))
+                    
                 }
                 
                 
@@ -71,7 +81,7 @@ struct StepOneOnboardingScreen: View {
             .navigationTitle("Step 1/3")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()
-        }
+        
     }
 }
 

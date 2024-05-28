@@ -9,16 +9,19 @@ import SwiftUI
 
 struct TodayScreen: View {
     @EnvironmentObject private var todayVm: TodayViewModel
+    @EnvironmentObject private var vm: SettingViewModel
+    @StateObject private var pathHolder = PathHandler()
     
     @State private var isConfirmationStopOpen: Bool = false
     @State private var showOutOfRangeOptions: Bool = false
+
     
     let pausePub = NotificationCenter.default.publisher(for: Notification.Name.pauseTimer)
     let resumePub = NotificationCenter.default.publisher(for: Notification.Name.resumeTimer)
     let stopPub = NotificationCenter.default.publisher(for: Notification.Name.stopTimer)
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $pathHolder.path) {
             ZStack {
                 ScrollView {
                     VStack(spacing: 24) {
@@ -45,8 +48,16 @@ struct TodayScreen: View {
                     .background(.kBackground)
                     .padding(.bottom, 60)
                     .toolbar {
-                        streakToolbar
+                        ToolbarItem(placement: .topBarLeading) {
+                            settingToolbar
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            streakToolbar
+                        }
+                        
                     }
+                    
+                    
                 }
                 .navigationTitle("Today")
                 .navigationBarTitleDisplayMode(.inline)
@@ -57,8 +68,7 @@ struct TodayScreen: View {
                             badge: badge,
                             showAchievementPopup: $todayVm.showBadge
                         )
-                    }
-                    
+                    }   
                 }
             }
         }
@@ -82,6 +92,7 @@ struct TodayScreen: View {
             todayVm.getTodayLearningPlan()
             todayVm.getLearningStreaks()
             todayVm.checkTodayLearningState()
+            
         }
         .sheet(isPresented: $isConfirmationStopOpen) {
             ConfirmationStopLearningComponent(isConfirmationStopOpen: $isConfirmationStopOpen) {
@@ -94,7 +105,9 @@ struct TodayScreen: View {
                 todayVm.startTimer()
             }
         }
+        .environmentObject(pathHolder)
     }
+    
     
     // Subview learning time info
     private var learningTimeInfo: some View {
@@ -104,7 +117,7 @@ struct TodayScreen: View {
                 .foregroundStyle(.kTitleText)
             
             if let event = todayVm.currentLearningTime {
-                (Text(event.startTime <= .now && event.endTime >= .now ? "Your learning time is at " : "Your next learning time will be available at ") +
+                (Text(event.startTime <= .now && event.endTime >= .now ? "Your learning time is at \n" : "Your next learning time will be available at \n") +
                  Text(event.startTime, style: .time) +
                  Text(" - ") +
                  Text(event.endTime, style: .time))
@@ -200,9 +213,33 @@ struct TodayScreen: View {
         }
         .foregroundStyle(Color.kStreak)
     }
+    
+    // Subview settings toolbar
+    private var settingToolbar: some View {
+        HStack {
+            Button{
+                pathHolder.path.append("setting")
+            } label: {
+                Image(systemName: "gear.circle.fill")
+            }
+            .navigationDestination(for: String.self) { value in
+                if value == "setting"{
+                    SettingsView()
+                } else if value == "twoFromSetting"{
+                    StepTwoOnboardingScreen()
+                } else if value == "threeFromSetting" {
+                    StepThreeOnboardingScreen()
+                } else if value == "fourFromSetting" {
+                    LearningTimeScreen()
+                }
+            }
+        }
+        .foregroundStyle(Color.kBody)
+    }
 }
 
 #Preview {
     TodayScreen()
         .environmentObject(TodayViewModel())
+        .environmentObject(SettingViewModel())
 }

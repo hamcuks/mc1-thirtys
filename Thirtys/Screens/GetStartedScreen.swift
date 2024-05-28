@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct GetStartedScreen: View {
+    
+    @StateObject private var onBoard = PathHandler()
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $onBoard.path) {
             VStack(spacing: 40) {
                 Spacer()
                 
@@ -32,16 +35,29 @@ struct GetStartedScreen: View {
                 
                 Spacer()
                 
-                NavigationLink(
-                    destination: StepOneOnboardingScreen()
-                ) {
+                Button{
+                    onBoard.path.append("oneOnBoard")
+                } label: {
                     Text("Let's Start")
                 }
                 .buttonStyle(AppButtonStyle())
+                .navigationDestination(for: String.self) { value in
+                    if value == "oneOnBoard"{
+                        StepOneOnboardingScreen(isOnboarding: true)
+                    } else if value == "twoOnBoard"{
+                        StepTwoOnboardingScreen(isOnboarding: true)
+                    } else if value == "threeOnBoard" {
+                        StepThreeOnboardingScreen(isOnboarding: true)
+                    } else if value == "fourOnBoard" {
+                        LearningTimeScreen()
+                    }
+                }
+                
                 
             }
             .padding(.horizontal)
         }
+        .environmentObject(onBoard)
     }
 }
 

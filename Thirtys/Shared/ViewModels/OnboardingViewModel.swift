@@ -129,4 +129,11 @@ class OnboardingViewModel: ObservableObject {
         self.storeLearningTime()
         self.storePlanData()
     }
+    
+    func updateWeekdayEvent(weekday: Weekday, startTime: Date, endTime: Date) {
+            if let index = weekDays.firstIndex(where: { $0.id == weekday.id }) {
+                weekDays[index].event.startTime = startTime
+                weekDays[index].event.endTime = endTime
+            }
+        }
 }
