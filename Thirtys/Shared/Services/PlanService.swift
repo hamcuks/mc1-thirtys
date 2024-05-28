@@ -28,12 +28,14 @@ class PlanService: ObservableObject {
     func store(
         title: String,
         startDate: Date,
-        duration: Int
+        duration: Int,
+        endDate: Date
     ) {
         let plan = PlanEntity(context: database)
         plan.title = title
         plan.startDate = startDate
         plan.duration = Int16(duration)
+        plan.endDate = endDate
         
         do {
             try database.save()

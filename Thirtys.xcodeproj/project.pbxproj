@@ -33,6 +33,16 @@
 		03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F838282BFD9288004DDDFA /* BadgeSheetView.swift */; };
 		82B8C8372BFDCE8300214670 /* StreakScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8C8362BFDCE8300214670 /* StreakScreen.swift */; };
 		D97A503A2C019F7A00851290 /* LearningOutRangeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97A50392C019F7A00851290 /* LearningOutRangeSheet.swift */; };
+		D9F853562C038A0400387B3D /* AppDatePickerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F853552C038A0400387B3D /* AppDatePickerV2.swift */; };
+		D9F8A5EF2C035FBD001278F5 /* MDPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8A5EE2C035FBD001278F5 /* MDPModel.swift */; };
+		D9F8A5F12C036000001278F5 /* MDPDaysOfMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8A5F02C036000001278F5 /* MDPDaysOfMonth.swift */; };
+		D9F8A5F32C036058001278F5 /* MDPMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8A5F22C036058001278F5 /* MDPMonthView.swift */; };
+		D9F8A5F52C036088001278F5 /* MDPMonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8A5F42C036088001278F5 /* MDPMonthYearPicker.swift */; };
+		D9F8A5F72C0360B6001278F5 /* MDPDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8A5F62C0360B6001278F5 /* MDPDayView.swift */; };
+		D9F8A5F92C0360F3001278F5 /* MDPMonthYearPickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8A5F82C0360F3001278F5 /* MDPMonthYearPickerButton.swift */; };
+		D9F8A5FB2C036115001278F5 /* MDPContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8A5FA2C036115001278F5 /* MDPContentView.swift */; };
+		D9F8A5FD2C036146001278F5 /* MDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8A5FC2C036146001278F5 /* MDP.swift */; };
+		D9F8A6012C036207001278F5 /* RangeCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8A6002C036207001278F5 /* RangeCalendar.swift */; };
 		DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC232BFC922300529B16 /* BadgeComponent.swift */; };
 		DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */; };
 		E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */; };
@@ -139,6 +149,16 @@
 		82B8C8362BFDCE8300214670 /* StreakScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakScreen.swift; sourceTree = "<group>"; };
 		D97A50392C019F7A00851290 /* LearningOutRangeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningOutRangeSheet.swift; sourceTree = "<group>"; };
 		D998CC0C2C021BBC0032DCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F853552C038A0400387B3D /* AppDatePickerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatePickerV2.swift; sourceTree = "<group>"; };
+		D9F8A5EE2C035FBD001278F5 /* MDPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPModel.swift; sourceTree = "<group>"; };
+		D9F8A5F02C036000001278F5 /* MDPDaysOfMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPDaysOfMonth.swift; sourceTree = "<group>"; };
+		D9F8A5F22C036058001278F5 /* MDPMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPMonthView.swift; sourceTree = "<group>"; };
+		D9F8A5F42C036088001278F5 /* MDPMonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPMonthYearPicker.swift; sourceTree = "<group>"; };
+		D9F8A5F62C0360B6001278F5 /* MDPDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPDayView.swift; sourceTree = "<group>"; };
+		D9F8A5F82C0360F3001278F5 /* MDPMonthYearPickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPMonthYearPickerButton.swift; sourceTree = "<group>"; };
+		D9F8A5FA2C036115001278F5 /* MDPContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDPContentView.swift; sourceTree = "<group>"; };
+		D9F8A5FC2C036146001278F5 /* MDP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDP.swift; sourceTree = "<group>"; };
+		D9F8A6002C036207001278F5 /* RangeCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCalendar.swift; sourceTree = "<group>"; };
 		DAA2CC232BFC922300529B16 /* BadgeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeComponent.swift; sourceTree = "<group>"; };
 		DAA2CC492BFD8EBC00529B16 /* BadgeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeData.swift; sourceTree = "<group>"; };
 		E704AAA42BFB741C00578B69 /* StepTwoOnboardingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTwoOnboardingScreen.swift; sourceTree = "<group>"; };
@@ -222,6 +242,23 @@
 				03545AA52BFDDA7F00F731D8 /* TimeFormattingHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D9F8A5ED2C035F81001278F5 /* RangeCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8A6002C036207001278F5 /* RangeCalendar.swift */,
+				D9F8A5FC2C036146001278F5 /* MDP.swift */,
+				D9F8A5EE2C035FBD001278F5 /* MDPModel.swift */,
+				D9F8A5F02C036000001278F5 /* MDPDaysOfMonth.swift */,
+				D9F8A5F22C036058001278F5 /* MDPMonthView.swift */,
+				D9F8A5FA2C036115001278F5 /* MDPContentView.swift */,
+				D9F8A5F62C0360B6001278F5 /* MDPDayView.swift */,
+				D9F8A5F42C036088001278F5 /* MDPMonthYearPicker.swift */,
+				D9F8A5F82C0360F3001278F5 /* MDPMonthYearPickerButton.swift */,
+				D9F853552C038A0400387B3D /* AppDatePickerV2.swift */,
+			);
+			path = RangeCalendar;
 			sourceTree = "<group>";
 		};
 		E72EB2E92BF84EC300237B58 = {
@@ -349,6 +386,7 @@
 		E72EB30E2BF84F0000237B58 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D9F8A5ED2C035F81001278F5 /* RangeCalendar */,
 				E7C2C4BC2BFF116800CAF782 /* TabViewComponent.swift */,
 				03545AA32BFDDA7600F731D8 /* CircularProgressBar.swift */,
 				E70A32502BFD90520014563C /* StaticFieldComponent.swift */,
@@ -536,12 +574,14 @@
 				E72EB2FF2BF84EC500237B58 /* Persistence.swift in Sources */,
 				E70A323C2BFCF1630014563C /* Weekday.swift in Sources */,
 				03545AA02BFDDA5D00F731D8 /* Timer.swift in Sources */,
+				D9F853562C038A0400387B3D /* AppDatePickerV2.swift in Sources */,
 				0349704F2BFEE6B800CB2E28 /* ConfirmationStopLearningComponent.swift in Sources */,
 				034E29312BFB74290030D448 /* StepThreeOnboardingScreen.swift in Sources */,
 				E7C2C4BD2BFF116800CAF782 /* TabViewComponent.swift in Sources */,
 				E70F06F02C0330AC006B8D9C /* NotificationExtension.swift in Sources */,
 				E704AAAD2BFB81B000578B69 /* AppDatePicker.swift in Sources */,
 				DAA2CC4A2BFD8EBC00529B16 /* BadgeData.swift in Sources */,
+				D9F8A6012C036207001278F5 /* RangeCalendar.swift in Sources */,
 				E72EB3292BF8504100237B58 /* GoalsScreen.swift in Sources */,
 				E70A32552BFE13C90014563C /* LearningTimeListComponent.swift in Sources */,
 				03D85E9A2BFA27D300C3A248 /* ViewExtension.swift in Sources */,
@@ -555,12 +595,18 @@
 				03A122332BFDF05E000BD12A /* LearningHistory.swift in Sources */,
 				03A74E442C0307F900CAF2BC /* AproxTime.swift in Sources */,
 				03B4D0662BFA299000C6643F /* TextFieldComponent.swift in Sources */,
+				D9F8A5F12C036000001278F5 /* MDPDaysOfMonth.swift in Sources */,
+				D9F8A5F92C0360F3001278F5 /* MDPMonthYearPickerButton.swift in Sources */,
 				E72EB3102BF84F1700237B58 /* AppButtonComponent.swift in Sources */,
+				D9F8A5FB2C036115001278F5 /* MDPContentView.swift in Sources */,
 				E72EB2F82BF84EC300237B58 /* ContentView.swift in Sources */,
+				D9F8A5FD2C036146001278F5 /* MDP.swift in Sources */,
 				E704AAAB2BFB742E00578B69 /* ListItemComponent.swift in Sources */,
 				03E71A3E2BFC9F1700207B4F /* (null) in Sources */,
 				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
 				D97A503A2C019F7A00851290 /* LearningOutRangeSheet.swift in Sources */,
+				D9F8A5F52C036088001278F5 /* MDPMonthYearPicker.swift in Sources */,
+				03F8382A2BFD9288004DDDFA /* BadgeSheetView.swift in Sources */,
 				E70A32362BFB8C8C0014563C /* DurationTypeEnum.swift in Sources */,
 				034970512BFF54BA00CB2E28 /* NotificationHandler.swift in Sources */,
 				E72EB3232BF84FCE00237B58 /* GetStartedScreen.swift in Sources */,
@@ -574,6 +620,7 @@
 				03E71A402BFCC90300207B4F /* (null) in Sources */,
 				E741256E2C00804D00812EB1 /* UserPreferenceService.swift in Sources */,
 				E70A32382BFC22780014563C /* OnboardingViewModel.swift in Sources */,
+				D9F8A5F32C036058001278F5 /* MDPMonthView.swift in Sources */,
 				E70A32402BFCF1A80014563C /* CollectionExtension.swift in Sources */,
 				E790B4892C00EB6600F22321 /* SplashScreen.swift in Sources */,
 				E72EB3212BF84FBF00237B58 /* TodayScreen.swift in Sources */,
@@ -591,9 +638,11 @@
 				E7C2C4BB2BFF0A3E00CAF782 /* (null) in Sources */,
 				E70F06F32C03326C006B8D9C /* TimerIntent.swift in Sources */,
 				E74125702C00BEAD00812EB1 /* StreakService.swift in Sources */,
+				D9F8A5F72C0360B6001278F5 /* MDPDayView.swift in Sources */,
 				E72EB3022BF84EC500237B58 /* Thirtys.xcdatamodeld in Sources */,
 				E70A324A2BFCFDF90014563C /* TimePickerComponent.swift in Sources */,
 				E70A32342BFB8C590014563C /* AppDurationPicker.swift in Sources */,
+				D9F8A5EF2C035FBD001278F5 /* MDPModel.swift in Sources */,
 				0321E8962C03814600432F12 /* PathHandler.swift in Sources */,
 				E704AAA72BFB741C00578B69 /* StepTwoOnboardingScreen.swift in Sources */,
 				DAA2CC242BFC922300529B16 /* BadgeComponent.swift in Sources */,

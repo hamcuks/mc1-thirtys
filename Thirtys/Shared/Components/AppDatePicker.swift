@@ -49,15 +49,13 @@ struct AppDatePicker: View {
         }
         .sheet(isPresented: $isOpened) {
             VStack(spacing: 24){
-                DatePicker("", selection: $selection, in: .now..., displayedComponents: .date)
-                    .datePickerStyle(.graphical)
+                RangeCalendar()
                 
                 Button("Set") {
                     isOpened.toggle()
                 }.buttonStyle(AppButtonStyle())
             }
             .presentationDetents([.medium])
-            .padding()
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Text("Save")
@@ -71,5 +69,5 @@ struct AppDatePicker: View {
 
 
 #Preview {
-    AppDatePicker(selection: .constant(.now), label: "Label")
+    AppDatePicker(selection: .constant(.now), label: "Label").environmentObject(OnboardingViewModel())
 }

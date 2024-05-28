@@ -20,7 +20,9 @@ class OnboardingViewModel: ObservableObject {
     // Step One
     @Published var planTitle: String = ""
     @Published var planStartDate: Date = .now
+    @Published var planEndDate: Date = .now 
     @Published var planDuration: Int = 7
+    @Published var dateRange: ClosedRange<Date>? = nil
     
     // Step Two
     @Published var weekDays: [Weekday] = [
@@ -116,7 +118,8 @@ class OnboardingViewModel: ObservableObject {
         planService.store(
             title: self.planTitle,
             startDate: self.planStartDate,
-            duration: self.planDuration
+            duration: self.planDuration,
+            endDate: self.planEndDate
         )
     }
     
@@ -134,4 +137,3 @@ class OnboardingViewModel: ObservableObject {
             }
         }
 }
-
